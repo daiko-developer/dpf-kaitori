@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "streetsidesoftware.code-spell-checker",
+        "vscode-icons-team.vscode-icons",
+        "mrmlnc.vscode-csscomb",
+        "ecmel.vscode-html-css",
+        "ritwickdey.live-sass",
+        "ritwickdey.liveserver"
+    ]
+}

@@ -1,0 +1,184 @@
+@charset "utf-8";
+/*version 1.0.1*/
+html {
+  color: #000000;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 1.5;
+  font-family: $gothic;
+  word-break: break-word;
+
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+body,
+div,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+form,
+input,
+button,
+figure,
+figcaption,
+p,
+pre,
+a,
+time {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  padding: 0;
+  color: inherit;
+  line-height: inherit;
+}
+
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  line-height: 1.15;
+  font-family: inherit;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+time {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: none;
+  border-style: none;
+  vertical-align: top;
+}
+
+img:not([src*="."]) {
+  display: none;
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  font-weight: normal;
+}
+
+.img img {
+  text-align: center;
+}
+
+.map {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    display: block;
+    padding-top: 50%;
+    content: "";
+  }
+  iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-width: initial;
+    height: 100%;
+    margin: auto;
+  }
+}
+
+a,
+button {
+  color: inherit;
+  text-decoration: none;
+  transition: .4s ease;
+
+  &:hover {
+    opacity: .6;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  &[href*="tel"] {
+    pointer-events: none;
+  }
+  @media (max-width: 1024px) {
+    &[href*="tel"] {
+      pointer-events: initial !important;
+    }
+  }
+}

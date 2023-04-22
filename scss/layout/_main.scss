@@ -1,0 +1,9 @@
+/*共通コンテンツ間隔*/
+.area {
+  margin-top: 160px;
+  margin-bottom: 160px;
+  @media only screen and (max-width: 599px) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}

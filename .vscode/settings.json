@@ -1,0 +1,108 @@
+{
+  "[html]": {
+    // フォーマットを指定
+    "editor.defaultFormatter": "vscode.html-language-features",
+    // 保存時に自動でフォーマットを実行するなら`true`.
+    "editor.formatOnSave": true,
+    // 入力した行を自動でフォーマットを実行するなら`true`.
+    "editor.formatOnType": true
+  },
+  // スペルチェックから除外する単語をまとめたテキストファイルを指定する
+  "cSpell.customDictionaries": {
+    "organization-words": {
+      "addWords": true,
+      "description": "Organization Words",
+      "name": "organization-words",
+      "path": "${workspaceRoot}/.cspell/organization-words.txt",
+      "scope": "workspace"
+    },
+    "site-words": {
+      "addWords": true,
+      "description": "Words specific to this site",
+      "name": "site-words",
+      "path": "${workspaceRoot}/.cspell/site-words.txt",
+      "scope": "workspace"
+    },
+    "web-words": {
+      "addWords": true,
+      "description": "Web App Development Words",
+      "name": "web-words",
+      "path": "${workspaceRoot}/.cspell/web-words.txt",
+      "scope": "workspace"
+    }
+  },
+  // スペルチェックを行わないファイルパスを指定する
+  "cSpell.ignorePaths": [
+    "vscode-extension",
+    ".vscode"
+  ],
+  // CSSプロパティの整形設定ファイル指定
+  "csscomb.preset": "./.vscode/csscomb.json",
+  // ONLY GLOBAL: Breakpointに到達した時、デバッグビューが自動的に表示される。
+  "debug.openDebug": "openOnDebugBreak",
+  // ブラケットをペアごとに色付けするなら`true`.
+  "editor.bracketPairColorization.enabled": true,
+  // ミニマップを表示するなら`true`。Default: true.
+  "editor.minimap.enabled": false,
+  // 制御文字を表示するなら`true`.
+  "editor.renderControlCharacters": true,
+  // ホワイトスペース文字の表示。
+  "editor.renderWhitespace": "all",
+  // 垂直ルーラーを表示する文字数の位置。複数指定可
+  "editor.rulers": [
+    80
+  ],
+  // Emmet の候補を表示
+  "emmet.showSuggestionsAsSnippets": true,
+  // TAB キーで Emmet を展開できるようにする
+  "emmet.triggerExpansionOnTab": true,
+  // Emmet で展開される HTML の言語を変更
+  "emmet.variables": {
+    "lang": "ja"
+  },
+  // エクスプローラでファイルやフォルダをドラッグ＆ドロップした時に確認を求めるなら`true`.
+  "explorer.confirmDragAndDrop": false,
+  // ファイルをネストさせる
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
+    "readme.*": "authors, backers.md, changelog*, citation*, code_of_conduct.md, codeowners, contributing.md, contributors, copying, credits, governance.md, history.md, license*, maintainers, readme*, security.md, sponsors.md"
+  },
+  "files.associations": {
+    "*.env.dev": "env",
+    "*.env.prod": "env",
+    "*.env.stag": "env"
+  },
+  // 現在のGitリポジトリのデフォルトリモートからコミットを自動で取得するなら`true`.
+  // `all` に設定すると、全てのリモートから取得する。
+  "git.autofetch": true,
+  // タグ内の記述はフォーマットしない
+  "html.format.contentUnformatted": "head, body, pre, code, textarea, title, h1, h2, h3, h4, h5, h6, p",
+  "html.format.enable": false,
+  "html.format.extraLiners": "main, head, body, /html",
+  "html.format.indentInnerHtml": false,
+  "html.format.preserveNewLines": true,
+  // フレージング・コンテンツ（旧インライン要素のようなタグ）はフォーマットしない
+  "html.format.unformatted": null,
+  // 行の文字数制限を無くし自動で改行させない
+  "html.format.wrapLineLength": 0,
+  "html.suggest.html5": false,
+  // Sassコンパイル時のプリフィックス設定
+  "liveSassCompile.settings.autoprefix": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  // Sassコンパイル時のフォーマット
+  "liveSassCompile.settings.formats": [
+    {
+      "extensionName": ".css",
+      "format": "expanded",
+      "savePath": "/css"
+    }
+  ],
+  // Sassコンパイルの対象とするファイル
+  "liveSassCompile.settings.includeItems": [
+    "scss/**/*.scss"
+  ]
+}

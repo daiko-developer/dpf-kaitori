@@ -1,0 +1,99 @@
+// メインコンテンツ幅
+.wrapper {
+  min-width: 320px;
+  overflow: hidden;
+}
+
+// コンテンツ幅
+.inner500,
+.inner600,
+.inner700,
+.inner800,
+.inner900,
+.inner,
+.inner1100,
+.inner1200,
+.inner1300,
+.inner1400,
+.inner1500 {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.inner500,
+.inner600,
+.inner700,
+.inner800,
+.inner900,
+.inner {
+  width: 92%;
+}
+
+.inner1100,
+.inner1200,
+.inner1300,
+.inner1400,
+.inner1500 {
+  width: 98%;
+}
+
+.inner500 {
+  max-width: 500px;
+}
+
+.inner600 {
+  max-width: 600px;
+}
+
+.inner700 {
+  max-width: 700px;
+}
+
+.inner800 {
+  max-width: 800px;
+}
+
+.inner900 {
+  max-width: 900px;
+}
+
+.inner {
+  max-width: 1000px;
+}
+
+.inner1100 {
+  max-width: 1100px;
+}
+
+.inner1200 {
+  max-width: 1200px;
+}
+
+.inner1300 {
+  max-width: 1300px;
+}
+
+.inner1400 {
+  max-width: 1400px;
+}
+
+.inner1500 {
+  max-width: 1500px;
+}
+
+@media (max-width: 1024px) {
+  .inner500,
+  .inner600,
+  .inner700,
+  .inner800,
+  .inner900,
+  .inner,
+  .inner1100,
+  .inner1200,
+  .inner1300,
+  .inner1400,
+  .inner1500 {
+    width: 96%;
+    max-width: 768px;
+  }
+}

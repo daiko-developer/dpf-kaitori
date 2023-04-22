@@ -1,0 +1,104 @@
+/**
+フッター
+footer
+*/
+.footer {
+  padding-top: 80px;
+  background-color: $color1;
+  .txt {
+    color: #ffffff;
+  }
+  .logo {
+    margin-top: 20px;
+  }
+  .copy {
+    padding: 10px 0;
+    background: #ffffff;
+    text-align: center;
+  }
+  @media only screen and (max-width: 1024px) {
+    .copy {
+      padding-bottom: 50px;
+    }
+  }
+}
+
+/**
+フッターナビ
+fnav
+*/
+.fnav {
+  padding: 50px 0;
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+  .list01 {
+    width: 50%;
+    .item {
+      margin-bottom: 10px;
+      padding-right: 10px;
+      color: #ffffff;
+      a {
+        display: block;
+        position: relative;
+        padding-left: 20px;
+        &:before {
+          position: absolute;
+          left: 0;
+          font-weight: bold;
+          font-family: "Font Awesome 5 Free";
+          content: "\f054";
+        }
+      }
+    }
+  }
+  .list02 {
+    display: flex;
+
+    .item {
+      margin-left: 50px;
+    }
+  }
+  .datattl {
+    position: relative;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  .data {
+    margin-bottom: 5px;
+    color: #ffffff;
+    a {
+      position: relative;
+      padding-left: 20px;
+      &:before {
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        font-family: "Font Awesome 5 Free";
+        content: "\f054";
+      }
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    .wrap {
+      flex-wrap: wrap;
+    }
+    .list01 {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .list02 {
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 599px) {
+    .list01 {
+      column-count: 2;
+    }
+    .datawrap {
+      column-count: 2;
+    }
+  }
+}

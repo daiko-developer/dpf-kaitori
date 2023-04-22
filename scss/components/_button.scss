@@ -1,0 +1,16 @@
+/*===================================
+  共通ボタン btn-cmn
+===================================*/
+/*共通ボタン１*/
+.btn-cmn01 {
+  position: relative;
+  display: block;
+  margin: 50px auto 0 auto;
+  padding: 10px 20px;
+  max-width: 250px;
+  border-radius: 10px;
+  background: $color1;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+}
