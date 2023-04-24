@@ -126,7 +126,6 @@
   overflow: hidden;
   border-radius: 20px;
   background: center / cover no-repeat url("../images/home/img01.png");
-
   &:before {
     display: block;
     position: relative;
@@ -134,7 +133,6 @@
     padding-top: 50%;
     content: "";
   }
-
   &:after {
     position: absolute;
     top: 0;
@@ -144,7 +142,6 @@
     background: rgba(0, 0, 0, .2);
     content: "";
   }
-
   .head {
     position: absolute !important;
     top: 50%;
@@ -152,22 +149,14 @@
     z-index: 1;
     transform: translate(-50%, -50%);
     color: #ffffff;
-    font-size: 45px;
+    font-size: 2.20rem;
   }
-
   .txt02 {
-    font-size: 35px;
+    font-size: 1.70rem;
   }
-
   .txt03 {
     font-weight: bold;
-    font-size: 55px;
-  }
-
-  @media only screen and (max-width: 599px) {
-    .head {
-      font-size: 28px;
-    }
+    font-size: 2.70rem;
   }
 }
 

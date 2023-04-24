@@ -4,7 +4,7 @@
   .contents {
     display: flex;
     justify-content: space-between;
-    height: 100px;
+    // height: 100px;
   }
   .logo {
     display: flex;
@@ -19,95 +19,97 @@
   }
   .right {
     display: flex;
-    .block-tel {
+  }
+  .block-tel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+    .tel {
+      a {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+      a:before {
+        margin-right: 5px;
+        font-weight: 600;
+        font-size: 1.2rem;
+        font-family: "Font Awesome 5 Free";
+        content: "\f879";
+      }
+    }
+  }
+  .block-btn {
+    display: flex;
+  }
+  .btn {
+    &.-menu,
+    &.-kaitori a,
+    &.-contact a {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin-right: 20px;
-      .txt {
-        line-height: 120%;
-      }
-      .tel {
-        a {
-          font-weight: bold;
-          font-size: 30px;
-        }
-        a:before {
-          margin-right: 5px;
-          font-weight: 600;
-          font-size: 24px;
-          font-family: "Font Awesome 5 Free";
-          content: "\f879";
-        }
-      }
-    }
-    .list {
-      display: flex;
       align-items: center;
-      padding-right: 20px;
+      width: 120px;
+      padding: 10px 10px;
     }
-    .button {
-      &.-menu,
-      &.-kaitori a {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 120px;
-        padding: 10px 10px;
-      }
-      &.-contact a {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 120px;
-        padding: 10px 10px;
-      }
-      &.-menu {
-        background-color: #0d4987;
-      }
-      &.-kaitori {
-        a {
-          height: 100%;
-          background-color: darkblue;
-        }
-        a:before {
-          margin-right: 5px;
-          font-weight: bold;
-          font-size: 24px;
-          font-family: "Font Awesome 5 Free";
-          text-align: center;
-          content: "\f573";
-        }
-      }
-      &.-contact {
-        a {
-          height: 100%;
-          background-color: #ffb100;
-        }
-        a:before {
-          margin-right: 5px;
-          font-weight: 500;
-          font-size: 24px;
-          font-family: "Font Awesome 5 Free";
-          text-align: center;
-          content: "\f0e0";
-        }
-      }
-      .label {
-        color: #ffffff;
+    &.-menu {
+      background-color: #0d4987;
+    }
+    &.-kaitori a,
+    &.-contact a {
+      height: 100%;
+      &:before {
+        margin-right: 5px;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 1.2rem;
+        font-family: "Font Awesome 5 Free";
+        text-align: center;
       }
+    }
+    &.-kaitori {
+      a {
+        background-color: darkblue;
+      }
+      a:before {
+        content: "\f573";
+      }
+    }
+    &.-contact {
+      a {
+        background-color: #ffb100;
+      }
+      a:before {
+        content: "\f0e0";
+      }
+    }
+    .label {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 0.8rem;
     }
   }
   @media only screen and (max-width: 1024px) {
-    padding: 5px 0;
+    .block-tel {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 599px) {
+    .logo img {
+      max-height: 40px;
+    }
+    .btn.-kaitori,
+    .btn.-contact {
+      display: none;
+    }
+    .btn.-menu {
+      width: 80px;
+      padding: 5px;
+    }
   }
 }
 
-/*下部固定コンテンツ*/
+// 下部固定コンテンツ
 .fix-bottom {
   position: fixed;
   right: 0;
@@ -119,11 +121,11 @@
     align-items: center;
     padding: 10px 5px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1rem;
     &:before {
       margin-right: 5px;
       font-weight: 600;
-      font-size: 30px;
+      font-size: 1.5rem;
       font-family: "Font Awesome 5 Free";
     }
   }
@@ -137,7 +139,6 @@
   .contact {
     background: #ffb100;
     color: #ffffff;
-
     a:before {
       font-weight: normal;
       content: "\f0e0";
@@ -147,29 +148,18 @@
     display: none;
     background: #53bf00;
     color: #ffffff;
-
     a:before {
       font-weight: bold;
       content: "\f879";
     }
   }
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 599px) {
     display: flex;
     bottom: 0;
     width: 100%;
     .item {
-      width: 50%;
+      width: 100%;
       text-align: center;
-    }
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      padding: 10px 5px;
-      &:before {
-        margin-right: 5px;
-      }
     }
     .tel {
       display: block;
