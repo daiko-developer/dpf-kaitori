@@ -4,13 +4,10 @@
   margin-bottom: 50px;
   color: $color1;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   text-align: center;
   .ttlin01 {
-    font-size: 70px;
-  }
-  @media only screen and (max-width: 599px) {
-    font-size: 24px;
+    font-size: 3.0rem;
   }
 }
 
@@ -19,12 +16,6 @@
   margin-bottom: 50px;
   color: $color1;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 1.9rem;
   text-align: center;
-  .ttlin01 {
-    font-size: 70px;
-  }
-  @media only screen and (max-width: 599px) {
-    font-size: 24px;
-  }
 }
