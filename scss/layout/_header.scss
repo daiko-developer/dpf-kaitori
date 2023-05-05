@@ -1,6 +1,27 @@
 // ヘッダー
 .header {
   margin-bottom: 10px;
+  background-color: rgba( #ffffff, .9);
+  &.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 200;
+    width: 100%;
+  }
+  &.overlay:after {
+    opacity: .3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 230;
+            transform: translate3d(0, 0, 0) !important;
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    content: "";
+
+    -webkit-transform: translate3d(0, 0, 0) !important;
+  }
   .contents {
     display: flex;
     justify-content: space-between;
@@ -86,7 +107,7 @@
     .label {
       color: #ffffff;
       font-weight: bold;
-      font-size: 0.8rem;
+      font-size: .8rem;
     }
   }
   @media only screen and (max-width: 1024px) {
@@ -103,7 +124,7 @@
       display: none;
     }
     .btn.-menu {
-      width: 80px;
+      width: 60px;
       padding: 5px;
     }
   }
@@ -157,6 +178,9 @@
     display: flex;
     bottom: 0;
     width: 100%;
+    a {
+      padding: 2px;
+    }
     .item {
       width: 100%;
       text-align: center;
@@ -310,6 +334,13 @@ gnav
       top: 10px;
     }
   }
+  @media only screen and (max-width: 599px) {
+    width: 30px;
+    height: 30px;
+    .bar {
+      left: 1px;
+    }
+  }
 }
 
 .toggle.active .bar {
@@ -336,20 +367,20 @@ gnav
   }
 }
 
-.overlay:after {
-  opacity: .3;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 249;
-          transform: translate3d(0, 0, 0) !important;
-  width: 100%;
-  height: 100vh;
-  background: #000000;
-  content: "";
+// .overlay:after {
+//   opacity: .3;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 230;
+//           transform: translate3d(0, 0, 0) !important;
+//   width: 100%;
+//   height: 100vh;
+//   background: #000000;
+//   content: "";
 
-  -webkit-transform: translate3d(0, 0, 0) !important;
-}
+//   -webkit-transform: translate3d(0, 0, 0) !important;
+// }
 
 /*トップへ戻る*/
 .totop {
@@ -374,5 +405,8 @@ gnav
   @media only screen and (max-width: 1024px) {
     right: 10px;
     bottom: 50px;
+  }
+  @media only screen and (max-width: 599px) {
+    bottom: 70px;
   }
 }

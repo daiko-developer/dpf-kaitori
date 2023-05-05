@@ -1,7 +1,4 @@
-/**
-フッター
-footer
-*/
+// フッター
 .footer {
   padding-top: 80px;
   background-color: $color1;
@@ -21,21 +18,24 @@ footer
       padding-bottom: 50px;
     }
   }
+  @media only screen and (max-width: 599px) {
+    padding-bottom: 50px;
+  }
 }
 
-/**
-フッターナビ
-fnav
-*/
+// フッターナビ
 .fnav {
   padding: 50px 0;
-  .wrap {
-    display: flex;
-    justify-content: space-between;
-  }
+  // .wrap {
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
   .list01 {
-    width: 50%;
+    // width: 50%;
+    display: flex;
+    justify-content: end;
     .item {
+      margin-right: 20px;
       margin-bottom: 10px;
       padding-right: 10px;
       color: #ffffff;
@@ -55,7 +55,6 @@ fnav
   }
   .list02 {
     display: flex;
-
     .item {
       margin-left: 50px;
     }

@@ -1,6 +1,34 @@
 /* version 1.0.0 */
 // JavaScript Document
 
+// ヘッダー読み込み
+function header(rootDir){
+  $.ajax({
+      url: rootDir + "_header.html",  // 読み込むHTMLファイル
+      cache: false,
+      async: false,
+      dataType: 'html',
+      success: function(html){
+          html = html.replace(/\{\$root\}/g, rootDir); //header.htmlの{$root}を置換
+          document.write(html);
+      }
+  });
+};
+
+// フッター読み込み
+function footer(rootDir){
+  $.ajax({
+      url: rootDir + "_footer.html",  // 読み込むHTMLファイル
+      cache: false,
+      async: false,
+      dataType: 'html',
+      success: function(html){
+          html = html.replace(/\{\$root\}/g, rootDir); //header.htmlの{$root}を置換
+          document.write(html);
+      }
+  });
+};
+
 //fead系
 $(window).on('load scroll', function () {
   $(".fead-mv, .fead-up, .fead-left, .fead-right").each(function () {
@@ -20,22 +48,24 @@ $(window).on('load scroll', function () {
 
 
 //グローバルナビ固定
-// $(window).on('load resize', function () {
-//   if ($('.gnav').length) {
-//     var w = window.innerWidth;
-//     var obj = $('.gnav').offset().top;
-//     var h = $('.header .contents').outerHeight();
-//     $(window).on('load scroll resize', function () {
-//       if ($(this).scrollTop() > obj && (w > 1024)) {
-//         $(".gnav").addClass("fixed");
-//         $("#wrapper").css('padding-top', h);
-//       } else {
-//         $(".gnav").removeClass("fixed");
-//         $("#wrapper").css('padding-top', 0);
-//       }
-//     });
-//   }
-// });
+$(window).on('load resize', function () {
+  if ($('.header').length) {
+    var w = window.innerWidth;
+    var obj = $('.header').offset().top;
+    var h = $('.header .contents').outerHeight();
+    var hbtn = $('.btn.-menu').outerHeight();
+    $(window).on('load scroll resize', function () {
+      if ($(this).scrollTop() > obj) {
+        $(".header").addClass("fixed");
+        $("#wrapper").css('padding-top', h);
+      } else {
+        $(".header").removeClass("fixed");
+        $(".btn.-menu").removeClass("fixed");
+        $("#wrapper").css('padding-top', 0);
+      }
+    });
+  }
+});
 
 
 //ハンバーガーメニュー
@@ -43,13 +73,13 @@ $(function () {
   $('.toggle').click(function () {
     $(this).toggleClass('active');
     $(".gnav").toggleClass('action');
-    $("body").toggleClass('overlay');
+    $("header").toggleClass('overlay');
   });
 
   $('.gnav a').click(function () {
     $(this).toggleClass('active');
     $(".gnav").toggleClass('action');
-    $("body").toggleClass('overlay');
+    $("header").toggleClass('overlay');
   });
 });
 

@@ -9,6 +9,9 @@
   .ttlin01 {
     font-size: 3.0rem;
   }
+  @media only screen and (max-width: 599px) {
+    margin-bottom: 30px;
+  }
 }
 
 // 共通タイトル２
@@ -18,4 +21,7 @@
   font-weight: bold;
   font-size: 1.9rem;
   text-align: center;
+  @media only screen and (max-width: 599px) {
+    margin-bottom: 30px;
+  }
 }
