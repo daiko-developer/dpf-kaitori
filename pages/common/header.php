@@ -10,7 +10,7 @@
         <div class="txt02">営業時間 9:00〜18:00(土日祝 ※年末年始･お盆除く)</div>
       </div>
       <div class="block-btn">
-        <div class="btn -kaitori"><a href="purchase_form.php" class="label">買取申込</a></div>
+        <div class="btn -kaitori"><a href="/pages/purchase_form.php" class="label">買取申込</a></div>
         <div class="btn -contact"><a href="contact_form.php" class="label">お問い合わせ</a></div>
         <div class="btn -menu">
           <div class="toggle"><span class="bar accordion-toggle"></span></div>

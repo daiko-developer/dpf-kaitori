@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "Enter your login ID and password"
+AuthUserFile /home/users/1/candypop.jp-rakurakukaitori/web/test/.htpasswd
+require valid-user
+<Files ~ "^.(htpasswd|htaccess)$">
+  deny from all
+</Files>
