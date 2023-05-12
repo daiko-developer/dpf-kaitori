@@ -1,4 +1,3 @@
-//// 共通タイトル　ttl-cmn
 // 共通タイトル１
 .ttl-cmn01 {
   margin-bottom: 50px;
@@ -24,4 +23,20 @@
   @media only screen and (max-width: 599px) {
     margin-bottom: 30px;
   }
+}
+
+// 共通タイトル3
+.ttl-cmn03 {
+  color: $color1;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+// line用共通タイトル１
+.ttl-cmn01-line {
+  font-size: 2rem;
+  font-weight: bold;
+  color: $color1;
+  text-align: center;
 }

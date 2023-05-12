@@ -7,3 +7,30 @@
     margin-bottom: 100px;
   }
 }
+
+.areas {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  @media only screen and (max-width: 599px) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+// 下層ページ見出し
+.topvisual {
+  background: center/cover no-repeat url(../../images/home/bg01.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  .ttl {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+  }
+  @media only screen and (max-width: 599px) {
+    height: 150px;
+  }
+}

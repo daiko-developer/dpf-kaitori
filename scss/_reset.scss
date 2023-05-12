@@ -132,6 +132,7 @@ img:not([src*="."]) {
 button,
 [role="button"] {
   cursor: pointer;
+  border: none;
 }
 
 table {

@@ -6,7 +6,10 @@
 
 // Components
 @import "components/button";
+@import "components/form";
+@import "components/tab";
 @import "components/title";
+@import "components/txt";
 
 // Layout
 @import "layout/common";
@@ -17,3 +20,4 @@
 // Pages
 @import "pages/home";
 @import "pages/privacy_policy";
+@import "pages/purchase_form";

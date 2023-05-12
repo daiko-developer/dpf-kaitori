@@ -3,10 +3,12 @@ $(function () {
   $(".homevisual").slick({
     centerMode: true,
     centerPadding: '0%',
-    autoplay: true,
+    // autoplay: true,
     slidesToShow: 1,
     dots: true,
-    autoplaySpeed: 3000,
+    prevArrow: '<i class="btn-slick btn-back fas fa-chevron-left"></i>',
+    nextArrow: '<i class="btn-slick btn-next fas fa-chevron-right"></i>',
+    // autoplaySpeed: 3000,
   });
   // 買取事例
   $(".slick01").slick({

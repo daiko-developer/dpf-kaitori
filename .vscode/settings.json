@@ -104,5 +104,13 @@
   // Sassコンパイルの対象とするファイル
   "liveSassCompile.settings.includeItems": [
     "scss/**/*.scss"
-  ]
+  ],
+  // php.exeのパス
+  "php.validate.executablePath": "/Applications/MAMP/bin/php/php7.4.33/bin/php",
+  // VSCode搭載のPHPコード検証機能を無効化
+  "php.validate.enable": false,
+  // VSCode搭載のIntelliSense機能候補提示の無効化
+  "php.suggest.basic": false,
+  // デバッグ用のPHPのパス
+  "php.debug.executablePath": "/Applications/MAMP/bin/php/php7.4.33/bin/php"
 }

@@ -7,6 +7,10 @@
   }
   .logo {
     margin-top: 20px;
+    display: block;
+    img {
+      max-width: 350px;
+    }
   }
   .copy {
     padding: 10px 0;
@@ -20,6 +24,11 @@
   }
   @media only screen and (max-width: 599px) {
     padding-bottom: 50px;
+    .logo {
+      img {
+        max-width: 200px;
+      }
+    }
   }
 }
 
@@ -98,6 +107,34 @@
     }
     .datawrap {
       column-count: 2;
+    }
+  }
+}
+
+
+// LINE用フッター
+// フッター
+.footer-line {
+  background-color: $color1;
+  .contents {
+    padding: 20px 0;
+    text-align: center;
+  }
+  .txt {
+    color: #ffffff;
+  }
+  .logo {
+    margin-top: 10px;
+    max-height: 100px;
+  }
+  .copy {
+    padding: 10px 0;
+    background: #ffffff;
+    text-align: center;
+  }
+  @media only screen and (max-width: 599px) {
+    .logo {
+      max-height: 70px;
     }
   }
 }

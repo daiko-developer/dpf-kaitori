@@ -5,6 +5,8 @@
         "mrmlnc.vscode-csscomb",
         "ecmel.vscode-html-css",
         "ritwickdey.live-sass",
-        "ritwickdey.liveserver"
+        "ritwickdey.liveserver",
+        "bmewburn.vscode-intelephense-client",
+        "xdebug.php-debug"
     ]
 }

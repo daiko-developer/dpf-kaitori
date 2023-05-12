@@ -9,6 +9,21 @@
   .slick-slide {
     height: auto !important;
   }
+  .btn-slick {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+    color: $color1;
+    font-size: 30px;
+    cursor: pointer;
+    &.btn-back {
+      left: 1%;
+    }
+    &.btn-next {
+      right: 1%;
+    }
+  }
   .box {
     position: relative;
     height: auto !important;
@@ -16,23 +31,24 @@
     max-height: 700px;
     overflow: hidden;
     border-radius: 20px;
-    &:after {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      z-index: 0;
-      transform: skewX(-20deg);
-      width: 50%;
-      height: 100%;
-      content: "";
+  }
+  .box01:after,
+  .box02:after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 0;
+    transform: skewX(-20deg);
+    width: 50%;
+    height: 100%;
+    content: "";
 
-      transform-origin: bottom;
-    }
+    transform-origin: bottom;
   }
   .box01 {
     background: center / cover no-repeat url("../images/home/home-slide-box01-bg.png");
     &:after {
-      background: rgba(61, 76, 106, 1);
+      background: $color2;
     }
     .boxin {
       position: relative;
@@ -42,6 +58,20 @@
       position: absolute;
       top: 0;
       left: 0;
+      a:hover {
+        opacity: 1;
+      }
+      .img01-2 {
+        display: none;
+      }
+      &:hover {
+        .img01-1 {
+          display: none;
+        }
+        .img01-2 {
+          display: block;
+        }
+      }
     }
     .right {
       padding: 80px 0;
@@ -69,32 +99,80 @@
       position: relative;
       z-index: 1;
       height: 100%;
+      padding: 0 50px;
     }
     .block-txt {
       flex-shrink: 0;
     }
     .txt01 {
       font-weight: bold;
-      font-size: 4rem;
+      font-size: 4vw;
+      // font-size: 4rem;
     }
     .maker {
       display: inline-block;
-      width: 50%;
+      min-width: 100px;
+      max-width: 15vw;
+      // max-width: 300px;
     }
     .txt02 {
       font-weight: bold;
       font-size: 1.4rem;
     }
+    .txt03 {
+      display: inline-block;
+    }
+    .price01 {
+      display: inline-block;
+    }
     .price {
       color: rgba($color: #ad1b1b, $alpha: 1.0);
-      font-size: 6.5rem;
+      font-size: 8vw;
+      // font-size: 6.5rem;
     }
     .unit {
       color: rgba($color: #ad1b1b, $alpha: 1.0);
-      font-size: 3.25rem;
+      font-size: 4vw;
+      // font-size: 3.25rem;
     }
     .img {
       max-width: 50%;
+      margin-left: 5%;
+    }
+  }
+  .box03 {
+    background: center/cover no-repeat url("../images/home/bg04.png");
+    .boxin {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 0 2%;
+    }
+    .txt {
+      flex-shrink: 0;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 4vw;
+      // font-size: 3rem;
+    }
+    .img {
+      margin: 0 2%;
+    }
+    .friend-link {
+      padding: 20px;
+      border-radius: 20px;
+      background-color: #ffffff;
+      text-align: center;
+      a {
+        display: block;
+      }
+      a img {
+        display: inline;
+      }
+    }
+    .qr {
+      margin-bottom: 20px;
     }
   }
   @media only screen and (max-width: 1024px) {
@@ -160,6 +238,7 @@
     .box02 {
       .boxin {
         flex-direction: column-reverse;
+        padding: 0 20px;
       }
       .block-txt {
         margin-left: auto;
@@ -181,6 +260,26 @@
         max-width: 80%;
         margin-right: auto;
         margin-bottom: 10px;
+      }
+    }
+    .box03 {
+      .boxin {
+        flex-wrap: wrap;
+        padding: 5%;
+      }
+      .txt {
+        order: 2;
+        width: 50%;
+        font-size: 8vw;
+      }
+      .img {
+        order: 1;
+        width: 100%;
+        margin: 0 0 20px 0;
+      }
+      .friend-link {
+        order: 3;
+        width: 50%;
       }
     }
   }
@@ -222,7 +321,7 @@
 
 // ３つのポイント
 .list-home-point {
-  counter-reset: number 0;
+  // counter-reset: number 0;
   .item {
     position: relative;
     background-position: center;
@@ -291,11 +390,11 @@
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 40px;
-    &:before {
-      display: block;
-      content: counter(number) ".";
-      counter-increment: number 1;
-    }
+    // &:before {
+    //   display: block;
+    //   content: counter(number) ".";
+    //   counter-increment: number 1;
+    // }
   }
   @media only screen and (max-width: 599px) {
     .itemin {
@@ -319,7 +418,6 @@
   }
   .table {
     width: 100%;
-    min-width: 600px;
     border: 1px solid #999999;
     border-collapse: collapse;
   }
@@ -331,6 +429,18 @@
   }
   .datattl01 {
     background: #eeeeee;
+  }
+  @media only screen and (max-width: 1024px) {
+    .datattl01,
+    .data {
+      padding: 10px;
+    }
+  }
+  @media only screen and (max-width: 599px) {
+    .datattl01,
+    .data {
+      padding: 5px 2px;
+    }
   }
 }
 
@@ -358,7 +468,15 @@
     bottom: -40px;
     left: 0;
   }
+  .item {
+    margin: 0 30px;
+  }
+  .img {
+    width: 100%;
+  }
   .img img {
+    width: 100%;
+
     aspect-ratio: 4 / 3;
     object-fit: cover;
   }
@@ -447,6 +565,10 @@
     color: $color1;
     text-decoration: underline;
   }
+  .thumbnail {
+    border: 1px solid #999;
+    max-width: 200px;
+  }
   @media only screen and (max-width: 1024px) {
     .item {
       width: 100%;
@@ -503,6 +625,81 @@
   }
 }
 
+// ラクラク査定
+.home-satei {
+  .list {
+    display: flex;
+    justify-content: space-between;
+  }
+  .item {
+    display: flex;
+  }
+  .head {
+    font-size: 1.25rem;
+  }
+  select {
+    min-width: 280px;
+    font-size: 1.25rem;
+  }
+  .block-button {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .button-satei {
+    width: 190px;
+    padding: 15px 50px;
+    border-radius: 10px;
+    background-color: #ffb100;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .price {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .txtin01 {
+    margin: 0 10px;
+  }
+  .txtin02 {
+    font-size: 1.5rem;
+  }
+  .txtin03 {
+    color: red;
+    font-size: 3rem;
+  }
+  .txt {
+    margin-bottom: 10px;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .list {
+      flex-direction: column;
+      align-items: center;
+    }
+    .item {
+      margin-bottom: 20px;
+    }
+  }
+  @media only screen and (max-width: 599px) {
+    .item {
+      display: block;
+    }
+  }
+}
+
+.home-application {
+  .ttl-cmn01 {
+    margin-bottom: 0;
+  }
+  .img {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
 .list-home08 {
   max-width: 1100px;
   margin: 0 auto;
@@ -540,11 +737,11 @@
   }
 }
 
-/*フォーム*/
+// 買取・見積り申込
 .line-contact {
   width: 80%;
   max-width: 1100px;
-  margin: 0 auto 50px;
+  margin: 50px auto;
   padding: 50px;
   border-radius: 20px;
   background-color: #06c755;
@@ -560,14 +757,9 @@
     justify-content: space-between;
     align-items: center;
   }
-  .block-txt {
+  .img {
     width: 48%;
-  }
-  .block-img {
-    display: flex;
-  }
-  .img:first-child {
-    margin-right: 20px;
+    text-align: center;
   }
   .friend-link {
     width: 48%;
@@ -585,325 +777,12 @@
     .block {
       flex-wrap: wrap;
     }
-    .block-txt,
+    .img,
     .friend-link {
       width: 100%;
     }
-    .block-txt {
+    .img {
       margin-bottom: 20px;
-    }
-  }
-}
-
-/*フォームブロック*/
-.block-form {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1100px;
-  margin: auto;
-}
-
-/*フォームタブ*/
-.tab-label {
-  display: block;
-  order: -1;
-  float: left;
-  width: 50%;
-  height: 50px;
-  margin-bottom: 50px;
-  background-color: #e6e6e6;
-  font-weight: bold;
-  font-size: 15px;
-  font-size: 20px;
-  line-height: 50px;
-  text-align: center;
-}
-
-.tab-input {
-  display: none;
-
-  &:checked + .form {
-    background-color: cadetblue;
-    color: aliceblue;
-  }
-
-  &:checked + .tab-label {
-    background: $color1;
-    color: #ffffff;
-  }
-
-  &:checked + .tab-label + .form {
-    display: block;
-  }
-}
-
-/*フォーム*/
-.form {
-  display: none;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  .block {
-    margin-bottom: 50px;
-  }
-  .item01 {
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 10px 0;
-  }
-  .list02 {
-    display: flex;
-    justify-content: space-between;
-  }
-  .item02 {
-    display: flex;
-    width: 49%;
-    padding: 5px 0;
-  }
-  .datattl {
-    display: flex;
-    flex-shrink: 0;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 210px;
-    padding-top: 5px;
-    color: $color1;
-    font-weight: bold;
-    font-size: 20px;
-  }
-  .ttlin {
-    display: inline-block;
-  }
-  .require {
-    display: inline-block;
-    flex-shrink: 0;
-    margin-top: 5px;
-    margin-left: 10px;
-    padding: 0 4px;
-    background: $color1;
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 1.6em;
-  }
-  .head {
-    color: $color1;
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  .input {
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
-    border: 1px solid rgba(13, 73, 135, 30);
-    box-sizing: border-box;
-    &.-middle {
-      max-width: 300px;
-    }
-    &.-short {
-      max-width: 150px;
-    }
-  }
-  .data {
-    width: 100%;
-    padding-left: 30px;
-    input[type="number"] {
-      width: 70px;
-      margin-right: 10px;
-    }
-    textarea {
-      width: 100%;
-      height: 170px;
-      padding: 5px;
-      border: 1px solid #999999;
-      box-sizing: border-box;
-      color: inherit;
-      font-size: inherit;
-      font-family: inherit;
-    }
-    input:invalid {
-      border: 2px solid rgba(13, 73, 135, 30);
-    }
-    input[type="radio"] {
-      display: none;
-    }
-
-    input[type="radio"] + label {
-      position: relative;
-      margin-right: 20px;
-      padding-left: 20px;
-      box-sizing: border-box;
-      line-height: 200%;
-    }
-
-    input[type="radio"] + label::before {
-      display: block;
-      position: absolute;
-      top: 4px;
-      left: 0;
-      width: 10px;
-      height: 10px;
-      border: 1px solid #303841;
-      border-radius: 50%;
-      box-shadow: inset 1px 1px 0 1px #999999;
-      background: #ffffff;
-      content: "";
-    }
-
-    input[type="radio"]:checked + label::after {
-      display: block;
-      position: absolute;
-      top: 7px;
-      left: 3px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #303841;
-      content: "";
-    }
-
-    input[type="radio"]:checked + label {
-      transition: .6s;
-    }
-  }
-  .data01 div {
-    display: inline-block;
-  }
-  .block-btn {
-    display: flex;
-    justify-content: center;
-  }
-  .btn {
-    width: 200px;
-    margin: 10px 20px;
-    text-align: center;
-    transition: .3s all ease;
-
-    button:hover {
-      opacity: .6;
-      cursor: pointer;
-    }
-  }
-  .item03 {
-    display: flex;
-  }
-  .list04 {
-    width: 100%;
-    padding-left: 50px;
-  }
-  .item04 {
-    display: flex;
-    justify-content: start;
-  }
-  .datattl04 {
-    color: $color1;
-    font-weight: bold;
-    font-size: 20px;
-    width: 220px;
-    padding-top: 5px;
-  }
-  .data04 {
-    width: 100%;
-    input[type="number"] {
-      width: 70px;
-      margin-right: 10px;
-    }
-    textarea {
-      width: 100%;
-      height: 60px;
-      padding: 5px;
-      border: 1px solid #999999;
-      box-sizing: border-box;
-      color: inherit;
-      font-size: inherit;
-      font-family: inherit;
-    }
-    input:invalid {
-      border: 2px solid rgba(13, 73, 135, 30);
-    }
-  }
-  @media only screen and (max-width: 1024px) {
-    .item01 {
-      flex-wrap: wrap;
-    }
-    .item02 {
-      flex-wrap: wrap;
-    }
-    .datattl {
-      display: block;
-      margin-bottom: 10px;
-    }
-    .data {
-      padding-left: 0;
-    }
-    .item03 {
-      flex-wrap: wrap;
-    }
-    .list04 {
-      padding-left: 0;
-    }
-  }
-  @media only screen and (max-width: 599px) {
-    .list02 {
-      flex-wrap: wrap;
-    }
-    .item02 {
-      width: 100%;
-    }
-  }
-}
-
-// ラクラク査定
-.home-satei {
-  .list {
-    display: flex;
-    justify-content: space-between;
-  }
-  .item {
-    display: flex;
-  }
-  .head {
-    font-size: 1.25rem;
-  }
-  select {
-    min-width: 280px;
-    font-size: 1.25rem;
-  }
-  .block-button {
-    margin-top: 30px;
-    text-align: center;
-  }
-  .button-satei {
-    width: 100px;
-    font-size: 25px;
-  }
-  .price {
-    margin-top: 30px;
-    text-align: center;
-  }
-  .txtin01 {
-    margin: 0 10px;
-  }
-  .txtin02 {
-    font-size: 1.5rem;
-  }
-  .txtin03 {
-    color: red;
-    font-size: 2rem;
-  }
-
-  @media only screen and (max-width: 1024px) {
-    .list {
-      flex-direction: column;
-      align-items: center;
-    }
-    .item {
-      margin-bottom: 20px;
-    }
-  }
-  @media only screen and (max-width: 599px) {
-    .item {
-      display: block;
     }
   }
 }

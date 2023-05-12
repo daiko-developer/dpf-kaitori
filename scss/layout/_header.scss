@@ -29,8 +29,11 @@
   }
   .logo {
     display: flex;
+    a {
+      padding: 10px 0;
+    }
     img {
-      max-height: 50px;
+      max-height: 80px;
     }
   }
   .left {
@@ -45,7 +48,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-end;
     margin-right: 20px;
+    color: $color2;
     .tel {
       a {
         font-weight: bold;
@@ -58,6 +63,9 @@
         font-family: "Font Awesome 5 Free";
         content: "\f879";
       }
+    }
+    .txt02 {
+      font-size: 14px;
     }
   }
   .block-btn {
@@ -74,9 +82,6 @@
       width: 120px;
       padding: 10px 10px;
     }
-    &.-menu {
-      background-color: #0d4987;
-    }
     &.-kaitori a,
     &.-contact a {
       height: 100%;
@@ -90,7 +95,7 @@
     }
     &.-kaitori {
       a {
-        background-color: darkblue;
+        background-color: $color2;
       }
       a:before {
         content: "\f573";
@@ -103,6 +108,9 @@
       a:before {
         content: "\f0e0";
       }
+    }
+    &.-menu .label {
+      color: $color2;
     }
     .label {
       color: #ffffff;
@@ -117,7 +125,7 @@
   }
   @media only screen and (max-width: 599px) {
     .logo img {
-      max-height: 40px;
+      max-height: 50px;
     }
     .btn.-kaitori,
     .btn.-contact {
@@ -136,6 +144,7 @@
   right: 0;
   bottom: 10%;
   z-index: 240;
+  display: none;
   a {
     display: flex;
     flex-direction: column;
@@ -204,25 +213,21 @@ gnav
   width: 100%;
   max-width: 300px;
   height: 100%;
-  padding: 10px 0;
+  padding: 25px 40px;
   overflow: auto;
   border-bottom: 1px solid #d9d9d9;
   background: rgba(255, 255, 255, .9);
   transition: transform ease .5s;
-
   -webkit-overflow-scrolling: touch;
-
   &.action {
     z-index: 250;
     transform: translate3d(0%, 0, 0);
   }
-
   .wrap {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 100px;
   }
-
   .navlogo {
     display: block;
     width: 100%;
@@ -230,26 +235,22 @@ gnav
     padding-right: 40px;
     font-weight: bold;
     font-size: 20px;
-
     img {
       max-height: 40px;
     }
   }
-
   .list01 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
   }
-
   .item01 {
     width: 100%;
     min-height: 40px;
     margin: 0 0 10px 0;
     font-size: 16px;
     text-align: left;
-
     > a,
     .itemin {
       display: block;
@@ -257,10 +258,8 @@ gnav
       cursor: pointer;
     }
   }
-
   .item01.-parent {
     position: relative;
-
     &:hover {
       .list02 {
         visibility: visible;
@@ -276,13 +275,11 @@ gnav
     left: 0;
     width: 200px;
     padding-left: 20px;
-
     a {
       display: block;
       position: relative;
       padding: 2px 0 2px 20px;
     }
-
     a:before {
       display: block;
       position: absolute;
@@ -312,7 +309,7 @@ gnav
     height: 2px;
     margin-top: -1px;
     padding: 0;
-    background: #ffffff;
+    background: $color2;
     text-indent: 9999px;
             transition: ease .4s;
 
@@ -324,7 +321,7 @@ gnav
       left: 0;
       width: 28px;
       height: 2px;
-      background: #ffffff;
+      background: $color2;
       content: "";
     }
     &:before {
@@ -391,7 +388,7 @@ gnav
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #000000;
+  background: $color2;
   color: #ffffff;
   font-size: 20px;
   line-height: 40px;
@@ -408,5 +405,20 @@ gnav
   }
   @media only screen and (max-width: 599px) {
     bottom: 70px;
+  }
+}
+
+// line用ヘッダー
+.header-line {
+  margin-bottom: 50px;
+  .img {
+    max-height: 100px;
+    margin-left: 2%;
+    margin-top: 20px;
+  }
+  @media only screen and (max-width: 599px) {
+    .img {
+      max-height: 60px;
+    }
   }
 }

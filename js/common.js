@@ -29,6 +29,34 @@ function footer(rootDir){
   });
 };
 
+// LINE用ヘッダー読み込み
+function headerLine(rootDir){
+  $.ajax({
+      url: rootDir + "_header_line.html",  // 読み込むHTMLファイル
+      cache: false,
+      async: false,
+      dataType: 'html',
+      success: function(html){
+          html = html.replace(/\{\$root\}/g, rootDir); //header.htmlの{$root}を置換
+          document.write(html);
+      }
+  });
+};
+
+// LINE用フッター読み込み
+function footerLine(rootDir){
+  $.ajax({
+      url: rootDir + "_footer_line.html",  // 読み込むHTMLファイル
+      cache: false,
+      async: false,
+      dataType: 'html',
+      success: function(html){
+          html = html.replace(/\{\$root\}/g, rootDir); //header.htmlの{$root}を置換
+          document.write(html);
+      }
+  });
+};
+
 //fead系
 $(window).on('load scroll', function () {
   $(".fead-mv, .fead-up, .fead-left, .fead-right").each(function () {
@@ -244,17 +272,17 @@ $(function () {
       var header = $('#header').outerHeight();
       if (w > 1024) {
         $('body,html').animate({
-          scrollTop: position - 10,
+          scrollTop: position - 10 - header,
           opacity: 1
         }, 600);
       } else if (w < 1025) {
         $('body,html').animate({
-          scrollTop: position - 10,
+          scrollTop: position - 10 - header,
           opacity: 1
         }, 600);
       } else {
         $('body,html').animate({
-          scrollTop: position - 10,
+          scrollTop: position - 10 - header,
           opacity: 1
         }, 600);
       }
