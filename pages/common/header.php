@@ -21,7 +21,7 @@
   </div>
   <nav id="gnav" class="gnav">
     <div class="wrap inner1500">
-      <div class="navlogo"><a href="<?php echo $path; ?>index.html"><img src="<?php echo $path; ?>images/common/logo.png" alt="DPFラクラク買取"></a></div>
+      <div class="navlogo"><a href="<?php echo $path; ?>"><img src="<?php echo $path; ?>images/common/logo.png" alt="DPFラクラク買取"></a></div>
       <ul class="list01">
         <li class="item01"><a href="<?php echo $path; ?>#news">お知らせ</a></li>
         <li class="item01"><a href="<?php echo $path; ?>#point">３つのポイント</a></li>
