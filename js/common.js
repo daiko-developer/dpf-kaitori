@@ -1,34 +1,6 @@
 /* version 1.0.0 */
 // JavaScript Document
 
-// ヘッダー読み込み
-function header(rootDir){
-  $.ajax({
-      url: rootDir + "_header.html",  // 読み込むHTMLファイル
-      cache: false,
-      async: false,
-      dataType: 'html',
-      success: function(html){
-          html = html.replace(/\{\$root\}/g, rootDir); //header.htmlの{$root}を置換
-          document.write(html);
-      }
-  });
-};
-
-// フッター読み込み
-function footer(rootDir){
-  $.ajax({
-      url: rootDir + "_footer.html",  // 読み込むHTMLファイル
-      cache: false,
-      async: false,
-      dataType: 'html',
-      success: function(html){
-          html = html.replace(/\{\$root\}/g, rootDir); //header.htmlの{$root}を置換
-          document.write(html);
-      }
-  });
-};
-
 // LINE用ヘッダー読み込み
 function headerLine(rootDir){
   $.ajax({
