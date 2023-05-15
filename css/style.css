@@ -1216,7 +1216,7 @@ gnav
 }
 
 .topvisual {
-  background: center/cover no-repeat url(../../images/home/bg01.png);
+  background: center/cover no-repeat url("../images/home/bg01.png");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

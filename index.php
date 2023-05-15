@@ -386,7 +386,7 @@ include $path .'pages/common/head.php'; //変更（$path. を追加）
 
     <?php include $path .'pages/common/footer.php'; ?>
   </div>
-  <script src="js/price.js"></script>
+  <script src="<?php echo $path; ?>js/price.js"></script>
 </body>
 
 </html>
