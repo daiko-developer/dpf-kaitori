@@ -14,8 +14,8 @@ if(isset($_POST['submit'])){
   $tel = e($_POST['tel']);
   $email = e($_POST['email']);
 
-  $dpfCar01 = e($_POST['dpfCar01']);
   $dpfType01 = e($_POST['dpfType01']);
+  $dpfCar01 = e($_POST['dpfCar01']);
   $dpfDetail01 = e($_POST['dpfDetail01']);
 
   $picture01 = $_FILES['picture01'];
@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
     $errors['name'] = "お名前を入力してください";
   }
   if(trim($dpfCar01) === '' || trim($dpfCar01) === "　"){
-    $errors['dpfCar01'] = "車名を入力してください";
+    $errors['dpfCar01'] = "車台番号を入力してください";
   }
 
   // エラー配列がなければ異常なし
@@ -47,8 +47,8 @@ if(isset($_POST['submit'])){
     $_SESSION['tel'] = $tel;
     $_SESSION['email'] = $email;
 
-    $_SESSION['dpfCar01'] = $dpfCar01;
     $_SESSION['dpfType01'] = $dpfType01;
+    $_SESSION['dpfCar01'] = $dpfCar01;
     $_SESSION['dpfDetail01'] = $dpfDetail01;
 
     $_SESSION['picture01'] = $picture01;
@@ -78,8 +78,8 @@ if (isset($_GET) && isset($_GET['action']) && $_GET['action'] === 'edit') {
   $tel = $_SESSION['tel'];
   $email = $_SESSION['email'];
 
-  $dpfCar01 = $_SESSION['dpfCar01'];
   $dpfType01 = $_SESSION['dpfType01'];
+  $dpfCar01 = $_SESSION['dpfCar01'];
   $dpfDetail01 = $_SESSION['dpfDetail01'];
 
   $picture01 = $_SESSION['picture01'];
@@ -161,18 +161,18 @@ include $path .'pages_line/common/head_line.php';
               <ul class="list01">
                 <li class="item01">
                   <div class="datattl">
-                    <label for="estimate-form-car01">車名</label><span class="require">必須</span>
-                  </div>
-                  <div class="data">
-                    <input id="estimate-form-car01" class="input" type="text" name="dpfCar01" placeholder="キャンター" value="<?php if (isset($dpfCar01)) {echo $dpfCar01;} ?>" required>
-                  </div>
-                </li>
-                <li class="item01">
-                  <div class="datattl">
                     <label for="estimate-form-type01">車両型式</label><span class="require">必須</span>
                   </div>
                   <div class="data">
                     <input id="estimate-form-type01" class="input" type="text" name="dpfType01" placeholder="FE82DG" value="<?php if (isset($dpfType01)) {echo $dpfType01;} ?>" required>
+                  </div>
+                </li>
+                <li class="item01">
+                  <div class="datattl">
+                    <label for="estimate-form-car01">車台番号</label><span class="require">必須</span>
+                  </div>
+                  <div class="data">
+                    <input id="estimate-form-car01" class="input" type="text" name="dpfCar01" placeholder="ABC012-3456789" value="<?php if (isset($dpfCar01)) {echo $dpfCar01;} ?>" required>
                   </div>
                 </li>
                 <li class="item01 -fullsize">

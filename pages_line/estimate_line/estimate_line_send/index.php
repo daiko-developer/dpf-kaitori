@@ -8,8 +8,8 @@ if($_SESSION['token'] === $_POST['token']){
     $tel = $_SESSION['tel'];
     $applicantEmail = str_replace(array("\r","\n"),'',$_SESSION['email']);
 
-    $dpfCar01 = $_SESSION['dpfCar01'];
     $dpfType01 = $_SESSION['dpfType01'];
+    $dpfCar01 = $_SESSION['dpfCar01'];
     $dpfDetail01 = $_SESSION['dpfDetail01'];
 
     $picture01Name = $_SESSION['picture01Name'];
@@ -34,8 +34,8 @@ if($_SESSION['token'] === $_POST['token']){
   メールアドレス　　　　：{$applicantEmail}
 
   マフラー情報
-  車名　　　　　　　　　：{$dpfCar01}
   車両型式　　　　　　　：{$dpfType01}
+  車台番号　　　　　　　　　：{$dpfCar01}
   備考欄　　　　　　　　：{$dpfDetail01}
   DPF写真１　　　　　　：{$picture01FileName}
   DPF写真２　　　　　　：{$picture02FileName}

@@ -16,24 +16,24 @@ if (isset($_SESSION['name'])) {
   $bankNumber = $_SESSION['bankNumber'];
   $bankUser = $_SESSION['bankUser'];
   $bankConfirm = $_SESSION['bankConfirm'];
-  $dpfCar01 = $_SESSION['dpfCar01'];
   $dpfType01 = $_SESSION['dpfType01'];
+  $dpfCar01 = $_SESSION['dpfCar01'];
   $dpfNumber01 = $_SESSION['dpfNumber01'];
   $dpfDetail01 = $_SESSION['dpfDetail01'];
-  $dpfCar02 = $_SESSION['dpfCar02'];
   $dpfType02 = $_SESSION['dpfType02'];
+  $dpfCar02 = $_SESSION['dpfCar02'];
   $dpfNumber02 = $_SESSION['dpfNumber02'];
   $dpfDetail02 = $_SESSION['dpfDetail02'];
-  $dpfCar03 = $_SESSION['dpfCar03'];
   $dpfType03 = $_SESSION['dpfType03'];
+  $dpfCar03 = $_SESSION['dpfCar03'];
   $dpfNumber03 = $_SESSION['dpfNumber03'];
   $dpfDetail03 = $_SESSION['dpfDetail03'];
-  $dpfCar04 = $_SESSION['dpfCar04'];
   $dpfType04 = $_SESSION['dpfType04'];
+  $dpfCar04 = $_SESSION['dpfCar04'];
   $dpfNumber04 = $_SESSION['dpfNumber04'];
   $dpfDetail04 = $_SESSION['dpfDetail04'];
-  $dpfCar05 = $_SESSION['dpfCar05'];
   $dpfType05 = $_SESSION['dpfType05'];
+  $dpfCar05 = $_SESSION['dpfCar05'];
   $dpfNumber05 = $_SESSION['dpfNumber05'];
   $dpfDetail05 = $_SESSION['dpfDetail05'];
 };
@@ -143,12 +143,12 @@ include $path .'pages/common/head.php';
           <dl class="list-form-confirm">
             <dt class="head">マフラー１</dt>
             <div class="item">
-              <dt class="datattl">車名</dt>
-              <dd class="data"><?php echo $dpfCar01; ?></dd>
-            </div>
-            <div class="item">
               <dt class="datattl">車両型式</dt>
               <dd class="data"><?php echo empty($dpfType01)? '-' : $dpfType01; ?></dd>
+            </div>
+            <div class="item">
+              <dt class="datattl">車台番号</dt>
+              <dd class="data"><?php echo $dpfCar01; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">数量</dt>
@@ -160,12 +160,12 @@ include $path .'pages/common/head.php';
             </div>
             <dt class="head">マフラー２</dt>
             <div class="item">
-              <dt class="datattl">車名</dt>
-              <dd class="data"><?php echo empty($dpfCar02)? '-' : $dpfCar02; ?></dd>
-            </div>
-            <div class="item">
               <dt class="datattl">車両型式</dt>
               <dd class="data"><?php echo empty($dpfType02)? '-' : $dpfType02; ?></dd>
+            </div>
+            <div class="item">
+              <dt class="datattl">車台番号</dt>
+              <dd class="data"><?php echo empty($dpfCar02)? '-' : $dpfCar02; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">数量</dt>
@@ -177,12 +177,12 @@ include $path .'pages/common/head.php';
             </div>
             <dt class="head">マフラー３</dt>
             <div class="item">
-              <dt class="datattl">車名</dt>
-              <dd class="data"><?php echo empty($dpfCar03)? '-' : $dpfCar03; ?></dd>
-            </div>
-            <div class="item">
               <dt class="datattl">車両型式</dt>
               <dd class="data"><?php echo empty($dpfType03)? '-' : $dpfType03; ?></dd>
+            </div>
+            <div class="item">
+              <dt class="datattl">車台番号</dt>
+              <dd class="data"><?php echo empty($dpfCar03)? '-' : $dpfCar03; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">数量</dt>
@@ -194,12 +194,12 @@ include $path .'pages/common/head.php';
             </div>
             <dt class="head">マフラー４</dt>
             <div class="item">
-              <dt class="datattl">車名</dt>
-              <dd class="data"><?php echo empty($dpfCar04)? '-' : $dpfCar04; ?></dd>
-            </div>
-            <div class="item">
               <dt class="datattl">車両型式</dt>
               <dd class="data"><?php echo empty($dpfType04)? '-' : $dpfType04; ?></dd>
+            </div>
+            <div class="item">
+              <dt class="datattl">車台番号</dt>
+              <dd class="data"><?php echo empty($dpfCar04)? '-' : $dpfCar04; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">数量</dt>
@@ -211,12 +211,12 @@ include $path .'pages/common/head.php';
             </div>
             <dt class="head">マフラー５</dt>
             <div class="item">
-              <dt class="datattl">車名</dt>
-              <dd class="data"><?php echo empty($dpfCar05)? '-' : $dpfCar05; ?></dd>
-            </div>
-            <div class="item">
               <dt class="datattl">車両型式</dt>
               <dd class="data"><?php echo empty($dpfType05)? '-' : $dpfType05; ?></dd>
+            </div>
+            <div class="item">
+              <dt class="datattl">車台番号</dt>
+              <dd class="data"><?php echo empty($dpfCar05)? '-' : $dpfCar05; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">数量</dt>

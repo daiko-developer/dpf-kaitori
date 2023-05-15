@@ -22,24 +22,24 @@ if($_SESSION['token'] === $_POST['token']){
     $bankNumber = $_SESSION['bankNumber'];
     $bankUser = $_SESSION['bankUser'];
     $bankConfirm = $_SESSION['bankConfirm'];
-    $dpfCar01 = $_SESSION['dpfCar01'];
     $dpfType01 = $_SESSION['dpfType01'];
+    $dpfCar01 = $_SESSION['dpfCar01'];
     $dpfNumber01 = $_SESSION['dpfNumber01'];
     $dpfDetail01 = $_SESSION['dpfDetail01'];
-    $dpfCar02 = $_SESSION['dpfCar02'];
     $dpfType02 = $_SESSION['dpfType02'];
+    $dpfCar02 = $_SESSION['dpfCar02'];
     $dpfNumber02 = $_SESSION['dpfNumber02'];
     $dpfDetail02 = $_SESSION['dpfDetail02'];
-    $dpfCar03 = $_SESSION['dpfCar03'];
     $dpfType03 = $_SESSION['dpfType03'];
+    $dpfCar03 = $_SESSION['dpfCar03'];
     $dpfNumber03 = $_SESSION['dpfNumber03'];
     $dpfDetail03 = $_SESSION['dpfDetail03'];
-    $dpfCar04 = $_SESSION['dpfCar04'];
     $dpfType04 = $_SESSION['dpfType04'];
+    $dpfCar04 = $_SESSION['dpfCar04'];
     $dpfNumber04 = $_SESSION['dpfNumber04'];
     $dpfDetail04 = $_SESSION['dpfDetail04'];
-    $dpfCar05 = $_SESSION['dpfCar05'];
     $dpfType05 = $_SESSION['dpfType05'];
+    $dpfCar05 = $_SESSION['dpfCar05'];
     $dpfNumber05 = $_SESSION['dpfNumber05'];
     $dpfDetail05 = $_SESSION['dpfDetail05'];
   }  // #2
@@ -74,28 +74,28 @@ if($_SESSION['token'] === $_POST['token']){
 
   買取希望マフラー
   マフラー１
-  車名　　　　　　　　　：{$dpfCar01}
   車両型式　　　　　　　：{$dpfType01}
+  車台番号　　　　　　　：{$dpfCar01}
   数量　　　　　　　　　：{$dpfNumber01}
   備考欄　　　　　　　　：{$dpfDetail01}
   マフラー２
-  車名　　　　　　　　　：{$dpfCar02}
   車両型式　　　　　　　：{$dpfType02}
+  車台番号　　　　　　　：{$dpfCar02}
   数量　　　　　　　　　：{$dpfNumber02}
   備考欄　　　　　　　　：{$dpfDetail02}
   マフラー３
-  車名　　　　　　　　　：{$dpfCar03}
   車両型式　　　　　　　：{$dpfType03}
+  車台番号　　　　　　　：{$dpfCar03}
   数量　　　　　　　　　：{$dpfNumber03}
   備考欄　　　　　　　　：{$dpfDetail03}
   マフラー４
-  車名　　　　　　　　　：{$dpfCar04}
   車両型式　　　　　　　：{$dpfType04}
+  車台番号　　　　　　　：{$dpfCar04}
   数量　　　　　　　　　：{$dpfNumber04}
   備考欄　　　　　　　　：{$dpfDetail04}
   マフラー５
-  車名　　　　　　　　　：{$dpfCar05}
   車両型式　　　　　　　：{$dpfType05}
+  車台番号　　　　　　　：{$dpfCar05}
   数量　　　　　　　　　：{$dpfNumber05}
   備考欄　　　　　　　　：{$dpfDetail05}
 

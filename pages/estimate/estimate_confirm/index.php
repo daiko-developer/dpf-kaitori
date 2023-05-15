@@ -6,8 +6,8 @@ if (isset($_SESSION['name'])) {
   $tel = $_SESSION['tel'];
   $email = $_SESSION['email'];
 
-  $dpfCar01 = $_SESSION['dpfCar01'];
   $dpfType01 = $_SESSION['dpfType01'];
+  $dpfCar01 = $_SESSION['dpfCar01'];
   $dpfDetail01 = $_SESSION['dpfDetail01'];
 };
 
@@ -56,12 +56,12 @@ include $path .'pages/common/head.php';
           <h4 class="ttl-cmn03">マフラー情報</h4>
           <dl class="list-form-confirm">
             <div class="item">
-              <dt class="datattl">車名</dt>
-              <dd class="data"><?php echo $dpfCar01; ?></dd>
-            </div>
-            <div class="item">
               <dt class="datattl">車両型式</dt>
               <dd class="data"><?php echo empty($dpfType01)? '-' : $dpfType01; ?></dd>
+            </div>
+            <div class="item">
+              <dt class="datattl">車台番号</dt>
+              <dd class="data"><?php echo $dpfCar01; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">備考欄</dt>

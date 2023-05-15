@@ -32,24 +32,24 @@ if(isset($_POST['submit'])){
   $bankNumber = e($_POST['bankNumber']);
   $bankUser = e($_POST['bankUser']);
   $bankConfirm = e($_POST['bankConfirm']);
-  $dpfCar01 = e($_POST['dpfCar01']);
   $dpfType01 = e($_POST['dpfType01']);
+  $dpfCar01 = e($_POST['dpfCar01']);
   $dpfNumber01 = e($_POST['dpfNumber01']);
   $dpfDetail01 = e($_POST['dpfDetail01']);
-  $dpfCar02 = e($_POST['dpfCar02']);
   $dpfType02 = e($_POST['dpfType02']);
+  $dpfCar02 = e($_POST['dpfCar02']);
   $dpfNumber02 = e($_POST['dpfNumber02']);
   $dpfDetail02 = e($_POST['dpfDetail02']);
-  $dpfCar03 = e($_POST['dpfCar03']);
   $dpfType03 = e($_POST['dpfType03']);
+  $dpfCar03 = e($_POST['dpfCar03']);
   $dpfNumber03 = e($_POST['dpfNumber03']);
   $dpfDetail03 = e($_POST['dpfDetail03']);
-  $dpfCar04 = e($_POST['dpfCar04']);
   $dpfType04 = e($_POST['dpfType04']);
+  $dpfCar04 = e($_POST['dpfCar04']);
   $dpfNumber04 = e($_POST['dpfNumber04']);
   $dpfDetail04 = e($_POST['dpfDetail04']);
-  $dpfCar05 = e($_POST['dpfCar05']);
   $dpfType05 = e($_POST['dpfType05']);
+  $dpfCar05 = e($_POST['dpfCar05']);
   $dpfNumber05 = e($_POST['dpfNumber05']);
   $dpfDetail05 = e($_POST['dpfDetail05']);
 
@@ -71,7 +71,7 @@ if(isset($_POST['submit'])){
     $errors['bankUser'] = "口座名義人を入力してください";
   }
   if(trim($dpfCar01) === '' || trim($dpfCar01) === "　"){
-    $errors['dpfCar01'] = "車名を入力してください";
+    $errors['dpfCar01'] = "車台番号を入力してください";
   }
 
   // エラー配列がなければ異常なし
@@ -99,24 +99,24 @@ if(isset($_POST['submit'])){
     $_SESSION['bankNumber'] = $bankNumber;
     $_SESSION['bankUser'] = $bankUser;
     $_SESSION['bankConfirm'] = $bankConfirm;
-    $_SESSION['dpfCar01'] = $dpfCar01;
     $_SESSION['dpfType01'] = $dpfType01;
+    $_SESSION['dpfCar01'] = $dpfCar01;
     $_SESSION['dpfNumber01'] = $dpfNumber01;
     $_SESSION['dpfDetail01'] = $dpfDetail01;
-    $_SESSION['dpfCar02'] = $dpfCar02;
     $_SESSION['dpfType02'] = $dpfType02;
+    $_SESSION['dpfCar02'] = $dpfCar02;
     $_SESSION['dpfNumber02'] = $dpfNumber02;
     $_SESSION['dpfDetail02'] = $dpfDetail02;
-    $_SESSION['dpfCar03'] = $dpfCar03;
     $_SESSION['dpfType03'] = $dpfType03;
+    $_SESSION['dpfCar03'] = $dpfCar03;
     $_SESSION['dpfNumber03'] = $dpfNumber03;
     $_SESSION['dpfDetail03'] = $dpfDetail03;
-    $_SESSION['dpfCar04'] = $dpfCar04;
     $_SESSION['dpfType04'] = $dpfType04;
+    $_SESSION['dpfCar04'] = $dpfCar04;
     $_SESSION['dpfNumber04'] = $dpfNumber04;
     $_SESSION['dpfDetail04'] = $dpfDetail04;
-    $_SESSION['dpfCar05'] = $dpfCar05;
     $_SESSION['dpfType05'] = $dpfType05;
+    $_SESSION['dpfCar05'] = $dpfCar05;
     $_SESSION['dpfNumber05'] = $dpfNumber05;
     $_SESSION['dpfDetail05'] = $dpfDetail05;
 
@@ -156,24 +156,24 @@ if (isset($_GET) && isset($_GET['action']) && $_GET['action'] === 'edit') {
   $bankNumber = $_SESSION['bankNumber'];
   $bankUser = $_SESSION['bankUser'];
   $bankConfirm = $_SESSION['bankConfirm'];
-  $dpfCar01 = $_SESSION['dpfCar01'];
   $dpfType01 = $_SESSION['dpfType01'];
+  $dpfCar01 = $_SESSION['dpfCar01'];
   $dpfNumber01 = $_SESSION['dpfNumber01'];
   $dpfDetail01 = $_SESSION['dpfDetail01'];
-  $dpfCar02 = $_SESSION['dpfCar02'];
   $dpfType02 = $_SESSION['dpfType02'];
+  $dpfCar02 = $_SESSION['dpfCar02'];
   $dpfNumber02 = $_SESSION['dpfNumber02'];
   $dpfDetail02 = $_SESSION['dpfDetail02'];
-  $dpfCar03 = $_SESSION['dpfCar03'];
   $dpfType03 = $_SESSION['dpfType03'];
+  $dpfCar03 = $_SESSION['dpfCar03'];
   $dpfNumber03 = $_SESSION['dpfNumber03'];
   $dpfDetail03 = $_SESSION['dpfDetail03'];
-  $dpfCar04 = $_SESSION['dpfCar04'];
   $dpfType04 = $_SESSION['dpfType04'];
+  $dpfCar04 = $_SESSION['dpfCar04'];
   $dpfNumber04 = $_SESSION['dpfNumber04'];
   $dpfDetail04 = $_SESSION['dpfDetail04'];
-  $dpfCar05 = $_SESSION['dpfCar05'];
   $dpfType05 = $_SESSION['dpfType05'];
+  $dpfCar05 = $_SESSION['dpfCar05'];
   $dpfNumber05 = $_SESSION['dpfNumber05'];
   $dpfDetail05 = $_SESSION['dpfDetail05'];
 };
@@ -378,18 +378,18 @@ include $path .'pages_line/common/head_line.php';
                   <ul class="list04">
                     <li class="item04">
                       <div class="datattl04">
-                        <label for="purchase-form-car01">車名</label><span class="require">必須</span>
-                      </div>
-                      <div class="data04">
-                        <input id="purchase-form-car01" class="input" type="text" name="dpfCar01" placeholder="キャンター" value="<?php if (isset($dpfCar01)) {echo $dpfCar01;} ?>" required>
-                      </div>
-                    </li>
-                    <li class="item04">
-                      <div class="datattl04">
                         <label for="purchase-form-type01">車両型式</label>
                       </div>
                       <div class="data04">
                         <input id="purchase-form-type01" class="input" type="text" name="dpfType01" placeholder="FE82DG" value="<?php if (isset($dpfType01)) {echo $dpfType01;} ?>">
+                      </div>
+                    </li>
+                    <li class="item04">
+                      <div class="datattl04">
+                        <label for="purchase-form-car01">車台番号</label><span class="require">必須</span>
+                      </div>
+                      <div class="data04">
+                        <input id="purchase-form-car01" class="input" type="text" name="dpfCar01" placeholder="ABC012-3456789" value="<?php if (isset($dpfCar01)) {echo $dpfCar01;} ?>" required>
                       </div>
                     </li>
                     <li class="item04">
@@ -415,18 +415,18 @@ include $path .'pages_line/common/head_line.php';
                   <ul class="list04">
                     <li class="item04">
                       <div class="datattl04">
-                        <label for="purchase-form-car02">車名</label>
-                      </div>
-                      <div class="data04">
-                        <input id="purchase-form-car02" class="input" type="text" name="dpfCar02" placeholder="キャンター" value="<?php if (isset($dpfCar02)) {echo $dpfCar02;} ?>">
-                      </div>
-                    </li>
-                    <li class="item04">
-                      <div class="datattl04">
                         <label for="purchase-form-type02">車両型式</label>
                       </div>
                       <div class="data04">
                         <input id="purchase-form-type02" class="input" type="text" name="dpfType02" placeholder="FE82DG" value="<?php if (isset($dpfType02)) {echo $dpfType02;} ?>">
+                      </div>
+                    </li>
+                    <li class="item04">
+                      <div class="datattl04">
+                        <label for="purchase-form-car02">車台番号</label>
+                      </div>
+                      <div class="data04">
+                        <input id="purchase-form-car02" class="input" type="text" name="dpfCar02" placeholder="ABC012-3456789" value="<?php if (isset($dpfCar02)) {echo $dpfCar02;} ?>">
                       </div>
                     </li>
                     <li class="item04">
@@ -452,18 +452,18 @@ include $path .'pages_line/common/head_line.php';
                   <ul class="list04">
                     <li class="item04">
                       <div class="datattl04">
-                        <label for="purchase-form-car03">車名</label>
-                      </div>
-                      <div class="data04">
-                        <input id="purchase-form-car03" class="input" type="text" name="dpfCar03" placeholder="キャンター" value="<?php if (isset($dpfCar03)) {echo $dpfCar03;} ?>">
-                      </div>
-                    </li>
-                    <li class="item04">
-                      <div class="datattl04">
                         <label for="purchase-form-type03">車両型式</label>
                       </div>
                       <div class="data04">
                         <input id="purchase-form-type03" class="input" type="text" name="dpfType03" placeholder="FE82DG" value="<?php if (isset($dpfType03)) {echo $dpfType03;} ?>">
+                      </div>
+                    </li>
+                    <li class="item04">
+                      <div class="datattl04">
+                        <label for="purchase-form-car03">車台番号</label>
+                      </div>
+                      <div class="data04">
+                        <input id="purchase-form-car03" class="input" type="text" name="dpfCar03" placeholder="ABC012-3456789" value="<?php if (isset($dpfCar03)) {echo $dpfCar03;} ?>">
                       </div>
                     </li>
                     <li class="item04">
@@ -489,18 +489,18 @@ include $path .'pages_line/common/head_line.php';
                   <ul class="list04">
                     <li class="item04">
                       <div class="datattl04">
-                        <label for="purchase-form-car04">車名</label>
-                      </div>
-                      <div class="data04">
-                        <input id="purchase-form-car04" class="input" type="text" name="dpfCar04" placeholder="キャンター" value="<?php if (isset($dpfCar04)) {echo $dpfCar04;} ?>">
-                      </div>
-                    </li>
-                    <li class="item04">
-                      <div class="datattl04">
                         <label for="purchase-form-type04">車両型式</label>
                       </div>
                       <div class="data04">
                         <input id="purchase-form-type04" class="input" type="text" name="dpfType04" placeholder="FE82DG" value="<?php if (isset($dpfType04)) {echo $dpfType04;} ?>">
+                      </div>
+                    </li>
+                    <li class="item04">
+                      <div class="datattl04">
+                        <label for="purchase-form-car04">車台番号</label>
+                      </div>
+                      <div class="data04">
+                        <input id="purchase-form-car04" class="input" type="text" name="dpfCar04" placeholder="ABC012-3456789" value="<?php if (isset($dpfCar04)) {echo $dpfCar04;} ?>">
                       </div>
                     </li>
                     <li class="item04">
@@ -526,18 +526,18 @@ include $path .'pages_line/common/head_line.php';
                   <ul class="list04">
                     <li class="item04">
                       <div class="datattl04">
-                        <label for="purchase-form-car05">車名</label>
-                      </div>
-                      <div class="data04">
-                        <input id="purchase-form-car05" class="input" type="text" name="dpfCar05" placeholder="キャンター" value="<?php if (isset($dpfCar05)) {echo $dpfCar05;} ?>">
-                      </div>
-                    </li>
-                    <li class="item04">
-                      <div class="datattl04">
                         <label for="purchase-form-type05">車両型式</label>
                       </div>
                       <div class="data04">
                         <input id="purchase-form-type05" class="input" type="text" name="dpfType05" placeholder="FE82DG" value="<?php if (isset($dpfType05)) {echo $dpfType05;} ?>">
+                      </div>
+                    </li>
+                    <li class="item04">
+                      <div class="datattl04">
+                        <label for="purchase-form-car05">車台番号</label>
+                      </div>
+                      <div class="data04">
+                        <input id="purchase-form-car05" class="input" type="text" name="dpfCar05" placeholder="ABC012-3456789" value="<?php if (isset($dpfCar05)) {echo $dpfCar05;} ?>">
                       </div>
                     </li>
                     <li class="item04">
