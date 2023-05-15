@@ -187,6 +187,7 @@ $is_home = false;
 $path = '../../';
 include $path .'pages_line/common/head_line.php';
 ?>
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 </head>
 
 <body>
@@ -248,7 +249,7 @@ include $path .'pages_line/common/head_line.php';
                     <label for="purchase-form-yubin">郵便番号</label>
                   </div>
                   <div class="data">
-                    <input id="purchase-form-yubin" type="text" name="post" class="input -short" placeholder="000-0000" value="<?php if (isset($post)) {echo $post;} ?>">
+                    <input id="purchase-form-yubin" type="text" name="post" class="input -short" placeholder="000-0000" value="<?php if (isset($post)) {echo $post;} ?>" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">
                   </div>
                 </li>
                 <li class="item01">
