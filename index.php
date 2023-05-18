@@ -1,13 +1,10 @@
 <?php
-// $appEnv = getenv('APP_ENV');
-// echo $appEnv;
-
 $title = 'DPFラクラク買取 | カンタンで便利！';
 $description = 'どこよりもカンタンで便利なDPFラクラク買取';
 $keywords = 'DPF買取,ラクラク,便利';
 $is_home = true;  //ホーム（トップページ）の判定用の変数を定義（header.php で使用）
 $path = './';  //追加（カレントディレクトリを表す ./ ）
-include $path .'pages/common/head.php'; //変更（$path. を追加）
+include_once $path .'common/components/head.php'; //変更（$path. を追加）
 ?>
   <link rel="stylesheet" href="<?php echo $path; ?>css/slick-theme.css">
   <link rel="stylesheet" href="<?php echo $path; ?>css/slick.css">
@@ -17,7 +14,7 @@ include $path .'pages/common/head.php'; //変更（$path. を追加）
 
 <body>
   <div id="wrapper" class="wrapper home">
-    <?php include $path .'pages/common/header.php'; ?>
+    <?php include_once $path .'common/components/header.php'; ?>
 
     <!-- メインコンテンツ -->
     <main id="main" class="main">
@@ -304,29 +301,7 @@ include $path .'pages/common/head.php'; //変更（$path. を追加）
       <section id="satei" class="home-satei area">
         <div class="inner900">
           <h2 class="ttl ttl-cmn01">どこよりも早く！<br>０秒見積り！</h2>
-          <ul class="list">
-            <li class="item">
-              <div class="head">車名：</div>
-              <select id="car" name="car">
-                <option value="0" name="0">選択してください
-              </select>
-            </li>
-            <li class="item">
-              <div class="head">エンジン型式：</div>
-              <select id="engine" name="engine">
-                <option value="">選択してください
-              </select>
-            </li>
-          </ul>
-          <!-- <div class="block-button"><button id="button-satei" class="button-satei">見積り</button></div> -->
-          <div class="btn01">
-            <div id="button-satei" class="btn01in">
-              <div class="btn01-1"><img src="<?php echo $path; ?>images/home/btn01.png" alt="今すぐ確認"></div>
-              <div class="btn01-2"><img src="<?php echo $path; ?>images/home/btn01-hover.png" alt="今すぐ確認"></div>
-            </div>
-          </div>
-          <div id="satei-price" class="price">
-          </div>
+          <?php include_once $path .'common/components/zero_estimate.php'; ?>
           <div class="txt">上記の選択肢に無い場合や、より詳細なお見積りをご希望の方は<br>写真お見積りをご利用ください。</div>
           <div class="btn btn-cmn01"><a href="<?php echo $path; ?>pages/estimate">写真お見積りはコチラ</a></div>
         </div>
@@ -387,7 +362,7 @@ include $path .'pages/common/head.php'; //変更（$path. を追加）
       </section>
     </main>
 
-    <?php include $path .'pages/common/footer.php'; ?>
+    <?php include_once $path .'common/components/footer.php'; ?>
   </div>
   <script src="<?php echo $path; ?>js/price.js"></script>
 </body>

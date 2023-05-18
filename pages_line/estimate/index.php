@@ -18,13 +18,11 @@ include_once $path .'common/components/head.php';
 
 <body>
   <div id="wrapper" class="wrapper under estimate-form">
-    <?php include_once $path .'common/components/header.php'; ?>
+    <?php include_once $path .'common/components/header_mini.php'; ?>
 
     <!-- メインコンテンツ -->
     <main id="main" class="main">
-      <div class="topvisual">
-        <h2 class="ttl">写真お見積り</h2>
-      </div>
+      <h2 class="ttl-cmn01-line">写真お見積り</h2>
 
       <section class="areas">
         <div class="inner1500">
@@ -33,7 +31,7 @@ include_once $path .'common/components/head.php';
       </section>
     </main>
 
-    <?php include_once $path .'common/components/footer.php'; ?>
+    <?php include_once $path .'common/components/footer_mini.php'; ?>
   </div>
 </body>
 

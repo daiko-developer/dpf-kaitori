@@ -64,7 +64,7 @@ if($_SESSION['token'] === $_POST['token']){
 } else {
 
   // 直接send.phpにアクセスしようとしたら強制的にリダイレクト
-  include_once '../../util/location.php';
+  include_once '../../common/util/location.php';
   header($location . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . './../');
 }
 ?>

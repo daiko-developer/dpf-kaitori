@@ -12,13 +12,13 @@ $description = 'カンタンでどこよりも便利なDPFラクラク買取の�
 $keywords = 'DPF買取,ラクラク,便利,お問い合わせ内容確認';
 $is_home = false;
 $path = '../../../';
-include $path .'pages/common/head.php';
+include $path .'common/components/head.php';
 ?>
 </head>
 
 <body>
   <div id="wrapper" class="wrapper under contact_confirm">
-    <?php include $path .'pages/common/header.php'; ?>
+    <?php include $path .'common/components/header.php'; ?>
 
     <!-- メインコンテンツ -->
     <main id="main" class="main">
@@ -59,7 +59,7 @@ include $path .'pages/common/head.php';
       </section>
     </main>
 
-    <?php include $path .'pages/common/footer.php'; ?>
+    <?php include $path .'common/components/footer.php'; ?>
   </div>
 </body>
 
