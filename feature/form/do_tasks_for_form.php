@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
     // エスケープ処理をして値を変数に格納済みの入力値
     $form->setSession();
 
-    include_once '../../util/location.php';
+    include_once '../../common/util/location.php';
     header($location . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/' . $form->confirmPage);
   }else{
     // エラー配列があればエラーを表示

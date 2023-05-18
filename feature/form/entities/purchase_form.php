@@ -49,7 +49,7 @@ class PurchaseForm extends Form {
 
   /** フォームの内容をフィールドに格納 */
   function setValuesFromForm(): void {
-    require_once '../../util/escape.php';
+    require_once '../../common/util/escape.php';
 
     // POSTされたデータをエスケープ処理して変数に格納
     $this->name = escape($_POST['name']);

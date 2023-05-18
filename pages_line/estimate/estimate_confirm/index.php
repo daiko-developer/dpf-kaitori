@@ -6,7 +6,6 @@ include_once '../../../feature/form/do_tasks_for_form_confirm.php';
 ?>
 
 <?php
-// head内容
 $title = 'DPF写真お見積り確認｜カンタンでどこよりも便利なDPFラクラク買取';
 $description = 'カンタンでどこよりも便利なDPFラクラク買取のDPF写真お見積り確認ページです。';
 $keywords = 'DPF買取,ラクラク,便利,DPF写真お見積り確認';
@@ -18,23 +17,20 @@ include_once $path .'common/components/head.php';
 
 <body>
   <div id="wrapper" class="wrapper under estimate_confirm">
-    <?php include_once $path .'common/components/header.php'; ?>
+    <?php include_once $path .'common/components/header_mini.php'; ?>
 
     <!-- メインコンテンツ -->
     <main id="main" class="main">
-      <div class="topvisual">
-        <h2 class="ttl">DPF写真お見積り</h2>
-      </div>
+      <h2 class="ttl-cmn01-line">見積り内容確認</h2>
 
       <section class="areas">
         <div class="inner">
-          <h3 class="ttl ttl-cmn02">DPF写真お見積り確認</h3>
           <?php include_once $path .'common/components/form/estimate_form_confirm.php'; ?>
         </div>
       </section>
     </main>
 
-    <?php include_once $path .'common/components/footer.php'; ?>
+    <?php include_once $path .'common/components/footer_mini.php'; ?>
   </div>
 </body>
 

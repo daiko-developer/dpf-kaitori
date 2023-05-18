@@ -18,24 +18,24 @@ include_once $path .'common/components/head.php';
 
 <body>
   <div id="wrapper" class="wrapper under purchase-send">
-    <?php include_once $path .'common/components/header.php'; ?>
+    <?php include_once $path .'common/components/header_mini.php'; ?>
 
     <!-- メインコンテンツ -->
     <main id="main" class="main">
       <section class="area">
         <div class="inner">
-          <h2 class="ttl ttl-cmn01">買取申込み完了</h2>
+          <h2 class="ttl ttl-cmn01">買取申込完了</h2>
           <?php
             if($message !== ""){
               echo $message;
             }
           ?>
-          <a href="../">TOPに戻る</a>
+          <p class="txt">ブラウザを閉じてください</p>
         </div>
       </section>
     </main>
 
-    <?php include_once $path .'common/components/footer.php'; ?>
+    <?php include_once $path .'common/components/footer_mini.php'; ?>
   </div>
 </body>
 
