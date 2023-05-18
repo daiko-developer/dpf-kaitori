@@ -654,6 +654,28 @@
     font-weight: bold;
     font-size: 25px;
   }
+  .btn01 {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .btn01in {
+    &:hover {
+      .btn01-1 {
+        display: none;
+      }
+      .btn01-2 {
+        display: block;
+      }
+    }
+  }
+  .btn01-2 {
+    display: none;
+    position: relative;
+    top: 5px;
+    left: 5px;
+  }
   .price {
     margin-top: 30px;
     text-align: center;
@@ -691,12 +713,13 @@
 }
 
 .home-application {
-  .ttl-cmn01 {
-    margin-bottom: 0;
-  }
   .img {
-    max-width: 1000px;
+    max-width: 600px;
     margin: 0 auto;
+  }
+  .txt01 {
+    text-align: center;
+    margin-bottom: 30px;
   }
 }
 

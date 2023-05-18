@@ -2067,6 +2067,28 @@ gnav
   font-weight: bold;
   font-size: 25px;
 }
+.home-satei .btn01 {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+.home-satei .btn01in:hover .btn01-1 {
+  display: none;
+}
+.home-satei .btn01in:hover .btn01-2 {
+  display: block;
+}
+.home-satei .btn01-2 {
+  display: none;
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
 .home-satei .price {
   margin-top: 30px;
   text-align: center;
@@ -2106,12 +2128,13 @@ gnav
   }
 }
 
-.home-application .ttl-cmn01 {
-  margin-bottom: 0;
-}
 .home-application .img {
-  max-width: 1000px;
+  max-width: 600px;
   margin: 0 auto;
+}
+.home-application .txt01 {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .list-home08 {

@@ -1,18 +1,12 @@
 <?php
-session_start();
-
-if (isset($_SESSION['name'])) {
-  $name = $_SESSION['name'];
-  $tel = $_SESSION['tel'];
-  $email = $_SESSION['email'];
-  $detail = $_SESSION['detail'];
-};
-
-$token = sha1(uniqid(mt_rand(),true));
-$_SESSION['token'] = $token;
+// フォーム処理
+require_once '../../../feature/form/entities/contact_form.php';
+$form = new ContactForm;
+include_once '../../../feature/form/do_tasks_for_form_confirm.php';
 ?>
 
 <?php
+// head内容
 $title = 'お問い合わせ内容確認｜カンタンでどこよりも便利なDPFラクラク買取';
 $description = 'カンタンでどこよりも便利なDPFラクラク買取のお問い合わせ内容確認ページです。';
 $keywords = 'DPF買取,ラクラク,便利,お問い合わせ内容確認';
@@ -38,19 +32,19 @@ include $path .'pages/common/head.php';
           <dl class="list-form-confirm">
             <div class="item">
               <dt class="datattl">お名前</dt>
-              <dd class="data"><?php echo $name; ?></dd>
+              <dd class="data"><?php echo $form->name; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">電話番号</dt>
-              <dd class="data"><?php echo empty($tel)? '-' : $tel; ?></dd>
+              <dd class="data"><?php echo empty($form->tel)? '-' : $form->tel; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">メールアドレス</dt>
-              <dd class="data"><?php echo $email; ?></dd>
+              <dd class="data"><?php echo $form->applicantEmail; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">備考欄</dt>
-              <dd class="data"><?php echo empty($detail)? '-' : $detail; ?></dd>
+              <dd class="data"><?php echo empty($form->detail)? '-' : $form->detail; ?></dd>
             </div>
           </dl>
           <p class="tac">こちらの内容で送信してもよろしいですか？</p>

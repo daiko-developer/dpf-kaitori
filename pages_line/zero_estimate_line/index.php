@@ -35,6 +35,7 @@ include $path .'pages/common/head.php';
           <div class="block-button"><button id="button-satei" class="button-satei">査定</button></div>
           <div id="satei-price" class="price">
           </div>
+          <div class="txt">上記の選択肢に無い場合や、より詳細なお見積りをご希望の方は<br>写真お見積りをご利用ください。</div>
         </div>
       </section>
     </main>

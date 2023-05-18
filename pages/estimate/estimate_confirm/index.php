@@ -1,21 +1,12 @@
 <?php
-session_start();
-
-if (isset($_SESSION['name'])) {
-  $name = $_SESSION['name'];
-  $tel = $_SESSION['tel'];
-  $email = $_SESSION['email'];
-
-  $dpfType01 = $_SESSION['dpfType01'];
-  $dpfCar01 = $_SESSION['dpfCar01'];
-  $dpfDetail01 = $_SESSION['dpfDetail01'];
-};
-
-$token = sha1(uniqid(mt_rand(),true));
-$_SESSION['token'] = $token;
+// フォーム処理
+require_once '../../../feature/form/entities/estimate_form.php';
+$form = new EstimateForm;
+include_once '../../../feature/form/do_tasks_for_form_confirm.php';
 ?>
 
 <?php
+// head内容
 $title = 'DPF写真お見積り確認｜カンタンでどこよりも便利なDPFラクラク買取';
 $description = 'カンタンでどこよりも便利なDPFラクラク買取のDPF写真お見積り確認ページです。';
 $keywords = 'DPF買取,ラクラク,便利,DPF写真お見積り確認';
@@ -42,30 +33,30 @@ include $path .'pages/common/head.php';
           <dl class="list-form-confirm">
             <div class="item">
               <dt class="datattl">お名前</dt>
-              <dd class="data"><?php echo $name; ?></dd>
+              <dd class="data"><?php echo $form->name; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">電話番号</dt>
-              <dd class="data"><?php echo empty($tel)? '-' : $tel; ?></dd>
+              <dd class="data"><?php echo empty($form->tel)? '-' : $form->tel; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">メールアドレス</dt>
-              <dd class="data"><?php echo $email; ?></dd>
+              <dd class="data"><?php echo $form->applicantEmail; ?></dd>
             </div>
           </dl>
           <h4 class="ttl-cmn03">マフラー情報</h4>
           <dl class="list-form-confirm">
             <div class="item">
               <dt class="datattl">車両型式</dt>
-              <dd class="data"><?php echo empty($dpfType01)? '-' : $dpfType01; ?></dd>
+              <dd class="data"><?php echo empty($form->dpfType01)? '-' : $form->dpfType01; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">車台番号</dt>
-              <dd class="data"><?php echo $dpfCar01; ?></dd>
+              <dd class="data"><?php echo $form->dpfCar01; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">備考欄</dt>
-              <dd class="data"><?php echo empty($dpfDetail01)? '-' : $dpfDetail01; ?></dd>
+              <dd class="data"><?php echo empty($form->dpfDetail01)? '-' : $form->dpfDetail01; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">DPF写真１</dt>

@@ -1,4 +1,7 @@
 <?php
+// $appEnv = getenv('APP_ENV');
+// echo $appEnv;
+
 $title = 'DPFラクラク買取 | カンタンで便利！';
 $description = 'どこよりもカンタンで便利なDPFラクラク買取';
 $keywords = 'DPF買取,ラクラク,便利';
@@ -284,15 +287,7 @@ include $path .'pages/common/head.php'; //変更（$path. を追加）
           <dl class="list-home06">
             <div class="item">
               <dt class="head">DPFとは何ですか？</dt>
-              <dd class="data">ディーゼルパティキュレートフィルターというマフラーで、排気ガスに含まれるPMを捕集し、除去を目的としています。</dd>
-            </div>
-            <div class="item">
-              <dt class="head">DPFを洗浄してもエンジンには影響ないですか？</dt>
-              <dd class="data">エンジンへの悪影響はありません。</dd>
-            </div>
-            <div class="item">
-              <dt class="head">DPFを洗浄すると燃費は良くなりますか？</dt>
-              <dd class="data">DPFを洗浄する事で、エンジンへの負荷が減少し、結果、燃費が向上します。</dd>
+              <dd class="data">ディーゼルパティキュレートフィルターというマフラーで、排気ガスに含まれるPMを捕集し、除去を目的としています。<br>DPF,DPD等の説明を追加</dd>
             </div>
             <div class="item">
               <dt class="head">見積り料金は発生しますか？</dt>
@@ -323,19 +318,27 @@ include $path .'pages/common/head.php'; //変更（$path. を追加）
               </select>
             </li>
           </ul>
-          <div class="block-button"><button id="button-satei" class="button-satei">見積り</button></div>
+          <!-- <div class="block-button"><button id="button-satei" class="button-satei">見積り</button></div> -->
+          <div class="btn01">
+            <div id="button-satei" class="btn01in">
+              <div class="btn01-1"><img src="<?php echo $path; ?>images/home/btn01.png" alt="今すぐ確認"></div>
+              <div class="btn01-2"><img src="<?php echo $path; ?>images/home/btn01-hover.png" alt="今すぐ確認"></div>
+            </div>
+          </div>
           <div id="satei-price" class="price">
           </div>
-          <div class="txt">より詳細なお見積りをご希望の方は写真お見積りをご利用ください。</div>
-          <div class="btn btn-cmn02 -estimate"><a href="<?php echo $path; ?>pages/estimate">写真お見積りはこちら</a></div>
+          <div class="txt">上記の選択肢に無い場合や、より詳細なお見積りをご希望の方は<br>写真お見積りをご利用ください。</div>
+          <div class="btn btn-cmn01"><a href="<?php echo $path; ?>pages/estimate">写真お見積りはコチラ</a></div>
         </div>
       </section>
 
       <section id="application" class="home-application area">
         <div class="inner1500">
           <h2 class="ttl ttl-cmn01">買取申込</h2>
+          <p class="txt01">古くても、汚れていても、詰まっていても、OK！<br>まずは着払いでお送りください！</p>
+          <div class="btn btn-cmn02 -purchase"><a href="<?php echo $path; ?>pages/purchase">買取申込はコチラ</a></div>
+          <p class="txt01">以下のような状態の場合は減額になることがあります。<br>予めご了承ください。</p>
           <div class="img"><img src="<?php echo $path; ?>images/home/img14.png" alt=""></div>
-          <div class="btn btn-cmn02 -purchase"><a href="<?php echo $path; ?>pages/purchase">買取申込はこちら</a></div>
           <div id="line" class="line-contact area">
             <h3 class="ttl">スマホで完結！<br>LINEで買取・見積り申込も可能</h3>
             <div class="block">
