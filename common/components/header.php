@@ -7,7 +7,7 @@
       <div class="block-tel">
         <div class="txt">お電話でのお問い合わせ</div>
         <div class="tel"><a href="tel:0722966752">072-296-6752</a></div>
-        <div class="txt02">営業時間 9:00〜18:00(土日祝 ※年末年始･お盆除く)</div>
+        <div class="txt02">営業時間 9:00〜18:00 (土日祝 ※年末年始･お盆除く)</div>
       </div>
       <div class="block-btn">
         <div class="btn -kaitori"><a href="<?php echo $path; ?>pages/purchase" class="label">買取申込</a></div>

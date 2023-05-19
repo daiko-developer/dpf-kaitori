@@ -28,7 +28,7 @@
     position: relative;
     height: auto !important;
     // min-height: 300px;
-    max-height: 700px;
+    max-height: 800px;
     overflow: hidden;
     border-radius: 20px;
   }
@@ -85,6 +85,15 @@
       width: 25%;
       margin-right: 10%;
       margin-left: auto;
+    }
+    .txt {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      width: 40%;
+      margin: 20px 20px 20px auto;
+      text-align: left;
+      text-shadow: 2px 2px $color1;
     }
   }
   .box02 {
@@ -186,6 +195,9 @@
       .img03 {
         width: 40%;
       }
+      .txt {
+        width: 50%;
+      }
     }
     .box02 {
       .block-txt {
@@ -233,6 +245,10 @@
       .img03 {
         width: 70%;
         margin: 0 auto;
+      }
+      .txt {
+        width: 90%;
+        margin: 20px auto 20px;
       }
     }
     .box02 {
@@ -713,13 +729,27 @@
 }
 
 .home-application {
-  .img {
-    max-width: 600px;
-    margin: 0 auto;
-  }
   .txt01 {
     text-align: center;
-    margin-bottom: 30px;
+    margin: 30px 0;
+  }
+  .block-img {
+    display: flex;
+    justify-content: center;
+  }
+  .icon {
+    background: $color1;
+    border-radius: 50%;
+    margin: 0 20px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .label {
+    text-align: center;
+    margin: 10px auto 0;
   }
 }
 

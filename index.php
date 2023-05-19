@@ -24,7 +24,8 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
             <div class="img01"><a href="#satei"><img class="img01-1" src="<?php echo $path; ?>images/home/home-slide-box01-txt03.png" alt="どこよりも早く！！０秒見積もり！！"><img class="img01-2" src="<?php echo $path; ?>images/home/home-slide-box01-txt03-hover.png" alt="どこよりも早く！！０秒見積もり！！今すぐ査定"></a></div>
             <div class="right">
               <div class="img02"><img src="<?php echo $path; ?>images/home/home-slide-box01-txt01.png" alt="どこよりもカンタン・便利なラクラク買取"></div>
-              <div class="img03"><img src="<?php echo $path; ?>images/home/home-slide-box01-txt02.png" alt="古くても、汚れていても、壊れていてもOK"></div>
+              <div class="img03"><img src="<?php echo $path; ?>images/home/home-slide-box01-txt02.png" alt="古くても、汚れていても、詰まっていてもOK"></div>
+              <p class="txt">DPF, DPD, DPR, インジェクター, 触媒のみの買取もOK</p>
             </div>
           </div>
         </div>
@@ -294,6 +295,10 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
               <dt class="head">破損やオイル漏れがある場合でも買取できますか？</dt>
               <dd class="data">買取可能ですが、状態によって減額になる場合があります。</dd>
             </div>
+            <div class="item">
+              <dt class="head">配送に関して</dt>
+              <dd class="data"></dd>
+            </div>
           </dl>
         </div>
       </section>
@@ -313,7 +318,20 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
           <p class="txt01">古くても、汚れていても、詰まっていても、OK！<br>まずは着払いでお送りください！</p>
           <div class="btn btn-cmn02 -purchase"><a href="<?php echo $path; ?>pages/purchase">買取申込はコチラ</a></div>
           <p class="txt01">以下のような状態の場合は減額になることがあります。<br>予めご了承ください。</p>
-          <div class="img"><img src="<?php echo $path; ?>images/home/img14.png" alt=""></div>
+          <ul class="block-img">
+            <li class="item">
+              <div class="icon"><img src="<?php echo $path; ?>images/home/img14.png" alt=""></div>
+              <p class="label">古びている</p>
+            </li>
+            <li class="item">
+              <div class="icon"><img src="<?php echo $path; ?>images/home/img15.png" alt=""></div>
+              <p class="label">汚れている</p>
+            </li>
+            <li class="item">
+              <div class="icon"><img src="<?php echo $path; ?>images/home/img16.png" alt=""></div>
+              <p class="label">詰まっている</p>
+            </li>
+          </ul>
           <div id="line" class="line-contact area">
             <h3 class="ttl">スマホで完結！<br>LINEで買取・見積り申込も可能</h3>
             <div class="block">

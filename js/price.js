@@ -11,64 +11,79 @@ fetch(endpoint)
 .then(response => response.json())
 /*成功した処理*/
 .then(data => {
-    //JSONから配列に変換
-    priceData = data;
+  //JSONから配列に変換
+  priceData = data;
 
-    priceTableBody = document.getElementById("price-table-body");
+  priceTableBody = document.getElementById("price-table-body");
 
-    // WEB掲載するデータのみ抽出
-    const priceDataForTable = priceData.filter(value => {
-      return value.WEB掲載 == true;
-    });
+  // データを並べ替え
+  priceData.sort((a, b) => {
+    if (a.車名 > b.車名) return　1;
+    if (a.車名 < b.車名) return -1;
+    if (a.エンジン型式 > b.エンジン型式) return 1;
+    if (a.エンジン型式 < b.エンジン型式) return -1;
+  });
 
-    // WEB掲載するデータの中から小型区分のデータを抽出
-    const priceDataOfSmall = priceDataForTable.filter(value => {
-      return value.区分 == "小型";
-    });
-    // WEB掲載するデータの中から中型区分のデータを抽出
-    const priceDataOfMiddle = priceDataForTable.filter(value => {
-      return value.区分 == "中型";
-    });
-    // WEB掲載するデータの中から大型区分のデータを抽出
-    const priceDataOfLarge = priceDataForTable.filter(value => {
-      return value.区分 == "大型";
-    });
-    // WEB掲載するデータの中から乗用区分のデータを抽出
-    const priceDataOfCommon = priceDataForTable.filter(value => {
-      return value.区分 == "乗用";
-    });
+  // WEB掲載するデータのみ抽出
+  const priceDataForTable = priceData.filter(value => {
+    return value.WEB掲載 == true;
+  });
 
-    // 各データを買取価格表に挿入
-    appendChildToPriceTable(priceDataOfSmall);
-    appendChildToPriceTable(priceDataOfMiddle);
-    appendChildToPriceTable(priceDataOfLarge);
-    appendChildToPriceTable(priceDataOfCommon);
+  // WEB掲載するデータの中から小型区分のデータを抽出
+  const priceDataOfSmall = priceDataForTable.filter(value => {
+    return value.区分 == "小型";
+  });
+  // WEB掲載するデータの中から中型区分のデータを抽出
+  const priceDataOfMiddle = priceDataForTable.filter(value => {
+    return value.区分 == "中型";
+  });
+  // WEB掲載するデータの中から大型区分のデータを抽出
+  const priceDataOfLarge = priceDataForTable.filter(value => {
+    return value.区分 == "大型";
+  });
+  // WEB掲載するデータの中から乗用区分のデータを抽出
+  const priceDataOfCommon = priceDataForTable.filter(value => {
+    return value.区分 == "乗用";
+  });
 
-    // データを並べ替え
-    priceData.sort((a, b) => {
-      if (a.車名 > b.車名) return　1;
-      if (a.車名 < b.車名) return -1;
-      if (a.エンジン型式 > b.エンジン型式) return 1;
-      if (a.エンジン型式 < b.エンジン型式) return -1;
-    });
+  // 各データを買取価格表に挿入
+  appendChildToPriceTable(priceDataOfSmall);
+  appendChildToPriceTable(priceDataOfMiddle);
+  appendChildToPriceTable(priceDataOfLarge);
+  appendChildToPriceTable(priceDataOfCommon);
 
-    // ０秒見積もりの車名選択肢を追加
-    car = document.getElementById("car");
-    for (let i = 0; i < priceData.length; i++) {
-      if (i != 0 && priceData[i].車名 == priceData[i-1].車名) continue;
-      var op = document.createElement("option");
-      value = priceData[i];
-      op.value = value.車名;
-      op.text = value.車名;
-      car.appendChild(op);
-    }
+  // ０秒見積もりの車名選択肢を追加
+  car = document.getElementById("car");
+  for (let i = 0; i < priceData.length; i++) {
+    if (i != 0 && priceData[i].車名 == priceData[i-1].車名) continue;
+    var op = document.createElement("option");
+    value = priceData[i];
+    op.value = value.車名;
+    op.text = value.車名;
+    car.appendChild(op);
+  }
 });
 
 // 買取価格表にデータを挿入
 function appendChildToPriceTable(data) {
   priceTableBody = document.getElementById("price-table-body");
+
+  // 重複データを削除
+  var filteredDataList = [];
   for (let i = 0; i < data.length; i++) {
     value = data[i];
+
+    var newRow = document.createElement("tr");
+    if (i != 0  && value.車名 == data[i-1].車名 && value.エンジン型式 == data[i-1].エンジン型式) {
+      continue;
+    } else {
+      filteredDataList.push(value);
+    }
+    priceTableBody.appendChild(newRow);
+  }
+
+  for (let i = 0; i < filteredDataList.length; i++) {
+    value = filteredDataList[i];
 
     var price = value.ラクラク買取の買取金額;
     if (!isNaN(value.ラクラク買取の買取金額)) {
@@ -78,7 +93,7 @@ function appendChildToPriceTable(data) {
     var newRow = document.createElement("tr");
     if (i == 0) {
       newRow.innerHTML = `
-        <td class="data" rowspan=${data.length}>${value.区分}</td>
+        <td class="data" rowspan=${filteredDataList.length}>${value.区分}</td>
         <td class="data">${value.車名}</td>
         <td class="data">${value.エンジン型式}</td>
         <td class="data">${price}</td>

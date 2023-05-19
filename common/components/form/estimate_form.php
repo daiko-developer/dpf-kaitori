@@ -37,7 +37,7 @@
     </ul>
   </div>
   <div class="block">
-    <div class="head">マフラー情報</div>
+    <div class="head">DPF情報</div>
     <ul class="list01">
       <li class="item01">
         <div class="datattl">
@@ -65,7 +65,7 @@
       </li>
       <li class="item01">
         <div class="datattl">
-          <label for="estimate-form-picture01">DPF写真１</label><span class="require">必須</span>
+          <label for="estimate-form-picture01">DPF全体の写真</label><span class="require">必須</span>
         </div>
         <div class="data">
           <input id="estimate-form-picture01" type="file" name="picture01" value="<?php if (isset($form->picture01)) {echo $form->picture01;} ?>" required>
@@ -73,7 +73,7 @@
       </li>
       <li class="item01">
         <div class="datattl">
-          <label for="estimate-form-picture02">DPF写真２</label><span class="require">必須</span>
+          <label for="estimate-form-picture02">DPFフィルター部分の写真</label><span class="require">必須</span>
         </div>
         <div class="data">
           <input id="estimate-form-picture02" type="file" name="picture02" value="<?php if (isset($form->picture02)) {echo $form->picture02;} ?>" required>
@@ -81,7 +81,7 @@
       </li>
       <li class="item01">
         <div class="datattl">
-          <label for="estimate-form-picture03">DPF写真３</label><span class="require">必須</span>
+          <label for="estimate-form-picture03">DPF出口側の写真</label><span class="require">必須</span>
         </div>
         <div class="data">
           <input id="estimate-form-picture03" type="file" name="picture03" value="<?php if (isset($form->picture03)) {echo $form->picture03;} ?>" required>

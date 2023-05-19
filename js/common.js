@@ -1,52 +1,6 @@
 /* version 1.0.0 */
 // JavaScript Document
 
-// LINE用ヘッダー読み込み
-function headerLine(rootDir){
-  $.ajax({
-      url: rootDir + "_header_line.html",  // 読み込むHTMLファイル
-      cache: false,
-      async: false,
-      dataType: 'html',
-      success: function(html){
-          html = html.replace(/\{\$root\}/g, rootDir); //header.htmlの{$root}を置換
-          document.write(html);
-      }
-  });
-};
-
-// LINE用フッター読み込み
-function footerLine(rootDir){
-  $.ajax({
-      url: rootDir + "_footer_line.html",  // 読み込むHTMLファイル
-      cache: false,
-      async: false,
-      dataType: 'html',
-      success: function(html){
-          html = html.replace(/\{\$root\}/g, rootDir); //header.htmlの{$root}を置換
-          document.write(html);
-      }
-  });
-};
-
-//fead系
-$(window).on('load scroll', function () {
-  $(".fead-mv, .fead-up, .fead-left, .fead-right").each(function () {
-    var ele = $(this);
-    var pos = ele.offset().top;
-    var scroll = $(window).scrollTop();
-
-    if (scroll > pos) {
-      ele.addClass("mv");
-    } else if (scroll > pos - window.innerHeight) {
-      setTimeout(function () {
-        ele.addClass("mv");
-      }, 400);
-    }
-  });
-});
-
-
 //グローバルナビ固定
 $(window).on('load resize', function () {
   if ($('.header').length) {
@@ -67,7 +21,6 @@ $(window).on('load resize', function () {
   }
 });
 
-
 //ハンバーガーメニュー
 $(function () {
   $('.toggle').click(function () {
@@ -82,7 +35,6 @@ $(function () {
     $("header").toggleClass('overlay');
   });
 });
-
 
 //トップへ戻る
 $(function () {
@@ -105,37 +57,6 @@ $(function () {
   });
 });
 
-
-//hoverで画像差し替え
-$(function () {
-  $('.js-thumb img').mouseover(function () {
-    var selectedSrc = $(this).attr('src').replace(/^(.+)_thumb(\.gif|\.jpg|\.png+)$/, "$1" + "$2");
-    $('.js-mainimg img').stop().fadeOut(200,
-      function () {
-        $('.js-mainimg img').attr('src', selectedSrc);
-        $('.js-mainimg img').stop().fadeIn(200);
-      }
-    );
-  });
-});
-
-
-//カテゴリーを分割し、クラスを付与
-$(function () {
-  $('.js-split-tag').html(function () {
-    return $(this).html().replace(/\n/g, '').split(",").filter(function (x) {
-      return x.match(/\S/);
-    }).map(function (x) {
-      return "<span>" + x + "</span>";
-    }).join("");
-  });
-  $('.js-split-tag span').each(function () {
-    var tagtext = $(this).text();
-    $(this).addClass(tagtext);
-  });
-});
-
-
 //トグルメニュー
 $(function () {
   $(".js-toggle").on("click", function () {
@@ -144,63 +65,6 @@ $(function () {
     $(this).next().toggleClass("is-active");
   });
 });
-
-//テキストトリミング
-$(window).load(function () {
-  $('.up-reader3').each(function () {
-    var $target = $(this);
-    var html = $target.html();
-    var $clone = $target.clone();
-    var fs = $target.css('font-size');
-    var lh = $target.css('line-height');
-    var lines = '3'; //表示したい行数
-    var lhp = Math.round((parseInt(lh) / parseInt(fs)) * 10) / 10;
-    var calc = parseInt(fs) * lhp * parseInt(lines);
-    $target.css('height', calc);
-    $clone
-      .css({
-        display: 'none',
-        position: 'absolute',
-        overflow: 'visible'
-      })
-      .width($target.width())
-      .height('auto');
-    $target.after($clone);
-    while ((html.length > 0) && ($clone.height() > $target.height())) {
-      html = html.substr(0, html.length - 1);
-      $clone.html(html + '…');
-    }
-    $target.html($clone.html());
-    $clone.remove();
-  });
-  $('.up-reader2').each(function () {
-    var $target = $(this);
-    var html = $target.html();
-    var $clone = $target.clone();
-    var fs = $target.css('font-size');
-    var lh = $target.css('line-height');
-    var lines = '2'; //表示したい行数
-    var lhp = Math.round((parseInt(lh) / parseInt(fs)) * 10) / 10;
-    var calc = parseInt(fs) * lhp * parseInt(lines);
-    $target.css('height', calc);
-    $clone
-      .css({
-        display: 'none',
-        position: 'absolute',
-        overflow: 'visible'
-      })
-      .width($target.width())
-      .height('auto');
-    $target.after($clone);
-    while ((html.length > 0) && ($clone.height() > $target.height())) {
-      html = html.substr(0, html.length - 1);
-      $clone.html(html + '…');
-    }
-    $target.html($clone.html());
-    $clone.remove();
-  });
-});
-
 
 //スクロール・ページ内リンク
 $(function () {
