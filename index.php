@@ -320,16 +320,16 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
           <p class="txt01">以下のような状態の場合は減額になることがあります。<br>予めご了承ください。</p>
           <ul class="block-img">
             <li class="item">
-              <div class="icon"><img src="<?php echo $path; ?>images/home/img14.png" alt=""></div>
-              <p class="label">古びている</p>
+              <div class="img01"><img src="<?php echo $path; ?>images/home/img17.png" alt="コアの状態から加工されたもの"></div>
+              <p class="label">コアの状態から加工されたもの</p>
             </li>
             <li class="item">
-              <div class="icon"><img src="<?php echo $path; ?>images/home/img15.png" alt=""></div>
-              <p class="label">汚れている</p>
+              <div class="img01"><img src="<?php echo $path; ?>images/home/img19.png" alt="オイルが混入しているもの"></div>
+              <p class="label">オイルが混入しているもの</p>
             </li>
             <li class="item">
-              <div class="icon"><img src="<?php echo $path; ?>images/home/img16.png" alt=""></div>
-              <p class="label">詰まっている</p>
+              <div class="img01"><img src="<?php echo $path; ?>images/home/img18.png" alt="破損しているもの"></div>
+              <p class="label">破損しているもの</p>
             </li>
           </ul>
           <div id="line" class="line-contact area">

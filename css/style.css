@@ -233,7 +233,7 @@ button[href*=tel] {
   background: #0d4987;
   color: #ffffff;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.2rem;
   text-align: center;
 }
 .btn-cmn02 a:before {
@@ -2219,6 +2219,8 @@ gnav
 .home-application .txt01 {
   text-align: center;
   margin: 30px 0;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 .home-application .block-img {
   display: -webkit-box;
@@ -2228,25 +2230,23 @@ gnav
       -ms-flex-pack: center;
           justify-content: center;
 }
-.home-application .icon {
-  background: #0d4987;
-  border-radius: 50%;
+.home-application .item {
   margin: 0 20px;
-  width: 150px;
-  height: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 .home-application .label {
   text-align: center;
   margin: 10px auto 0;
+  color: #0d4987;
+  font-weight: bold;
+}
+@media only screen and (max-width: 599px) {
+  .home-application .block-img {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .home-application .item {
+    margin: 20px 0;
+  }
 }
 
 .list-home08 {

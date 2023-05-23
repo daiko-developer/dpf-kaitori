@@ -763,28 +763,34 @@
   }
 }
 
+// 買取申込
 .home-application {
   .txt01 {
     text-align: center;
     margin: 30px 0;
+    font-weight: bold;
+    font-size: 1.2rem;
   }
   .block-img {
     display: flex;
     justify-content: center;
   }
-  .icon {
-    background: $color1;
-    border-radius: 50%;
+  .item {
     margin: 0 20px;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .label {
     text-align: center;
     margin: 10px auto 0;
+    color: $color1;
+    font-weight: bold;
+  }
+  @media only screen and (max-width: 599px) {
+    .block-img {
+      flex-wrap: wrap;
+    }
+    .item {
+      margin: 20px 0;
+    }
   }
 }
 
