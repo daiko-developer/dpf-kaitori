@@ -472,6 +472,9 @@ button[href*=tel] {
   display: -ms-flexbox;
   display: flex;
 }
+.form .txt {
+  margin: 10px 10px 0 10px;
+}
 .form .img {
   position: relative;
   width: 200px;

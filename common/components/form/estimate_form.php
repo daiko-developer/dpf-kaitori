@@ -69,9 +69,10 @@
         </div>
         <div class="data">
           <input id="estimate-form-picture01" class="file" type="file" name="picture01" value="<?php if (isset($form->picture01)) {echo $form->picture01;} ?>" required>
+          <p class="txt">※全体が見えるように撮影してください</p>
           <div class="block-img">
-            <div class="img -good"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
-            <div class="img -bad"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
+            <div class="img -good"><img src="<?php echo $path; ?>images/estimate/img01.jpeg" alt=""></div>
+            <div class="img -bad"><img src="<?php echo $path; ?>images/estimate/img02.jpeg" alt=""></div>
           </div>
         </div>
       </li>
@@ -81,9 +82,10 @@
         </div>
         <div class="data">
           <input id="estimate-form-picture02" class="file" type="file" name="picture02" value="<?php if (isset($form->picture02)) {echo $form->picture02;} ?>" required>
+          <p class="txt">※フィルター部分全体が見えるように撮影してください</p>
           <div class="block-img">
-            <div class="img -good"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
-            <div class="img -bad"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
+            <div class="img -good"><img src="<?php echo $path; ?>images/estimate/img03.jpeg" alt=""></div>
+            <div class="img -bad"><img src="<?php echo $path; ?>images/estimate/img04.jpeg" alt=""></div>
           </div>
         </div>
       </li>
@@ -93,9 +95,10 @@
         </div>
         <div class="data">
           <input id="estimate-form-picture03" class="file" type="file" name="picture03" value="<?php if (isset($form->picture03)) {echo $form->picture03;} ?>" required>
+          <p class="txt">※出口部分全体が見えるように撮影してください</p>
           <div class="block-img">
-            <div class="img -good"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
-            <div class="img -bad"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
+            <div class="img -good"><img src="<?php echo $path; ?>images/estimate/img05.jpeg" alt=""></div>
+            <div class="img -bad"><img src="<?php echo $path; ?>images/estimate/img06.jpeg" alt=""></div>
           </div>
         </div>
       </li>
