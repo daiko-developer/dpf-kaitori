@@ -21,5 +21,9 @@ abstract class Form {
   abstract protected function getMailBodyForUser(): string;
   /** メール本文に挿入するフォーム内容を取得 */
   abstract protected function getFormContentsOfMailBody(): string;
+  /** フォーム内容を記録するPOST先URLを返す */
+  abstract protected function getPostUrl(): string;
+  /** フォーム内容を返す */
+  abstract protected function getPostData(): array;
 }
 ?>

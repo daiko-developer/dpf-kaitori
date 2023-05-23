@@ -200,6 +200,23 @@ class EstimateForm extends Form {
     $fileBody .= "--__BOUNDARY__";
     return $fileBody;
   }
+
+  /** フォーム内容を記録するPOST先URLを返す */
+  function getPostUrl(): string {
+    return 'https://script.google.com/macros/s/AKfycbw0hrPsv9TPaX3pWs6ajKDfV83dhvIAeAZrKqOe3mBtmSml5Zv4rOVh5XUfnqrTup_OlA/exec';
+  }
+
+  /** フォーム内容を返す */
+  function getPostData(): array {
+    return array(
+      'name' => $this->name,
+      'tel' => $this->tel,
+      'applicantEmail' => $this->applicantEmail,
+      'dpfType01' => $this->dpfType01,
+      'dpfCar01' => $this->dpfCar01,
+      'dpfDetail01' => $this->dpfDetail01,
+    );
+  }
 }
 
 ?>

@@ -14,6 +14,10 @@
     width: 100%;
     max-width: 400px;
   }
+  &.-white {
+    background: #fff;
+    color: $color1;
+  }
 }
 
 .btn-cmn02 {

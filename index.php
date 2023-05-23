@@ -305,10 +305,10 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
 
       <section id="satei" class="home-satei area">
         <div class="inner900">
-          <h2 class="ttl ttl-cmn01">どこよりも早く！<br>０秒見積り！</h2>
+          <h2 class="ttl ttl-cmn01">どこよりも早く！<br><span class="ttlin01">０</span>秒見積り！</h2>
           <?php include_once $path .'common/components/zero_estimate.php'; ?>
           <div class="txt">上記の選択肢に無い場合や、より詳細なお見積りをご希望の方は<br>写真お見積りをご利用ください。</div>
-          <div class="btn btn-cmn01"><a href="<?php echo $path; ?>pages/estimate">写真お見積りはコチラ</a></div>
+          <div class="btn btn-cmn01 -white"><a href="<?php echo $path; ?>pages/estimate">写真お見積りはコチラ</a></div>
         </div>
       </section>
 

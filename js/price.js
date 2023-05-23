@@ -96,13 +96,13 @@ function appendChildToPriceTable(data) {
         <td class="data" rowspan=${filteredDataList.length}>${value.区分}</td>
         <td class="data">${value.車名}</td>
         <td class="data">${value.エンジン型式}</td>
-        <td class="data">${price}</td>
+        <td class="data -price">${price}</td>
       `;
     } else {
       newRow.innerHTML = `
         <td class="data">${value.車名}</td>
         <td class="data">${value.エンジン型式}</td>
-        <td class="data">${price}</td>
+        <td class="data -price">${price}</td>
       `;
     }
     priceTableBody.appendChild(newRow);
@@ -142,9 +142,10 @@ document.getElementById("button-satei").onclick = function() {
     if (value.車名 == targetCar && value.エンジン型式 == targetEngine) {
       priceHtml = document.getElementById("satei-price");
       priceHtml.innerHTML = `
-      <div class="txtin01">標準買取価格：<span class="txtin03">${price}</span>円</div>
-      <span class="txtin01">車名：<span class="txtin02">${value.車名}</span></span>
-      <span class="txtin01">エンジン型式：<span class="txtin02">${value.エンジン型式}</span></span>
+      <div class="txt01 -price">標準買取価格：<span class="txtin03">${price}</span></div>
+      <span class="txt02">車名：<span class="txtin02">${value.車名}</span></span>
+      <span class="txt02">エンジン型式：<span class="txtin02">${value.エンジン型式}</span></span>
+      <div class="txt01">パーツ：<span class="txtin02">${value.パーツ}</span></div>
       `;
     }
   }

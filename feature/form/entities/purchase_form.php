@@ -334,6 +334,51 @@ class PurchaseForm extends Form {
     $fileBody .= "--__BOUNDARY__";
     return $fileBody;
   }
+
+  /** フォーム内容を記録するPOST先URLを返す */
+  function getPostUrl(): string {
+    return 'https://script.google.com/macros/s/AKfycbwImw4aniDILKzosWQG2p0lqdYuzmRHsQoB9A9Ltg5u8qkNcRBwXX0XC4eyf2ZRbo12zQ/exec';
+  }
+
+  /** フォーム内容を返す */
+  function getPostData(): array {
+    return array(
+      'name' => $this->name,
+      'nameFuri' => $this->nameFuri,
+      'company' => $this->company,
+      'companyFuri' => $this->companyFuri,
+      'post' => $this->post,
+      'address' => $this->address,
+      'tel' => $this->tel,
+      'applicantEmail' => $this->applicantEmail,
+      'bank' => $this->bank,
+      'branch' => $this->branch,
+      'bankType' => $this->bankType,
+      'bankNumber' => $this->bankNumber,
+      'bankUser' => $this->bankUser,
+      'bankConfirm' => $this->bankConfirm,
+      'dpfType01' => $this->dpfType01,
+      'dpfCar01' => $this->dpfCar01,
+      'dpfNumber01' => $this->dpfNumber01,
+      'dpfDetail01' => $this->dpfDetail01,
+      'dpfType02' => $this->dpfType02,
+      'dpfCar02' => $this->dpfCar02,
+      'dpfNumber02' => $this->dpfNumber02,
+      'dpfDetail02' => $this->dpfDetail02,
+      'dpfType03' => $this->dpfType03,
+      'dpfCar03' => $this->dpfCar03,
+      'dpfNumber03' => $this->dpfNumber03,
+      'dpfDetail03' => $this->dpfDetail03,
+      'dpfType04' => $this->dpfType04,
+      'dpfCar04' => $this->dpfCar04,
+      'dpfNumber04' => $this->dpfNumber04,
+      'dpfDetail04' => $this->dpfDetail04,
+      'dpfType05' => $this->dpfType05,
+      'dpfCar05' => $this->dpfCar05,
+      'dpfNumber05' => $this->dpfNumber05,
+      'dpfDetail05' => $this->dpfDetail05,
+    );
+  }
 }
 
 ?>

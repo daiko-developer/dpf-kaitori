@@ -442,9 +442,18 @@
     width: 20%;
     padding: 10px 20px;
     border: 1px solid #999999;
+    font-weight: bold;
   }
   .datattl01 {
-    background: #eeeeee;
+    background: $color1;
+    color: #fff;
+    font-weight: bold;
+  }
+  .data.-price {
+    text-align: right;
+    font-weight: bold;
+    color: red;
+    font-size: 1.2rem;
   }
   @media only screen and (max-width: 1024px) {
     .datattl01,
@@ -456,6 +465,9 @@
     .datattl01,
     .data {
       padding: 5px 2px;
+    }
+    .data.-price {
+      font-size: 1rem;
     }
   }
 }
@@ -505,6 +517,7 @@
     margin-top: 10px;
     font-weight: bold;
     font-size: 30px;
+    color: red;
   }
   .pricein {
     font-size: 16px;
@@ -643,6 +656,15 @@
 
 // ラクラク査定
 .home-satei {
+  background: $color1;
+  padding: 80px 0;
+  .ttl,
+  .head,
+  .txt,
+  .txt01,
+  .txt02 {
+    color: #fff;
+  }
   .list {
     display: flex;
     justify-content: space-between;
@@ -652,6 +674,7 @@
   }
   .head {
     font-size: 1.25rem;
+    font-weight: bold;
   }
   select {
     min-width: 280px;
@@ -696,8 +719,17 @@
     margin-top: 30px;
     text-align: center;
   }
-  .txtin01 {
-    margin: 0 10px;
+  .txt01 {
+    font-weight: bold;
+    margin: 10px;
+    &.-price {
+      margin-bottom: 20px;
+    }
+  }
+  .txt02 {
+    font-weight: bold;
+    margin: 10px;
+    display: inline-block;
   }
   .txtin02 {
     font-size: 1.5rem;
@@ -705,6 +737,9 @@
   .txtin03 {
     color: red;
     font-size: 3rem;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
   }
   .txt {
     margin-bottom: 10px;

@@ -68,7 +68,11 @@
           <label for="estimate-form-picture01">DPF全体の写真</label><span class="require">必須</span>
         </div>
         <div class="data">
-          <input id="estimate-form-picture01" type="file" name="picture01" value="<?php if (isset($form->picture01)) {echo $form->picture01;} ?>" required>
+          <input id="estimate-form-picture01" class="file" type="file" name="picture01" value="<?php if (isset($form->picture01)) {echo $form->picture01;} ?>" required>
+          <div class="block-img">
+            <div class="img -good"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
+            <div class="img -bad"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
+          </div>
         </div>
       </li>
       <li class="item01">
@@ -76,7 +80,11 @@
           <label for="estimate-form-picture02">DPFフィルター部分の写真</label><span class="require">必須</span>
         </div>
         <div class="data">
-          <input id="estimate-form-picture02" type="file" name="picture02" value="<?php if (isset($form->picture02)) {echo $form->picture02;} ?>" required>
+          <input id="estimate-form-picture02" class="file" type="file" name="picture02" value="<?php if (isset($form->picture02)) {echo $form->picture02;} ?>" required>
+          <div class="block-img">
+            <div class="img -good"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
+            <div class="img -bad"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
+          </div>
         </div>
       </li>
       <li class="item01">
@@ -84,7 +92,11 @@
           <label for="estimate-form-picture03">DPF出口側の写真</label><span class="require">必須</span>
         </div>
         <div class="data">
-          <input id="estimate-form-picture03" type="file" name="picture03" value="<?php if (isset($form->picture03)) {echo $form->picture03;} ?>" required>
+          <input id="estimate-form-picture03" class="file" type="file" name="picture03" value="<?php if (isset($form->picture03)) {echo $form->picture03;} ?>" required>
+          <div class="block-img">
+            <div class="img -good"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
+            <div class="img -bad"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
+          </div>
         </div>
       </li>
     </ul>

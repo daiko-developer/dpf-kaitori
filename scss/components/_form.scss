@@ -65,6 +65,10 @@
       max-width: 150px;
     }
   }
+  .file {
+    width: 100%;
+    max-width: 500px;
+  }
   .data {
     width: 100%;
     padding-left: 30px;
@@ -182,6 +186,30 @@
     }
     input:invalid {
       border: 2px solid rgba(13, 73, 135, 30);
+    }
+  }
+  .block-img {
+    display: flex;
+  }
+  .img {
+    position: relative;
+    width: 200px;
+    margin: 10px;
+    &:after {
+      position: absolute;
+      bottom: 0;
+      right: 10px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-shadow: 1px 1px #000;
+    }
+    &.-good:after {
+      content: 'OK';
+      color: greenyellow;
+    }
+    &.-bad:after {
+      content: 'BAD';
+      color: red;
     }
   }
   @media only screen and (max-width: 1024px) {

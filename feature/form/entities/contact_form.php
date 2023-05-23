@@ -102,6 +102,20 @@ class ContactForm extends Form {
 
     EOD;
   }
-}
 
+  /** フォーム内容を記録するPOST先URLを返す */
+  function getPostUrl(): string {
+    return 'https://script.google.com/macros/s/AKfycbynJWkbc-CRAI_my08drf0g2s4KdnEmlxRxp1jlW2njgb8ukbLAO2_PtxF3VzGKhaFFjA/exec';
+  }
+
+  /** フォーム内容を返す */
+  function getPostData(): array {
+    return array(
+      'name' => $this->name,
+      'tel' => $this->tel,
+      'applicantEmail' => $this->applicantEmail,
+      'detail' => $this->detail,
+    );
+  }
+}
 ?>

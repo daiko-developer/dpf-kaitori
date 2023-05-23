@@ -46,6 +46,29 @@ if($_SESSION['token'] === $_POST['token']){
 
     if (mb_send_mail($companyEmail, $mailTitle1, $body1, $header1)) { // 自分に送信
 
+      //POST送信先
+      $post_url = $form->getPostUrl();
+      //POSTデータ
+      $post_data = $form->getPostData();
+      //cURL
+      $ch = curl_init();
+      curl_setopt_array($ch, [
+          CURLOPT_URL => $post_url,
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_POST => true,
+          CURLOPT_POSTFIELDS => json_encode($post_data),
+      ]);
+      $result = curl_exec($ch);
+      curl_close($ch);
+
+      //実行結果（JSON）を配列に変換する
+      $result = json_decode($result, true);
+      //POSTデータ（JSON）を配列に変換する
+      $contents = json_decode($result['postData']['contents'], true);
+
+      // var_dump($contents);
+
       // 終了処理開始 セッションの破棄
       $_SESSION = [];
       if (isset($_COOKIE[session_name()])) {  // #5
