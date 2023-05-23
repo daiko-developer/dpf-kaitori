@@ -296,8 +296,16 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
               <dd class="data">買取可能ですが、状態によって減額になる場合があります。</dd>
             </div>
             <div class="item">
-              <dt class="head">配送に関して</dt>
-              <dd class="data"></dd>
+              <dt class="head">運送会社に指定はありますか？</dt>
+              <dd class="data">
+                ヤマト運輸・佐川急便をご利用ください。配送料は弊社が負担させていただきますので着払いでお送りください。ただし、ダンボール１個あたりの送料が5,000円を超える場合は、超過分を買取金額から引かせていただきます。
+              </dd>
+            </div>
+            <div class="item">
+              <dt class="head">買取してもらったDPFを返してもらうことはできますか？</dt>
+              <dd class="data">
+                申し訳ございません、返却はできませんのでご了承ください。
+              </dd>
             </div>
           </dl>
         </div>
