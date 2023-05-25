@@ -85,9 +85,9 @@ function appendChildToPriceTable(data) {
   for (let i = 0; i < filteredDataList.length; i++) {
     value = filteredDataList[i];
 
-    var price = value.ラクラク買取の買取金額;
-    if (!isNaN(value.ラクラク買取の買取金額)) {
-      price = changeYen(value.ラクラク買取の買取金額);
+    var price = value.ラクラク買取の買取金額1;
+    if (!isNaN(value.ラクラク買取の買取金額1)) {
+      price = changeYen(value.ラクラク買取の買取金額1);
     }
 
     var newRow = document.createElement("tr");
@@ -134,9 +134,9 @@ document.getElementById("button-satei").onclick = function() {
   for (let i = 0; i < priceData.length; i++) {
     value = priceData[i];
 
-    var price = value.ラクラク買取の買取金額;
-    if (!isNaN(value.ラクラク買取の買取金額)) {
-      price = changeYen(value.ラクラク買取の買取金額);
+    var price = value.ラクラク買取の買取金額1;
+    if (!isNaN(value.ラクラク買取の買取金額1)) {
+      price = changeYen(value.ラクラク買取の買取金額1);
     }
 
     if (value.車名 == targetCar && value.エンジン型式 == targetEngine) {
