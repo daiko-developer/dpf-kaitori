@@ -690,6 +690,7 @@ button[href*=tel] {
 .wrapper {
   min-width: 320px;
   overflow: hidden;
+  background-color: #F7F7F7;
 }
 
 .inner500,
@@ -1435,6 +1436,9 @@ gnav
 .homevisual .slick-slide {
   height: auto !important;
 }
+.homevisual .slick-dots {
+  bottom: -40px;
+}
 .homevisual .btn-slick {
   position: absolute;
   top: 50%;
@@ -1523,6 +1527,7 @@ gnav
 }
 .homevisual .box02 {
   height: 100%;
+  background-color: #fff;
 }
 .homevisual .box02:after {
   background: rgb(229, 248, 246);
@@ -1875,6 +1880,7 @@ gnav
   width: 100%;
   border: 1px solid #999999;
   border-collapse: collapse;
+  background-color: #fff;
 }
 .table-kaitori-price .datattl01,
 .table-kaitori-price .data {
@@ -1888,11 +1894,18 @@ gnav
   color: #fff;
   font-weight: bold;
 }
-.table-kaitori-price .data.-price {
+.table-kaitori-price .price-item {
+  display: block;
+}
+.table-kaitori-price .price {
   text-align: right;
   font-weight: bold;
   color: red;
   font-size: 1.2rem;
+}
+.table-kaitori-price .engine-info {
+  font-weight: normal;
+  font-size: 16px;
 }
 @media only screen and (max-width: 1024px) {
   .table-kaitori-price .datattl01,
@@ -1904,9 +1917,11 @@ gnav
   .table-kaitori-price .datattl01,
 .table-kaitori-price .data {
     padding: 5px 2px;
+    font-size: 12px;
   }
   .table-kaitori-price .data.-price {
-    font-size: 1rem;
+    font-size: 16px;
+    min-width: 80px;
   }
 }
 
@@ -1937,6 +1952,10 @@ gnav
 }
 .slick01 .item {
   margin: 0 30px;
+  background-color: #fff;
+}
+.slick01 .block {
+  padding: 5px;
 }
 .slick01 .img {
   width: 100%;
@@ -1948,7 +1967,6 @@ gnav
      object-fit: cover;
 }
 .slick01 .head {
-  margin-top: 20px;
   font-weight: bold;
   font-size: 20px;
 }
@@ -2107,9 +2125,7 @@ gnav
 }
 .home-satei .ttl,
 .home-satei .head,
-.home-satei .txt,
-.home-satei .txt01,
-.home-satei .txt02 {
+.home-satei .txt {
   color: #fff;
 }
 .home-satei .list {
@@ -2168,31 +2184,59 @@ gnav
   top: 5px;
   left: 5px;
 }
-.home-satei .price {
+.home-satei .block-price {
   margin-top: 30px;
   text-align: center;
 }
-.home-satei .txt01 {
+.home-satei .datalist {
+  background: #fff;
+  padding: 30px 50px;
+  border-radius: 5px;
+  max-width: 630px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.home-satei .dataitem {
+  margin: 0 20px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.home-satei .dataitem.-price {
+  width: 100%;
+  margin: 0 0 20px 0;
+  display: block;
+}
+.home-satei .datattl {
   font-weight: bold;
-  margin: 10px;
 }
-.home-satei .txt01.-price {
-  margin-bottom: 20px;
-}
-.home-satei .txt02 {
+.home-satei .price {
   font-weight: bold;
-  margin: 10px;
-  display: inline-block;
-}
-.home-satei .txtin02 {
-  font-size: 1.5rem;
-}
-.home-satei .txtin03 {
   color: red;
   font-size: 3rem;
-  background: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
+}
+.home-satei .price-info {
+  color: red;
+  display: inline-block;
+}
+.home-satei .common-data {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 .home-satei .txt {
   margin-bottom: 10px;
@@ -2216,6 +2260,9 @@ gnav
 @media only screen and (max-width: 599px) {
   .home-satei .item {
     display: block;
+  }
+  .home-satei .datalist {
+    padding: 20px 10px;
   }
 }
 
@@ -2255,6 +2302,7 @@ gnav
 .list-home08 {
   max-width: 1100px;
   margin: 0 auto;
+  background-color: #fff;
 }
 .list-home08 .item {
   display: -webkit-box;

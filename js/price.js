@@ -85,10 +85,10 @@ function appendChildToPriceTable(data) {
   for (let i = 0; i < filteredDataList.length; i++) {
     value = filteredDataList[i];
 
-    var price = value.ラクラク買取の買取金額1;
-    if (!isNaN(value.ラクラク買取の買取金額1)) {
-      price = changeYen(value.ラクラク買取の買取金額1);
-    }
+    const price1 = value.ラクラク買取の買取金額1 == "" ? "" : changeYen(value.ラクラク買取の買取金額1);
+    const engineInfo1 = value.DPFドットコムの買取金額1のエンジン詳細 == "" ? "" : `(${value.DPFドットコムの買取金額1のエンジン詳細})`
+    const price2 = value.ラクラク買取の買取金額2 == "" ? "" : changeYen(value.ラクラク買取の買取金額2);
+    const engineInfo2 = value.DPFドットコムの買取金額2のエンジン詳細 == "" ? "" : `(${value.DPFドットコムの買取金額2のエンジン詳細})`
 
     var newRow = document.createElement("tr");
     if (i == 0) {
@@ -96,13 +96,21 @@ function appendChildToPriceTable(data) {
         <td class="data" rowspan=${filteredDataList.length}>${value.区分}</td>
         <td class="data">${value.車名}</td>
         <td class="data">${value.エンジン型式}</td>
-        <td class="data -price">${price}</td>
+        <td class="data">${value.パーツ}</td>
+        <td class="data -price">
+          <span class="price-item"><span class="price">${price1}</span><span class="engine-info">${engineInfo1}</span></span>
+          <span class="price-item"><span class="price">${price2}</span><span class="engine-info">${engineInfo2}</span></span>
+        </td>
       `;
     } else {
       newRow.innerHTML = `
         <td class="data">${value.車名}</td>
         <td class="data">${value.エンジン型式}</td>
-        <td class="data -price">${price}</td>
+        <td class="data">${value.パーツ}</td>
+        <td class="data -price">
+          <span class="price-item"><span class="price">${price1}</span><span class="engine-info">${engineInfo1}</span></span>
+          <span class="price-item"><span class="price">${price2}</span><span class="engine-info">${engineInfo2}</span></span>
+        </td>
       `;
     }
     priceTableBody.appendChild(newRow);
@@ -134,19 +142,58 @@ document.getElementById("button-satei").onclick = function() {
   for (let i = 0; i < priceData.length; i++) {
     value = priceData[i];
 
-    var price = value.ラクラク買取の買取金額1;
-    if (!isNaN(value.ラクラク買取の買取金額1)) {
-      price = changeYen(value.ラクラク買取の買取金額1);
-    }
+    const price1 = value.ラクラク買取の買取金額1 == "" ? "" : changeYen(value.ラクラク買取の買取金額1);
+    const engineInfo1 = value.DPFドットコムの買取金額1のエンジン詳細 == "" ? "" : `(${value.DPFドットコムの買取金額1のエンジン詳細})`
 
     if (value.車名 == targetCar && value.エンジン型式 == targetEngine) {
       priceHtml = document.getElementById("satei-price");
-      priceHtml.innerHTML = `
-      <div class="txt01 -price">標準買取価格：<span class="txtin03">${price}</span></div>
-      <span class="txt02">車名：<span class="txtin02">${value.車名}</span></span>
-      <span class="txt02">エンジン型式：<span class="txtin02">${value.エンジン型式}</span></span>
-      <div class="txt01">パーツ：<span class="txtin02">${value.パーツ}</span></div>
-      `;
+      if (value.ラクラク買取の買取金額2 != "") {
+        const price2 = changeYen(value.ラクラク買取の買取金額2);
+        const engineInfo2 = value.DPFドットコムの買取金額2のエンジン詳細 == "" ? "" : `(${value.DPFドットコムの買取金額2のエンジン詳細})`
+        priceHtml.innerHTML = `
+        <dl class="datalist">
+          <div class="dataitem -price">
+            <dt class="datattl">標準買取価格：</dt>
+            <dd class="data"><span class="price">${price1}</span><span class="price-info">${engineInfo1}</span></dd>
+            <div class="">又は</div>
+            <dd class="data"><span class="price">${price2}</span><span class="price-info">${engineInfo2}</span></dd>
+          </div>
+          <div class="dataitem">
+            <dt class="datattl">車名：</dt>
+            <dd class="data"><span class="common-data">${value.車名}</span></dd>
+          </div>
+          <div class="dataitem">
+            <dt class="datattl">エンジン型式：</dt>
+            <dd class="data"><span class="common-data">${value.エンジン型式}</span></dd>
+          </div>
+          <div class="dataitem">
+            <dt class="datattl">パーツ：</dt>
+            <dd class="data"><span class="common-data">${value.パーツ}</span></dd>
+          </div>
+        </dl>
+        `;
+      } else {
+        priceHtml.innerHTML = `
+        <dl class="datalist">
+          <div class="dataitem -price">
+            <dt class="datattl">標準買取価格：</dt>
+            <dd class="data"><span class="price">${price1}</span><span class="price-info">${engineInfo1}</span></dd>
+          </div>
+          <div class="dataitem">
+            <dt class="datattl">車名：</dt>
+            <dd class="data"><span class="common-data">${value.車名}</span></dd>
+          </div>
+          <div class="dataitem">
+            <dt class="datattl">エンジン型式：</dt>
+            <dd class="data"><span class="common-data">${value.エンジン型式}</span></dd>
+          </div>
+          <div class="dataitem">
+            <dt class="datattl">パーツ：</dt>
+            <dd class="data"><span class="common-data">${value.パーツ}</span></dd>
+          </div>
+        </dl>
+        `;
+      }
     }
   }
 };

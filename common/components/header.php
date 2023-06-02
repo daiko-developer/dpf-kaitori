@@ -6,7 +6,7 @@
     <div class="right">
       <div class="block-tel">
         <div class="txt">お電話でのお問い合わせ</div>
-        <div class="tel"><a href="tel:0722966752">072-296-6752</a></div>
+        <div class="tel"><a href="tel:0723493548">072-349-3548</a></div>
         <div class="txt02">営業時間 9:00〜18:00 (土日祝 ※年末年始･お盆除く)</div>
       </div>
       <div class="block-btn">
@@ -40,7 +40,7 @@
   <div class="fix-bottom">
     <div class="item kaitori"><a href="<?php echo $path; ?>pages/purchase">買取申込</a></div>
     <div class="item contact"><a href="<?php echo $path; ?>pages/contact">お問い合わせ</a></div>
-    <div class="item tel"><a href="tel:0722966752">お問い合わせ</a></div>
+    <div class="item tel"><a href="tel:0723493548">お問い合わせ</a></div>
   </div>
   <div class="totop"></div>
 </header>

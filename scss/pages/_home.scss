@@ -9,6 +9,9 @@
   .slick-slide {
     height: auto !important;
   }
+  .slick-dots {
+    bottom: -40px;
+  }
   .btn-slick {
     position: absolute;
     top: 50%;
@@ -98,6 +101,7 @@
   }
   .box02 {
     height: 100%;
+    background-color: #fff;
     &:after {
       background: rgba(229, 248, 246, 1);
     }
@@ -436,6 +440,7 @@
     width: 100%;
     border: 1px solid #999999;
     border-collapse: collapse;
+    background-color: #fff;
   }
   .datattl01,
   .data {
@@ -449,11 +454,18 @@
     color: #fff;
     font-weight: bold;
   }
-  .data.-price {
+  .price-item {
+    display: block;
+  }
+  .price {
     text-align: right;
     font-weight: bold;
     color: red;
     font-size: 1.2rem;
+  }
+  .engine-info {
+    font-weight: normal;
+    font-size: 16px;
   }
   @media only screen and (max-width: 1024px) {
     .datattl01,
@@ -465,9 +477,11 @@
     .datattl01,
     .data {
       padding: 5px 2px;
+      font-size: 12px;
     }
     .data.-price {
-      font-size: 1rem;
+      font-size: 16px;
+      min-width: 80px;
     }
   }
 }
@@ -498,6 +512,10 @@
   }
   .item {
     margin: 0 30px;
+    background-color: #fff;
+  }
+  .block {
+    padding: 5px;
   }
   .img {
     width: 100%;
@@ -509,7 +527,6 @@
     object-fit: cover;
   }
   .head {
-    margin-top: 20px;
     font-weight: bold;
     font-size: 20px;
   }
@@ -660,9 +677,7 @@
   padding: 80px 0;
   .ttl,
   .head,
-  .txt,
-  .txt01,
-  .txt02 {
+  .txt {
     color: #fff;
   }
   .list {
@@ -715,31 +730,47 @@
     top: 5px;
     left: 5px;
   }
-  .price {
+  .block-price {
     margin-top: 30px;
     text-align: center;
   }
-  .txt01 {
-    font-weight: bold;
-    margin: 10px;
+  .datalist {
+    background: #fff;
+    padding: 30px 50px;
+    border-radius: 5px;
+    max-width: 630px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .dataitem {
+    margin: 0 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     &.-price {
-      margin-bottom: 20px;
+      width: 100%;
+      margin: 0 0 20px 0;
+      display: block;
     }
   }
-  .txt02 {
+  .datattl {
     font-weight: bold;
-    margin: 10px;
-    display: inline-block;
   }
-  .txtin02 {
-    font-size: 1.5rem;
-  }
-  .txtin03 {
+  .price {
+    font-weight: bold;
     color: red;
     font-size: 3rem;
-    background: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+  }
+  .price-info {
+    color: red;
+    display: inline-block;
+  }
+  .common-data {
+    font-size: 1.5rem;
+    font-weight: bold;
   }
   .txt {
     margin-bottom: 10px;
@@ -759,6 +790,9 @@
   @media only screen and (max-width: 599px) {
     .item {
       display: block;
+    }
+    .datalist {
+      padding: 20px 10px;
     }
   }
 }
@@ -797,6 +831,7 @@
 .list-home08 {
   max-width: 1100px;
   margin: 0 auto;
+  background-color: #fff;
   .item {
     display: flex;
     border-bottom: 1px solid #999999;

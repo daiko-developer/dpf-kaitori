@@ -122,7 +122,7 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
       </section>
 
       <section id="price" class="kaitori-price area">
-        <div class="inner1100">
+        <div class="inner1500">
           <h2 class="ttl ttl-cmn01">買取の限界に挑戦！<br>高価買取リスト（2023/5/XX最新版）</h2>
           <div class="list table-kaitori-price">
             <div class="wrap">
@@ -132,6 +132,7 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
                     <th class="datattl01">分類</th>
                     <th class="datattl01">車種</th>
                     <th class="datattl01">エンジン型式</th>
+                    <th class="datattl01">パーツ</th>
                     <th class="datattl01">買取価格</th>
                   </tr>
                 </thead>
@@ -148,21 +149,27 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
           <ul class="slick01">
             <li class="item up-adb up-mx-10 up-mx-5@sp">
               <div class="img"><img src="<?php echo $path; ?>images/home/img05.png" alt=""></div>
-              <h3 class="head">三菱ふそう　キャンター</h3>
-              <div class="model">4M50</div>
-              <div class="price"><span class="pricein">¥</span>60,000</div>
+              <div class="block">
+                <h3 class="head">三菱ふそう　キャンター</h3>
+                <div class="model">4M50</div>
+                <div class="price"><span class="pricein">¥</span>60,000</div>
+              </div>
             </li>
             <li class="item up-adb up-mx-10 up-mx-5@sp">
               <div class="img"><img src="<?php echo $path; ?>images/home/img06.png" alt=""></div>
-              <h3 class="head">日野・トヨタ　デュトロ</h3>
-              <div class="model">XZC605</div>
-              <div class="price"><span class="pricein">¥</span>50,000</div>
+              <div class="block">
+                <h3 class="head">日野・トヨタ　デュトロ</h3>
+                <div class="model">XZC605</div>
+                <div class="price"><span class="pricein">¥</span>50,000</div>
+              </div>
             </li>
             <li class="item up-adb up-mx-10 up-mx-5@sp">
               <div class="img"><img src="<?php echo $path; ?>images/home/img07.png" alt=""></div>
-              <h3 class="head">三菱ふそう ファイター</h3>
-              <div class="model">6M60</div>
-              <div class="price"><span class="pricein">¥</span>80,000</div>
+              <div class="block">
+                <h3 class="head">三菱ふそう ファイター</h3>
+                <div class="model">6M60</div>
+                <div class="price"><span class="pricein">¥</span>80,000</div>
+              </div>
             </li>
           </ul>
         </div>
@@ -195,7 +202,7 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
                       〒590-0122<br>
                       堺市南区釜室145-6<br>
                       ㈲ミツ・トレーディング ラクラク買取宛<br>
-                      TEL <a href="tel:">0000-00-0000</a>
+                      TEL <a href="tel:0723493548">072-349-3548</a>
                     </p>
                   </div>
                   <div class="img"><img class="" src="<?php echo $path; ?>images/home/img10.png" alt="書類準備"></div>
@@ -247,7 +254,7 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
                       〒590-0122<br>
                       堺市南区釜室145-6<br>
                       ㈲ミツ・トレーディング ラクラク買取宛<br>
-                      TEL <a href="tel:">0000-00-0000</a>
+                      TEL <a href="tel:0723493548">072-349-3548</a>
                     </p>
                   </div>
                   <div class="img"><img class="" src="<?php echo $path; ?>images/home/img10.png" alt="書類準備"></div>
@@ -372,7 +379,7 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
             <div class="item">
               <dt class="datattl">TEL</dt>
               <dd class="data">
-                <a href="tel:0722966752">072-296-6752</a>
+                <a href="tel:0723493548">072-349-3548</a>
               </dd>
             </div>
             <div class="item">

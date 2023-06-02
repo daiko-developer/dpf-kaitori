@@ -18,5 +18,4 @@
     <div class="btn01-2"><img src="<?php echo $path; ?>images/home/btn01-hover.png" alt="今すぐ確認"></div>
   </div>
 </div>
-<div id="satei-price" class="price">
-</div>
+<div id="satei-price" class="block-price"></div>
