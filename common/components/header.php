@@ -32,8 +32,8 @@
         <li class="item01"><a href="<?php echo $path; ?>#satei">０秒見積り</a></li>
         <li class="item01"><a href="<?php echo $path; ?>#application">買取申込</a></li>
         <li class="item01"><a href="<?php echo $path; ?>#company">会社情報</a></li>
-        <li class="item01"><a href="<?php echo $path; ?>pages/privacy_policy.html">プライバシーポリシー</a></li>
-        <li class="item01"><a href="<?php echo $path; ?>pages/contact_form.php">お問い合わせ</a></li>
+        <li class="item01"><a href="<?php echo $path; ?>pages/privacy_policy">プライバシーポリシー</a></li>
+        <li class="item01"><a href="<?php echo $path; ?>pages/contact">お問い合わせ</a></li>
       </ul>
     </div>
   </nav>

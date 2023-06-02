@@ -6,7 +6,7 @@
   <div class="fnav">
     <div class="wrap inner1500">
       <ul class="list01">
-        <li class="item"><a href="<?php echo $path; ?>pages/privacy_policy.html">プライバシーポリシー</a></li>
+        <li class="item"><a href="<?php echo $path; ?>pages/privacy_policy">プライバシーポリシー</a></li>
         <li class="item"><a href="<?php echo $path; ?>#company">会社情報</a></li>
       </ul>
       <!-- <dl class="list02">
