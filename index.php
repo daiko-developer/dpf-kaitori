@@ -292,7 +292,7 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
           <dl class="list-home06">
             <div class="item">
               <dt class="head">DPFとは何ですか？</dt>
-              <dd class="data">ディーゼルパティキュレートフィルターというマフラーで、排気ガスに含まれるPMを捕集し、除去を目的としています。<br>DPF,DPD等の説明を追加</dd>
+              <dd class="data">ディーゼルパティキュレートフィルターというマフラーで、排気ガスに含まれるPMを捕集し、除去を目的としています。</dd>
             </div>
             <div class="item">
               <dt class="head">見積り料金は発生しますか？</dt>
