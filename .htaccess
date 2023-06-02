@@ -10,5 +10,5 @@ SetEnv APP_ENV 'prod'
 # Basic認証
 AuthType Basic
 AuthName "Please enter your ID and password"
-AuthUserFile "/home/users/1/candypop.jp-rakurakukaitori/web/test"
+AuthUserFile "/home/users/1/candypop.jp-rakurakukaitori/web/test/.htpasswd"
 require valid-user
