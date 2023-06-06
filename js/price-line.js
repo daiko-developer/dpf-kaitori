@@ -61,14 +61,14 @@ document.getElementById("button-satei").onclick = function() {
   for (let i = 0; i < priceData.length; i++) {
     value = priceData[i];
 
-    const price1 = value.ラクラク買取の買取金額1 == "" ? "" : changeYen(value.ラクラク買取の買取金額1);
-    const engineInfo1 = value.DPFドットコムの買取金額1のエンジン詳細 == "" ? "" : `(${value.DPFドットコムの買取金額1のエンジン詳細})`
+    const price1 = value.ラクラク買取の確定買取金額1 == "" ? "" : changeYen(value.ラクラク買取の確定買取金額1);
+    const engineInfo1 = value.ラクラク買取の買取金額1のエンジン詳細 == "" ? "" : `(${value.ラクラク買取の買取金額1のエンジン詳細})`
 
     if (value.車名 == targetCar && value.エンジン型式 == targetEngine) {
       priceHtml = document.getElementById("satei-price");
-      if (value.ラクラク買取の買取金額2 != "") {
-        const price2 = changeYen(value.ラクラク買取の買取金額2);
-        const engineInfo2 = value.DPFドットコムの買取金額2のエンジン詳細 == "" ? "" : `(${value.DPFドットコムの買取金額2のエンジン詳細})`
+      if (value.ラクラク買取の確定買取金額2 != "") {
+        const price2 = changeYen(value.ラクラク買取の確定買取金額2);
+        const engineInfo2 = value.ラクラク買取の買取金額2のエンジン詳細 == "" ? "" : `(${value.ラクラク買取の買取金額2のエンジン詳細})`
         priceHtml.innerHTML = `
         <dl class="datalist">
           <div class="dataitem -price">
