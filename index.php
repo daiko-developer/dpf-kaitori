@@ -187,7 +187,7 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
                   <div class="block-txt">
                     <h3 class="head">申込</h3>
                     <p class="txt">
-                      <a href="<?php echo $path; ?>pages/purchase_form.php" class="link">買取申込フォーム</a>もしくは<a href="#line" class="link">LINE</a>の買取申込ページから申込を行ってください。<br><br>
+                      <a href="<?php echo $path; ?>pages/purchase" class="link">買取申込フォーム</a>もしくは<a href="#line" class="link">LINE</a>の買取申込ページから申込を行ってください。<br><br>
                       ※個人のお客様は本人確認書類が初回お取引時に必要です。買取申込フォームで本人確認書類をアップロードしてください。<br>
                     </p>
                   </div>
