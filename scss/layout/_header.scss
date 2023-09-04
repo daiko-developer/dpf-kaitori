@@ -33,13 +33,14 @@
       padding: 10px 0;
     }
     img {
-      max-height: 80px;
+      max-height: 50px;
     }
   }
   .left {
     display: flex;
     align-items: center;
     padding-left: 20px;
+    padding-right: 10px;
   }
   .right {
     display: flex;
@@ -119,15 +120,18 @@
     }
   }
   @media only screen and (max-width: 1024px) {
+    .left {
+      padding-left: 10px;
+    }
     .block-tel {
       display: none;
     }
   }
   @media only screen and (max-width: 599px) {
     .logo img {
-      max-height: 50px;
+      max-height: 40px;
     }
-    .btn.-kaitori,
+    .btn.-kaitori,　
     .btn.-contact {
       display: none;
     }

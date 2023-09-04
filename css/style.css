@@ -191,7 +191,7 @@ button[href*=tel] {
 }
 @media (max-width: 1024px) {
   a[href*=tel],
-button[href*=tel] {
+  button[href*=tel] {
     pointer-events: initial !important;
   }
 }
@@ -771,16 +771,16 @@ button[href*=tel] {
 
 @media (max-width: 1024px) {
   .inner500,
-.inner600,
-.inner700,
-.inner800,
-.inner900,
-.inner,
-.inner1100,
-.inner1200,
-.inner1300,
-.inner1400,
-.inner1500 {
+  .inner600,
+  .inner700,
+  .inner800,
+  .inner900,
+  .inner,
+  .inner1100,
+  .inner1200,
+  .inner1300,
+  .inner1400,
+  .inner1500 {
     width: 96%;
     max-width: 768px;
   }
@@ -825,7 +825,7 @@ button[href*=tel] {
   padding: 10px 0;
 }
 .header .logo img {
-  max-height: 80px;
+  max-height: 50px;
 }
 .header .left {
   display: -webkit-box;
@@ -835,6 +835,7 @@ button[href*=tel] {
       -ms-flex-align: center;
           align-items: center;
   padding-left: 20px;
+  padding-right: 10px;
 }
 .header .right {
   display: -webkit-box;
@@ -925,16 +926,18 @@ button[href*=tel] {
   font-size: 0.8rem;
 }
 @media only screen and (max-width: 1024px) {
+  .header .left {
+    padding-left: 10px;
+  }
   .header .block-tel {
     display: none;
   }
 }
 @media only screen and (max-width: 599px) {
   .header .logo img {
-    max-height: 50px;
+    max-height: 40px;
   }
-  .header .btn.-kaitori,
-.header .btn.-contact {
+  .header .btn.-kaitori, .header 　 .btn.-contact {
     display: none;
   }
   .header .btn.-menu {
@@ -1772,7 +1775,7 @@ gnav
         flex-wrap: wrap;
   }
   .list-home-news .time,
-.list-home-news .head {
+  .list-home-news .head {
     width: 100%;
   }
 }
@@ -1864,7 +1867,7 @@ gnav
         flex-wrap: wrap;
   }
   .list-home-point .block-img,
-.list-home-point .block-txt {
+  .list-home-point .block-txt {
     width: 100%;
     padding: 0 20px;
   }
@@ -1909,13 +1912,13 @@ gnav
 }
 @media only screen and (max-width: 1024px) {
   .table-kaitori-price .datattl01,
-.table-kaitori-price .data {
+  .table-kaitori-price .data {
     padding: 10px;
   }
 }
 @media only screen and (max-width: 599px) {
   .table-kaitori-price .datattl01,
-.table-kaitori-price .data {
+  .table-kaitori-price .data {
     padding: 5px 2px;
     font-size: 12px;
   }
@@ -2053,6 +2056,9 @@ gnav
 }
 .list-home-flow .txt {
   margin-top: 30px;
+}
+.list-home-flow .txt.-attention {
+  color: red;
 }
 .list-home-flow .link {
   color: #0d4987;
@@ -2390,7 +2396,7 @@ gnav
         flex-wrap: wrap;
   }
   .line-contact .img,
-.line-contact .friend-link {
+  .line-contact .friend-link {
     width: 100%;
   }
   .line-contact .img {

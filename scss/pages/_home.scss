@@ -606,6 +606,9 @@
   .txt {
     margin-top: 30px;
   }
+  .txt.-attention {
+    color: red;
+  }
   .link {
     color: $color1;
     text-decoration: underline;

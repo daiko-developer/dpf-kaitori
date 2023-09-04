@@ -187,7 +187,7 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
                   <div class="block-txt">
                     <h3 class="head">申込</h3>
                     <p class="txt">
-                      <a href="<?php echo $path; ?>pages/purchase_form.php" class="link">買取申込フォーム</a>もしくは<a href="#line" class="link">LINE</a>の買取申込ページから申込を行ってください。<br><br>
+                      <a href="<?php echo $path; ?>pages/purchase" class="link">買取申込フォーム</a>もしくは<a href="#line" class="link">LINE</a>の買取申込ページから申込を行ってください。<br><br>
                       ※個人のお客様は本人確認書類が初回お取引時に必要です。買取申込フォームで本人確認書類をアップロードしてください。<br>
                     </p>
                   </div>
@@ -199,10 +199,19 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
                     <p class="txt">
                       DPFを下記まで着払いでご発送下さい。<br>
                       他に特に同封するものはございませんので、DPFのみお送りください。<br><br>
-                      〒590-0122<br>
-                      堺市南区釜室145-6<br>
-                      ㈲ミツ・トレーディング ラクラク買取宛<br>
-                      TEL <a href="tel:0723493548">072-349-3548</a>
+                      〒590-0121<br>
+                      大阪府堺市南区片蔵486-1<br>
+                      リビルトワールド DPFラクラク買取宛<br>
+                      TEL <a href="tel:0723493548">072-349-3548</a><br>
+                      <br>
+                      【注意事項】<br>
+                      ・ヤマト運輸・佐川急便をご利用ください。配送料は弊社が負担させていただきますので着払いでお送りください（ヤマト運輸・佐川急便以外で送った場合は送料無料の対象外になります）。<br>
+                      ・ダンボール1個あたりの送料が5,000円を超える場合は、超過分を買取金額から引かせていただきます。1個当たりの送料が5000円を超えない限り、何口でも当社にて送料負担いたします。<br>
+                      ・発送前に可能な限りセンサー・ブラケット類を取り外してご発送ください。<br>
+                      ・梱包はダンボールで220サイズ程度に収めていただき、センサーや差圧パイプが破損しないようしっかりと梱包してください。<br>
+                      ・お客様のご都合による返送（誤配送・買取不可DPF等の返送など）は当社での送料負担は致しかねます。<br>
+                      ・SCR付きDPFユニットや、大型DPFユニットでの発送はお断りしております。DPF（DOCとDPFが一体となっているものを含む）のみに分解の上、DPFのみでご発送ください。<br>
+                      ・パレットやコンテナなどの荷姿での発送はご遠慮ください。
                     </p>
                   </div>
                   <div class="img"><img class="" src="<?php echo $path; ?>images/home/img10.png" alt="書類準備"></div>
@@ -211,7 +220,10 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
                   <div class="block-txt">
                     <h3 class="head">査定</h3>
                     <p class="txt">
-                      到着したDPFの状態を確認後、査定価格をお知らせいたします。
+                      到着したDPFの状態を確認後、査定価格をお知らせいたします。<br>
+                      <br>
+                      【注意事項】<br>
+                      ・DPF内の詰まりがひどい場合は、追加でお時間いただく場合がございます。
                     </p>
                   </div>
                   <div class="img"><img class="" src="<?php echo $path; ?>images/home/img11.png" alt="書類準備"></div>
@@ -221,9 +233,11 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
                     <h3 class="head">お振込み</h3>
                     <p class="txt">
                       査定価格に同意頂けましたら、即日、ご指定の口座にお振り込みいたします。<br><br>
+                      <br>
                       【注意事項】<br>
-                      DPFが再使用できる場合と、そうでない場合では買取価格に差が出ます。<br>
-                      あくまでも、買取価格表は再使用可能なＤＰＦの買取価格です。
+                      ・DPFが再使用できる場合と、そうでない場合では買取価格に差が出ます。あくまでも、買取価格表は再使用可能なDPFの買取価格です。<br>
+                      ・振込み手数料はお客様ご負担にてお願いしております。<br>
+                      ・ご返送はお振込確認後に行います。お振込みが難しくお急ぎの場合は代引き配送も承っております(別途代引き手数料を頂きます)。
                     </p>
                   </div>
                   <div class="img"><img class="" src="<?php echo $path; ?>images/home/img12.png" alt="書類準備"></div>
@@ -240,9 +254,9 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
                     <p class="txt">
                       買取依頼書をダウンロードして必要事項ご記入してください。また合わせて本人確認書類もご用意ください。<br>
                       ※個人のお客様は本人確認書類が初回お取引時に必要です。<br><br>
-                      買取依頼書は<a class="link" href="https://drive.google.com/uc?id=1reTXe9kV8KWHZH59qnJalvDE0r5h8UNi" target="_blank">こちら</a>から
+                      買取依頼書は<a class="link" href="https://drive.google.com/uc?id=17BahxJcsY3ZqYa7RlqkqGk0GL2vGOBfV" target="_blank">こちら</a>から
                     </p>
-                    <div class="thumbnail"><a href="https://drive.google.com/uc?id=1reTXe9kV8KWHZH59qnJalvDE0r5h8UNi" target="_blank"><img src="<?php echo $path; ?>images/home/img13.jpg" alt="買取依頼書"></a></div>
+                    <div class="thumbnail"><a href="https://drive.google.com/uc?id=17BahxJcsY3ZqYa7RlqkqGk0GL2vGOBfV" target="_blank"><img src="<?php echo $path; ?>images/home/img13.jpg" alt="買取依頼書"></a></div>
                   </div>
                   <div class="img"><img class="" src="<?php echo $path; ?>images/home/img09.png" alt="書類準備"></div>
                 </li>
@@ -251,10 +265,19 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
                     <h3 class="head">お客様から発送</h3>
                     <p class="txt">
                       買取依頼書と本人確認書類を同梱頂き、DPFを下記まで着払いでご発送下さい。<br><br>
-                      〒590-0122<br>
-                      堺市南区釜室145-6<br>
-                      ㈲ミツ・トレーディング ラクラク買取宛<br>
-                      TEL <a href="tel:0723493548">072-349-3548</a>
+                      〒590-0121<br>
+                      大阪府堺市南区片蔵486-1<br>
+                      リビルトワールド DPFラクラク買取宛<br>
+                      TEL <a href="tel:0723493548">072-349-3548</a><br>
+                      <br>
+                      【注意事項】<br>
+                      ・ヤマト運輸・佐川急便をご利用ください。配送料は弊社が負担させていただきますので着払いでお送りください（ヤマト運輸・佐川急便以外で送った場合は送料無料の対象外になります）。<br>
+                      ・ダンボール1個あたりの送料が5,000円を超える場合は、超過分を買取金額から引かせていただきます。1個当たりの送料が5000円を超えない限り、何口でも当社にて送料負担いたします。<br>
+                      ・発送前に可能な限りセンサー・ブラケット類を取り外してご発送ください。<br>
+                      ・梱包はダンボールで220サイズ程度に収めていただき、センサーや差圧パイプが破損しないようしっかりと梱包してください。<br>
+                      ・お客様のご都合による返送（誤配送・買取不可DPF等の返送など）は当社での送料負担は致しかねます。<br>
+                      ・SCR付きDPFユニットや、大型DPFユニットでの発送はお断りしております。DPF（DOCとDPFが一体となっているものを含む）のみに分解の上、DPFのみでご発送ください。<br>
+                      ・パレットやコンテナなどの荷姿での発送はご遠慮ください。
                     </p>
                   </div>
                   <div class="img"><img class="" src="<?php echo $path; ?>images/home/img10.png" alt="書類準備"></div>
@@ -263,7 +286,10 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
                   <div class="block-txt">
                     <h3 class="head">査定</h3>
                     <p class="txt">
-                      到着したDPFの状態を確認後、査定価格をお知らせいたします。
+                      到着したDPFの状態を確認後、査定価格をお知らせいたします。<br>
+                      <br>
+                      【注意事項】<br>
+                      ・DPF内の詰まりがひどい場合は、追加でお時間いただく場合がございます。
                     </p>
                   </div>
                   <div class="img"><img class="" src="<?php echo $path; ?>images/home/img11.png" alt="書類準備"></div>
@@ -272,10 +298,12 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
                   <div class="block-txt">
                     <h3 class="head">お振込み</h3>
                     <p class="txt">
-                      査定価格に同意頂けましたら、即日、ご指定の口座にお振り込みいたします。<br><br>
+                      査定価格に同意頂けましたら、即日、ご指定の口座にお振り込みいたします。<br>
+                      <br>
                       【注意事項】<br>
-                      DPFが再使用できる場合と、そうでない場合では買取価格に差が出ます。<br>
-                      あくまでも、買取価格表は再使用可能なＤＰＦの買取価格です。
+                      ・DPFが再使用できる場合と、そうでない場合では買取価格に差が出ます。あくまでも、買取価格表は再使用可能なDPFの買取価格です。<br>
+                      ・振込み手数料はお客様ご負担にてお願いしております。<br>
+                      ・ご返送はお振込確認後に行います。お振込みが難しくお急ぎの場合は代引き配送も承っております(別途代引き手数料を頂きます)。
                     </p>
                   </div>
                   <div class="img"><img class="" src="<?php echo $path; ?>images/home/img12.png" alt="書類準備"></div>
@@ -305,7 +333,7 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
             <div class="item">
               <dt class="head">運送会社に指定はありますか？</dt>
               <dd class="data">
-                ヤマト運輸・佐川急便をご利用ください。配送料は弊社が負担させていただきますので着払いでお送りください。ただし、ダンボール１個あたりの送料が5,000円を超える場合は、超過分を買取金額から引かせていただきます。
+                ヤマト運輸・佐川急便をご利用ください。配送料は弊社が負担させていただきますので着払いでお送りください（ヤマト運輸・佐川急便以外で送った場合は送料無料の対象外になります）。ただし、ダンボール1個あたりの送料が5,000円を超える場合は、超過分を買取金額から引かせていただきます。
               </dd>
             </div>
             <div class="item">
@@ -367,13 +395,13 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
             <div class="item">
               <dt class="datattl">会社名</dt>
               <dd class="data">
-                有限会社ミツ・トレーディング
+                株式会社リック・ジャパン
               </dd>
             </div>
             <div class="item">
               <dt class="datattl">住所</dt>
               <dd class="data">
-                大阪府堺市南区釜室890-5
+                大阪府堺市南区片蔵486-1
               </dd>
             </div>
             <div class="item">
@@ -385,7 +413,7 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
             <div class="item">
               <dt class="datattl">古物営業法の規定<span class="ttlin">に基づく表示</span></dt>
               <dd class="data">
-                有限会社ミツ・トレーディング<br>
+                株式会社リック・ジャパン<br>
                 大阪府公安委員会<br>
                 第62234R057273号
               </dd>
