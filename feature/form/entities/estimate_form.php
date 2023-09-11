@@ -1,6 +1,6 @@
 <?php
 include_once 'form.php';
-require_once '../../../common/util/escape.php';
+require_once __DIR__ . '../../../../common/util/escape.php';
 /** 画像見積りフォームのクラス */
 class EstimateForm extends Form {
   const SPREAD_SHEET_URL = "https://script.google.com/macros/s/AKfycbyNpcgR_0PRZbLFOsIoWDEHvJyHW0s2ZIv0JAh-wQckXEObTp0sMgx-ThVY-BJTnHKr/exec";

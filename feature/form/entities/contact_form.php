@@ -1,6 +1,6 @@
 <?php
 include_once 'form.php';
-require_once '../../../common/util/escape.php';
+require_once __DIR__ . '../../../../common/util/escape.php';
 /** お問い合わせフォームのクラス */
 class ContactForm extends Form {
   const SPREAD_SHEET_URL = "https://script.google.com/macros/s/AKfycbyPNB6eHyMs5aKuXNRp-NiSQ8HGx9noun3jnMPVYzDdGPneGBGtjt_LSfnYt8YaJY59/exec";

@@ -172,191 +172,45 @@
   <div class="block">
     <div class="head">買取希望DPF</div>
     <ul class="list03">
-      <li class="item03">
-        <div class="datattl">DPF１</div>
-        <ul class="list04">
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-type01">車両型式</label><span class="require">必須</span>
-            </div>
-            <div class="data04">
-              <input id="purchase-form-type01" class="input" type="text" name="dpfType01" placeholder="FE82DG" value="<?php if (isset($form->dpfType01)) {echo $form->dpfType01;} ?>" required>
-            </div>
-          </li>
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-car01">車台番号</label><span class="require">必須</span>
-            </div>
-            <div class="data04">
-              <input id="purchase-form-car01" class="input" type="text" name="dpfCar01" placeholder="ABC012-3456789" value="<?php if (isset($form->dpfCar01)) {echo $form->dpfCar01;} ?>" required>
-            </div>
-          </li>
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-number01">数量</label><span class="require">必須</span>
-            </div>
-            <div class="data04">
-              <input type="number" id="purchase-form-number01" class="input" name="dpfNumber01" value="<?php if (isset($form->dpfNumber01)) {echo $form->dpfNumber01;} ?>" required>
-            </div>
-          </li>
-          <li class="item04 -fullsize">
-            <div class="datattl04">
-              <label for="purchase-form-detail01">備考欄<br>(商品状態)</label>
-            </div>
-            <div class="data04">
-              <textarea id="purchase-form-detail01" name="dpfDetail01" placeholder="オイル漏れ、欠陥部品がある等" ><?php if (isset($form->dpfDetail01)) {echo $form->dpfDetail01;} ?></textarea>
-            </div>
-          </li>
-        </ul>
-      </li>
-      <li class="item03">
-        <div class="datattl">DPF２</div>
-        <ul class="list04">
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-type02">車両型式</label>
-            </div>
-            <div class="data04">
-              <input id="purchase-form-type02" class="input" type="text" name="dpfType02" placeholder="FE82DG" value="<?php if (isset($form->dpfType02)) {echo $form->dpfType02;} ?>">
-            </div>
-          </li>
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-car02">車台番号</label>
-            </div>
-            <div class="data04">
-              <input id="purchase-form-car02" class="input" type="text" name="dpfCar02" placeholder="ABC012-3456789" value="<?php if (isset($form->dpfCar02)) {echo $form->dpfCar02;} ?>">
-            </div>
-          </li>
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-number02">数量</label>
-            </div>
-            <div class="data04">
-              <input type="number" id="purchase-form-number02" class="input" name="dpfNumber02" value="<?php if (isset($form->dpfNumber02)) {echo $form->dpfNumber02;} ?>">
-            </div>
-          </li>
-          <li class="item04 -fullsize">
-            <div class="datattl04">
-              <label for="purchase-form-detail02">備考欄<br>(商品状態)</label>
-            </div>
-            <div class="data04">
-              <textarea id="purchase-form-detail02" name="dpfDetail02" placeholder="オイル漏れ、欠陥部品がある等" ><?php if (isset($form->dpfDetail02)) {echo $form->dpfDetail02;} ?></textarea>
-            </div>
-          </li>
-        </ul>
-      </li>
-      <li class="item03">
-        <div class="datattl">DPF３</div>
-        <ul class="list04">
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-type03">車両型式</label>
-            </div>
-            <div class="data04">
-              <input id="purchase-form-type03" class="input" type="text" name="dpfType03" placeholder="FE82DG" value="<?php if (isset($form->dpfType03)) {echo $form->dpfType03;} ?>">
-            </div>
-          </li>
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-car03">車台番号</label>
-            </div>
-            <div class="data04">
-              <input id="purchase-form-car03" class="input" type="text" name="dpfCar03" placeholder="ABC012-3456789" value="<?php if (isset($form->dpfCar03)) {echo $form->dpfCar03;} ?>">
-            </div>
-          </li>
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-number03">数量</label>
-            </div>
-            <div class="data04">
-              <input type="number" id="purchase-form-number03" class="input" name="dpfNumber03" value="<?php if (isset($form->dpfNumber03)) {echo $form->dpfNumber03;} ?>">
-            </div>
-          </li>
-          <li class="item04 -fullsize">
-            <div class="datattl04">
-              <label for="purchase-form-detail03">備考欄<br>(商品状態)</label>
-            </div>
-            <div class="data04">
-              <textarea id="purchase-form-detail03" name="dpfDetail03" placeholder="オイル漏れ、欠陥部品がある等" ><?php if (isset($form->dpfDetail03)) {echo $form->dpfDetail03;} ?></textarea>
-            </div>
-          </li>
-        </ul>
-      </li>
-      <li class="item03">
-        <div class="datattl">DPF４</div>
-        <ul class="list04">
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-type04">車両型式</label>
-            </div>
-            <div class="data04">
-              <input id="purchase-form-type04" class="input" type="text" name="dpfType04" placeholder="FE82DG" value="<?php if (isset($form->dpfType04)) {echo $form->dpfType04;} ?>">
-            </div>
-          </li>
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-car04">車台番号</label>
-            </div>
-            <div class="data04">
-              <input id="purchase-form-car04" class="input" type="text" name="dpfCar04" placeholder="ABC012-3456789" value="<?php if (isset($form->dpfCar04)) {echo $form->dpfCar04;} ?>">
-            </div>
-          </li>
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-number04">数量</label>
-            </div>
-            <div class="data04">
-              <input type="number" id="purchase-form-number04" class="input" name="dpfNumber04" value="<?php if (isset($form->dpfNumber04)) {echo $form->dpfNumber04;} ?>">
-            </div>
-          </li>
-          <li class="item04 -fullsize">
-            <div class="datattl04">
-              <label for="purchase-form-detail04">備考欄<br>(商品状態)</label>
-            </div>
-            <div class="data04">
-              <textarea id="purchase-form-detail04" name="dpfDetail04" placeholder="オイル漏れ、欠陥部品がある等" ><?php if (isset($form->dpfDetail04)) {echo $form->dpfDetail04;} ?></textarea>
-            </div>
-          </li>
-        </ul>
-      </li>
-      <li class="item03">
-        <div class="datattl">DPF５</div>
-        <ul class="list04">
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-type05">車両型式</label>
-            </div>
-            <div class="data04">
-              <input id="purchase-form-type05" class="input" type="text" name="dpfType05" placeholder="FE82DG" value="<?php if (isset($form->dpfType05)) {echo $form->dpfType05;} ?>">
-            </div>
-          </li>
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-car05">車台番号</label>
-            </div>
-            <div class="data04">
-              <input id="purchase-form-car05" class="input" type="text" name="dpfCar05" placeholder="ABC012-3456789" value="<?php if (isset($form->dpfCar05)) {echo $form->dpfCar05;} ?>">
-            </div>
-          </li>
-          <li class="item04">
-            <div class="datattl04">
-              <label for="purchase-form-number05">数量</label>
-            </div>
-            <div class="data04">
-              <input type="number" id="purchase-form-number05" class="input" name="dpfNumber05" value="<?php if (isset($form->dpfNumber05)) {echo $form->dpfNumber05;} ?>">
-            </div>
-          </li>
-          <li class="item04 -fullsize">
-            <div class="datattl04">
-              <label for="purchase-form-detail05">備考欄<br>(商品状態)</label>
-            </div>
-            <div class="data04">
-              <textarea id="purchase-form-detail05" name="dpfDetail05" placeholder="オイル漏れ、欠陥部品がある等" ><?php if (isset($form->dpfDetail05)) {echo $form->dpfDetail05;} ?></textarea>
-            </div>
-          </li>
-        </ul>
-      </li>
+    <?php for ($i = 1; $i <= 5; $i++): ?>
+        <li class="item03">
+          <div class="datattl">DPF<?= $i; ?></div>
+          <ul class="list04">
+            <li class="item04">
+              <div class="datattl04">
+                <label for="purchase-form-type0<?= $i; ?>">車両型式</label><?= $i === 1 ? '<span class="require">必須</span>' : ''; ?>
+              </div>
+              <div class="data04">
+                <input id="purchase-form-type0<?= $i; ?>" class="input" type="text" name="dpfType0<?= $i; ?>" placeholder="FE82DG" value="<?php if (isset($form->{'dpfType' . $i})) {echo $form->{'dpfType' . $i};} ?>" <?= $i === 1 ? 'required' : ''; ?>>
+              </div>
+            </li>
+            <li class="item04">
+              <div class="datattl04">
+                <label for="purchase-form-car0<?= $i; ?>">車台番号</label><?= $i === 1 ? '<span class="require">必須</span>' : ''; ?>
+              </div>
+              <div class="data04">
+                <input id="purchase-form-car0<?= $i; ?>" class="input" type="text" name="dpfCar0<?= $i; ?>" placeholder="ABC012-3456789" value="<?php if (isset($form->{'dpfCar' . $i})) {echo $form->{'dpfCar' . $i};} ?>" <?= $i === 1 ? 'required' : ''; ?>>
+              </div>
+            </li>
+            <li class="item04">
+              <div class="datattl04">
+                <label for="purchase-form-number0<?= $i; ?>">数量</label><?= $i === 1 ? '<span class="require">必須</span>' : ''; ?>
+              </div>
+              <div class="data04">
+                <input type="number" id="purchase-form-number0<?= $i; ?>" class="input" name="dpfNumber0<?= $i; ?>" value="<?php if (isset($form->{'dpfNumber' . $i})) {echo $form->{'dpfNumber' . $i};} ?>" <?= $i === 1 ? 'required' : ''; ?>>
+              </div>
+            </li>
+            <li class="item04 -fullsize">
+              <div class="datattl04">
+                <label for="purchase-form-detail0<?= $i; ?>">備考欄<br>(商品状態)</label>
+              </div>
+              <div class="data04">
+                <textarea id="purchase-form-detail0<?= $i; ?>" name="dpfDetail0<?= $i; ?>" placeholder="オイル漏れ、欠陥部品がある等"><?= isset($form->{'dpfDetail' . $i}) ? $form->{'dpfDetail' . $i} : ''; ?></textarea>
+              </div>
+            </li>
+          </ul>
+        </li>
+      <?php endfor; ?>
     </ul>
   </div>
   <div class="block-btn">
