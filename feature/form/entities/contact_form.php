@@ -1,7 +1,10 @@
 <?php
 include_once 'form.php';
+require_once '../../../common/util/escape.php';
 /** お問い合わせフォームのクラス */
 class ContactForm extends Form {
+  const SPREAD_SHEET_URL = "https://script.google.com/macros/s/AKfycbyPNB6eHyMs5aKuXNRp-NiSQ8HGx9noun3jnMPVYzDdGPneGBGtjt_LSfnYt8YaJY59/exec";
+
   public $name;
   public $tel;
   public $applicantEmail;
@@ -11,8 +14,6 @@ class ContactForm extends Form {
 
   /** フォームの内容をフィールドに格納 */
   function setValuesFromForm(): void {
-    require_once '../../common/util/escape.php';
-
     // POSTされたデータをエスケープ処理して変数に格納
     $this->name = escape($_POST['name']);
     $this->tel = escape($_POST['tel']);
@@ -105,7 +106,7 @@ class ContactForm extends Form {
 
   /** フォーム内容を記録するPOST先URLを返す */
   function getPostUrl(): string {
-    return 'https://script.google.com/macros/s/AKfycbynJWkbc-CRAI_my08drf0g2s4KdnEmlxRxp1jlW2njgb8ukbLAO2_PtxF3VzGKhaFFjA/exec';
+    return self::SPREAD_SHEET_URL;
   }
 
   /** フォーム内容を返す */

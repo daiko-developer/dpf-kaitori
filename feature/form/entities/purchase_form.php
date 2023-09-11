@@ -1,7 +1,10 @@
 <?php
 include_once 'form.php';
+require_once '../../../common/util/escape.php';
 /** 買取フォームのクラス */
 class PurchaseForm extends Form {
+  const SPREAD_SHEET_URL = "https://script.google.com/macros/s/AKfycbyXxI4cJy0HnRfaDaIO_sdNgDTST9_hDrTerjRROwuz9DvH_mTau0b9nWER1RZX6rMmBw/exec";
+
   public $name;
   public $nameFuri;
   public $company;
@@ -49,8 +52,6 @@ class PurchaseForm extends Form {
 
   /** フォームの内容をフィールドに格納 */
   function setValuesFromForm(): void {
-    require_once '../../common/util/escape.php';
-
     // POSTされたデータをエスケープ処理して変数に格納
     $this->name = escape($_POST['name']);
     $this->nameFuri = escape($_POST['nameFuri']);
@@ -337,7 +338,7 @@ class PurchaseForm extends Form {
 
   /** フォーム内容を記録するPOST先URLを返す */
   function getPostUrl(): string {
-    return 'https://script.google.com/macros/s/AKfycbwImw4aniDILKzosWQG2p0lqdYuzmRHsQoB9A9Ltg5u8qkNcRBwXX0XC4eyf2ZRbo12zQ/exec';
+    return self::SPREAD_SHEET_URL;
   }
 
   /** フォーム内容を返す */

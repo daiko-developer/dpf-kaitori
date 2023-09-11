@@ -1,7 +1,10 @@
 <?php
 include_once 'form.php';
+require_once '../../../common/util/escape.php';
 /** 画像見積りフォームのクラス */
 class EstimateForm extends Form {
+  const SPREAD_SHEET_URL = "https://script.google.com/macros/s/AKfycbyNpcgR_0PRZbLFOsIoWDEHvJyHW0s2ZIv0JAh-wQckXEObTp0sMgx-ThVY-BJTnHKr/exec";
+
   public $name;
   public $tel;
   public $applicantEmail;
@@ -25,8 +28,6 @@ class EstimateForm extends Form {
 
   /** フォームの内容をフィールドに格納 */
   function setValuesFromForm(): void {
-    require_once '../../common/util/escape.php';
-
     // POSTされたデータをエスケープ処理して変数に格納
     $this->name = escape($_POST['name']);
     $this->tel = escape($_POST['tel']);
@@ -203,7 +204,7 @@ class EstimateForm extends Form {
 
   /** フォーム内容を記録するPOST先URLを返す */
   function getPostUrl(): string {
-    return 'https://script.google.com/macros/s/AKfycbw0hrPsv9TPaX3pWs6ajKDfV83dhvIAeAZrKqOe3mBtmSml5Zv4rOVh5XUfnqrTup_OlA/exec';
+    return self::SPREAD_SHEET_URL;
   }
 
   /** フォーム内容を返す */
