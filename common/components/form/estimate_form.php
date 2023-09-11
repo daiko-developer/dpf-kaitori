@@ -60,7 +60,8 @@
           <label for="estimate-form-detail01">備考欄</label>
         </div>
         <div class="data">
-          <textarea id="estimate-form-detail01" name="dpfDetail01" placeholder="オイル漏れ、欠陥部品がある等" value="<?php if (isset($form->dpfDetail01)) {echo $form->dpfDetail01;} ?>"></textarea>
+          <textarea id="estimate-form-detail01" name="dpfDetail01" placeholder="オイル漏れ、欠陥部品がある等"><?php if (isset($form->dpfDetail01)) {echo $form->dpfDetail01;} ?></textarea>
+
         </div>
       </li>
       <li class="item01">

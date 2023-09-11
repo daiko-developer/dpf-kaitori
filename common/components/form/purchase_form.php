@@ -204,7 +204,7 @@
               <label for="purchase-form-detail01">備考欄<br>(商品状態)</label>
             </div>
             <div class="data04">
-              <textarea id="purchase-form-detail01" name="dpfDetail01" placeholder="オイル漏れ、欠陥部品がある等" value="<?php if (isset($form->dpfDetail01)) {echo $form->dpfDetail01;} ?>"></textarea>
+              <textarea id="purchase-form-detail01" name="dpfDetail01" placeholder="オイル漏れ、欠陥部品がある等" ><?php if (isset($form->dpfDetail01)) {echo $form->dpfDetail01;} ?></textarea>
             </div>
           </li>
         </ul>
@@ -241,7 +241,7 @@
               <label for="purchase-form-detail02">備考欄<br>(商品状態)</label>
             </div>
             <div class="data04">
-              <textarea id="purchase-form-detail02" name="dpfDetail02" placeholder="オイル漏れ、欠陥部品がある等" value="<?php if (isset($form->dpfDetail02)) {echo $form->dpfDetail02;} ?>"></textarea>
+              <textarea id="purchase-form-detail02" name="dpfDetail02" placeholder="オイル漏れ、欠陥部品がある等" ><?php if (isset($form->dpfDetail02)) {echo $form->dpfDetail02;} ?></textarea>
             </div>
           </li>
         </ul>
@@ -278,7 +278,7 @@
               <label for="purchase-form-detail03">備考欄<br>(商品状態)</label>
             </div>
             <div class="data04">
-              <textarea id="purchase-form-detail03" name="dpfDetail03" placeholder="オイル漏れ、欠陥部品がある等" value="<?php if (isset($form->dpfDetail03)) {echo $form->dpfDetail03;} ?>"></textarea>
+              <textarea id="purchase-form-detail03" name="dpfDetail03" placeholder="オイル漏れ、欠陥部品がある等" ><?php if (isset($form->dpfDetail03)) {echo $form->dpfDetail03;} ?></textarea>
             </div>
           </li>
         </ul>
@@ -315,7 +315,7 @@
               <label for="purchase-form-detail04">備考欄<br>(商品状態)</label>
             </div>
             <div class="data04">
-              <textarea id="purchase-form-detail04" name="dpfDetail04" placeholder="オイル漏れ、欠陥部品がある等" value="<?php if (isset($form->dpfDetail04)) {echo $form->dpfDetail04;} ?>"></textarea>
+              <textarea id="purchase-form-detail04" name="dpfDetail04" placeholder="オイル漏れ、欠陥部品がある等" ><?php if (isset($form->dpfDetail04)) {echo $form->dpfDetail04;} ?></textarea>
             </div>
           </li>
         </ul>
@@ -352,7 +352,7 @@
               <label for="purchase-form-detail05">備考欄<br>(商品状態)</label>
             </div>
             <div class="data04">
-              <textarea id="purchase-form-detail05" name="dpfDetail05" placeholder="オイル漏れ、欠陥部品がある等" value="<?php if (isset($form->dpfDetail05)) {echo $form->dpfDetail05;} ?>"></textarea>
+              <textarea id="purchase-form-detail05" name="dpfDetail05" placeholder="オイル漏れ、欠陥部品がある等" ><?php if (isset($form->dpfDetail05)) {echo $form->dpfDetail05;} ?></textarea>
             </div>
           </li>
         </ul>

@@ -69,7 +69,7 @@ include_once $path .'common/components/head.php';
                     <label for="contact-form-detail">お問い合わせ内容</label><span class="require">必須</span>
                   </div>
                   <div class="data">
-                    <textarea id="contact-form-detail" name="detail" placeholder="" value="<?php if (isset($form->detail)) {echo $form->detail;} ?>" required></textarea>
+                    <textarea id="contact-form-detail" name="detail" required><?php if (isset($form->detail)) {echo $form->detail;} ?></textarea>
                   </div>
                 </li>
               </ul>
