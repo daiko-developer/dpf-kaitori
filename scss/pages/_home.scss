@@ -561,9 +561,12 @@
   justify-content: space-between;
   counter-reset: number 0;
   .item {
-    display: flex;
     width: 49%;
     margin-bottom: 50px;
+  }
+  .itemin {
+    display: flex;
+    margin-bottom: 20px;
   }
   .img {
     position: relative;
@@ -597,7 +600,7 @@
   .head {
     color: $color1;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.8rem;
     &:before {
       content: counter(number) ".";
       counter-increment: number 1;
@@ -605,9 +608,10 @@
   }
   .txt {
     margin-top: 30px;
+    font-size: 16px;
   }
-  .txt.-attention {
-    color: red;
+  .attention {
+    font-size: 14px;
   }
   .link {
     color: $color1;
@@ -623,7 +627,7 @@
     }
   }
   @media only screen and (max-width: 599px) {
-    .item {
+    .itemin {
       flex-wrap: wrap-reverse;
     }
     .img {

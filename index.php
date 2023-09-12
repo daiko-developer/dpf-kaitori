@@ -180,133 +180,151 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
           <h2 class="ttl ttl-cmn01">申込から入金までの流れ</h2>
           <div class="tab-area">
             <input class="tab-input" type="radio" name="tab_name" id="tab1" checked>
-            <label class="tab-label" for="tab1">WEB/LINEで申し込む場合</label>
+            <label class="tab-label" for="tab1">買取依頼書で申し込む場合</label>
             <div class="tab-block">
               <ul class="list list-home-flow">
                 <li class="item">
-                  <div class="block-txt">
-                    <h3 class="head">申込</h3>
-                    <p class="txt">
-                      <a href="<?php echo $path; ?>pages/purchase" class="link">買取申込フォーム</a>もしくは<a href="#line" class="link">LINE</a>の買取申込ページから申込を行ってください。<br><br>
-                      ※個人のお客様は本人確認書類が初回お取引時に必要です。買取申込フォームで本人確認書類をアップロードしてください。<br>
-                    </p>
+                  <div class="itemin">
+                    <div class="block-txt">
+                      <h3 class="head">申込</h3>
+                      <p class="txt">
+                        買取依頼書をダウンロードして必要事項ご記入してください。また合わせて本人確認書類もご用意ください。<br>
+                        ※個人のお客様は本人確認書類が初回お取引時に必要です。<br><br>
+                        買取依頼書は<a class="link" href="https://drive.google.com/uc?id=17BahxJcsY3ZqYa7RlqkqGk0GL2vGOBfV" target="_blank">こちら</a>から
+                      </p>
+                    </div>
+                    <div class="img"><img class="" src="<?php echo $path; ?>images/home/img13.jpg" alt="書類準備"></div>
                   </div>
-                  <div class="img"><img class="" src="<?php echo $path; ?>images/home/img09.png" alt="書類準備"></div>
                 </li>
                 <li class="item">
-                  <div class="block-txt">
-                    <h3 class="head">お客様から発送</h3>
-                    <p class="txt">
-                      DPFを下記まで着払いでご発送下さい。<br>
-                      他に特に同封するものはございませんので、DPFのみお送りください。<br><br>
-                      〒590-0121<br>
-                      大阪府堺市南区片蔵486-1<br>
-                      リビルトワールド DPFラクラク買取宛<br>
-                      TEL <a href="tel:0723493548">072-349-3548</a><br>
-                      <br>
-                      【注意事項】<br>
-                      ・ヤマト運輸・佐川急便をご利用ください。配送料は弊社が負担させていただきますので着払いでお送りください（ヤマト運輸・佐川急便以外で送った場合は送料無料の対象外になります）。<br>
-                      ・ダンボール1個あたりの送料が5,000円を超える場合は、超過分を買取金額から引かせていただきます。1個当たりの送料が5000円を超えない限り、何口でも当社にて送料負担いたします。<br>
-                      ・発送前に可能な限りセンサー・ブラケット類を取り外してご発送ください。<br>
-                      ・梱包はダンボールで220サイズ程度に収めていただき、センサーや差圧パイプが破損しないようしっかりと梱包してください。<br>
-                      ・お客様のご都合による返送（誤配送・買取不可DPF等の返送など）は当社での送料負担は致しかねます。<br>
-                      ・SCR付きDPFユニットや、大型DPFユニットでの発送はお断りしております。DPF（DOCとDPFが一体となっているものを含む）のみに分解の上、DPFのみでご発送ください。<br>
-                      ・パレットやコンテナなどの荷姿での発送はご遠慮ください。
-                    </p>
+                  <div class="itemin">
+                    <div class="block-txt">
+                      <h3 class="head">お客様から発送</h3>
+                      <p class="txt">
+                        買取依頼書と本人確認書類を同梱頂き、DPFを下記まで着払いでご発送下さい。<br><br>
+                        〒590-0121<br>
+                        大阪府堺市南区片蔵486-1<br>
+                        リビルトワールド DPFラクラク買取宛<br>
+                        TEL <a href="tel:0723493548">072-349-3548</a>
+                      </p>
+                    </div>
+                    <div class="img"><img class="" src="<?php echo $path; ?>images/home/img10.png" alt="書類準備"></div>
                   </div>
-                  <div class="img"><img class="" src="<?php echo $path; ?>images/home/img10.png" alt="書類準備"></div>
+                  <p class="attention">
+                    【注意事項】<br>
+                    ・ヤマト運輸・佐川急便をご利用ください。配送料は弊社が負担させていただきますので着払いでお送りください（ヤマト運輸・佐川急便以外で送った場合は送料無料の対象外になります）。<br>
+                    ・ダンボール1個あたりの送料が5,000円を超える場合は、超過分を買取金額から引かせていただきます。1個当たりの送料が5000円を超えない限り、何口でも当社にて送料負担いたします。<br>
+                    ・発送前に可能な限りセンサー・ブラケット類を取り外してご発送ください。<br>
+                    ・梱包はダンボールで220サイズ程度に収めていただき、センサーや差圧パイプが破損しないようしっかりと梱包してください。<br>
+                    ・お客様のご都合による返送（誤配送・買取不可DPF等の返送など）は当社での送料負担は致しかねます。<br>
+                    ・SCR付きDPFユニットや、大型DPFユニットでの発送はお断りしております。DPF（DOCとDPFが一体となっているものを含む）のみに分解の上、DPFのみでご発送ください。<br>
+                    ・パレットやコンテナなどの荷姿での発送はご遠慮ください。
+                  </p>
                 </li>
                 <li class="item">
-                  <div class="block-txt">
-                    <h3 class="head">査定</h3>
-                    <p class="txt">
-                      到着したDPFの状態を確認後、査定価格をお知らせいたします。<br>
-                      <br>
-                      【注意事項】<br>
-                      ・DPF内の詰まりがひどい場合は、追加でお時間いただく場合がございます。
-                    </p>
+                  <div class="itemin">
+                    <div class="block-txt">
+                      <h3 class="head">査定</h3>
+                      <p class="txt">
+                        到着したDPFの状態を確認後、査定価格をお知らせいたします。
+                      </p>
+                    </div>
+                    <div class="img"><img class="" src="<?php echo $path; ?>images/home/img11.png" alt="書類準備"></div>
                   </div>
-                  <div class="img"><img class="" src="<?php echo $path; ?>images/home/img11.png" alt="書類準備"></div>
+                  <p class="attention">
+                    【注意事項】<br>
+                    ・DPF内の詰まりがひどい場合は、追加でお時間いただく場合がございます。
+                  </p>
                 </li>
                 <li class="item">
-                  <div class="block-txt">
-                    <h3 class="head">お振込み</h3>
-                    <p class="txt">
-                      査定価格に同意頂けましたら、即日、ご指定の口座にお振り込みいたします。<br><br>
-                      <br>
-                      【注意事項】<br>
-                      ・DPFが再使用できる場合と、そうでない場合では買取価格に差が出ます。あくまでも、買取価格表は再使用可能なDPFの買取価格です。<br>
-                      ・振込み手数料はお客様ご負担にてお願いしております。<br>
-                      ・ご返送はお振込確認後に行います。お振込みが難しくお急ぎの場合は代引き配送も承っております(別途代引き手数料を頂きます)。
-                    </p>
+                  <div class="itemin">
+                    <div class="block-txt">
+                      <h3 class="head">お振込み</h3>
+                      <p class="txt">
+                        査定価格に同意頂けましたら、即日、ご指定の口座にお振り込みいたします。
+                      </p>
+                    </div>
+                    <div class="img"><img class="" src="<?php echo $path; ?>images/home/img12.png" alt="書類準備"></div>
                   </div>
-                  <div class="img"><img class="" src="<?php echo $path; ?>images/home/img12.png" alt="書類準備"></div>
+                  <p class="attention">
+                    【注意事項】<br>
+                    ・DPFが再使用できる場合と、そうでない場合では買取価格に差が出ます。あくまでも、買取価格表は再使用可能なDPFの買取価格です。<br>
+                    ・振込み手数料はお客様ご負担にてお願いしております。
+                  </p>
                 </li>
               </ul>
             </div>
             <input class="tab-input" type="radio" name="tab_name" id="tab2">
-            <label class="tab-label" for="tab2">買取依頼書で申し込む場合</label>
+            <label class="tab-label" for="tab2">WEB/LINEで申し込む場合</label>
             <div class="tab-block">
               <ul class="list list-home-flow">
                 <li class="item">
-                  <div class="block-txt">
-                    <h3 class="head">申込</h3>
-                    <p class="txt">
-                      買取依頼書をダウンロードして必要事項ご記入してください。また合わせて本人確認書類もご用意ください。<br>
-                      ※個人のお客様は本人確認書類が初回お取引時に必要です。<br><br>
-                      買取依頼書は<a class="link" href="https://drive.google.com/uc?id=17BahxJcsY3ZqYa7RlqkqGk0GL2vGOBfV" target="_blank">こちら</a>から
-                    </p>
-                    <div class="thumbnail"><a href="https://drive.google.com/uc?id=17BahxJcsY3ZqYa7RlqkqGk0GL2vGOBfV" target="_blank"><img src="<?php echo $path; ?>images/home/img13.jpg" alt="買取依頼書"></a></div>
+                  <div class="itemin">
+                    <div class="block-txt">
+                      <h3 class="head">申込</h3>
+                      <p class="txt">
+                        <a href="<?php echo $path; ?>pages/purchase" class="link">買取申込フォーム</a>もしくは<a href="#line" class="link">LINE</a>の買取申込ページから申込を行ってください。<br><br>
+                        ※個人のお客様は本人確認書類が初回お取引時に必要です。買取申込フォームで本人確認書類をアップロードしてください。<br>
+                      </p>
+                    </div>
+                    <div class="img"><img class="" src="<?php echo $path; ?>images/home/img09.png" alt="書類準備"></div>
                   </div>
-                  <div class="img"><img class="" src="<?php echo $path; ?>images/home/img09.png" alt="書類準備"></div>
                 </li>
                 <li class="item">
-                  <div class="block-txt">
-                    <h3 class="head">お客様から発送</h3>
-                    <p class="txt">
-                      買取依頼書と本人確認書類を同梱頂き、DPFを下記まで着払いでご発送下さい。<br><br>
-                      〒590-0121<br>
-                      大阪府堺市南区片蔵486-1<br>
-                      リビルトワールド DPFラクラク買取宛<br>
-                      TEL <a href="tel:0723493548">072-349-3548</a><br>
-                      <br>
-                      【注意事項】<br>
-                      ・ヤマト運輸・佐川急便をご利用ください。配送料は弊社が負担させていただきますので着払いでお送りください（ヤマト運輸・佐川急便以外で送った場合は送料無料の対象外になります）。<br>
-                      ・ダンボール1個あたりの送料が5,000円を超える場合は、超過分を買取金額から引かせていただきます。1個当たりの送料が5000円を超えない限り、何口でも当社にて送料負担いたします。<br>
-                      ・発送前に可能な限りセンサー・ブラケット類を取り外してご発送ください。<br>
-                      ・梱包はダンボールで220サイズ程度に収めていただき、センサーや差圧パイプが破損しないようしっかりと梱包してください。<br>
-                      ・お客様のご都合による返送（誤配送・買取不可DPF等の返送など）は当社での送料負担は致しかねます。<br>
-                      ・SCR付きDPFユニットや、大型DPFユニットでの発送はお断りしております。DPF（DOCとDPFが一体となっているものを含む）のみに分解の上、DPFのみでご発送ください。<br>
-                      ・パレットやコンテナなどの荷姿での発送はご遠慮ください。
-                    </p>
+                  <div class="itemin">
+                    <div class="block-txt">
+                      <h3 class="head">お客様から発送</h3>
+                      <p class="txt">
+                        DPFを下記まで着払いでご発送下さい。<br>
+                        他に特に同封するものはございませんので、DPFのみお送りください。<br><br>
+                        〒590-0121<br>
+                        大阪府堺市南区片蔵486-1<br>
+                        リビルトワールド DPFラクラク買取宛<br>
+                        TEL <a href="tel:0723493548">072-349-3548</a>
+                      </p>
+                    </div>
+                    <div class="img"><img class="" src="<?php echo $path; ?>images/home/img10.png" alt="書類準備"></div>
                   </div>
-                  <div class="img"><img class="" src="<?php echo $path; ?>images/home/img10.png" alt="書類準備"></div>
+                  <p class="attention">
+                    【注意事項】<br>
+                    ・ヤマト運輸・佐川急便をご利用ください。配送料は弊社が負担させていただきますので着払いでお送りください（ヤマト運輸・佐川急便以外で送った場合は送料無料の対象外になります）。<br>
+                    ・ダンボール1個あたりの送料が5,000円を超える場合は、超過分を買取金額から引かせていただきます。1個当たりの送料が5000円を超えない限り、何口でも当社にて送料負担いたします。<br>
+                    ・発送前に可能な限りセンサー・ブラケット類を取り外してご発送ください。<br>
+                    ・梱包はダンボールで220サイズ程度に収めていただき、センサーや差圧パイプが破損しないようしっかりと梱包してください。<br>
+                    ・お客様のご都合による返送（誤配送・買取不可DPF等の返送など）は当社での送料負担は致しかねます。<br>
+                    ・SCR付きDPFユニットや、大型DPFユニットでの発送はお断りしております。DPF（DOCとDPFが一体となっているものを含む）のみに分解の上、DPFのみでご発送ください。<br>
+                    ・パレットやコンテナなどの荷姿での発送はご遠慮ください。
+                  </p>
                 </li>
                 <li class="item">
-                  <div class="block-txt">
-                    <h3 class="head">査定</h3>
-                    <p class="txt">
-                      到着したDPFの状態を確認後、査定価格をお知らせいたします。<br>
-                      <br>
-                      【注意事項】<br>
-                      ・DPF内の詰まりがひどい場合は、追加でお時間いただく場合がございます。
-                    </p>
+                  <div class="itemin">
+                    <div class="block-txt">
+                      <h3 class="head">査定</h3>
+                      <p class="txt">
+                        到着したDPFの状態を確認後、査定価格をお知らせいたします。
+                      </p>
+                    </div>
+                    <div class="img"><img class="" src="<?php echo $path; ?>images/home/img11.png" alt="書類準備"></div>
                   </div>
-                  <div class="img"><img class="" src="<?php echo $path; ?>images/home/img11.png" alt="書類準備"></div>
+                  <p class="attention">
+                    【注意事項】<br>
+                    ・DPF内の詰まりがひどい場合は、追加でお時間いただく場合がございます。
+                  </p>
                 </li>
                 <li class="item">
-                  <div class="block-txt">
-                    <h3 class="head">お振込み</h3>
-                    <p class="txt">
-                      査定価格に同意頂けましたら、即日、ご指定の口座にお振り込みいたします。<br>
-                      <br>
-                      【注意事項】<br>
-                      ・DPFが再使用できる場合と、そうでない場合では買取価格に差が出ます。あくまでも、買取価格表は再使用可能なDPFの買取価格です。<br>
-                      ・振込み手数料はお客様ご負担にてお願いしております。<br>
-                      ・ご返送はお振込確認後に行います。お振込みが難しくお急ぎの場合は代引き配送も承っております(別途代引き手数料を頂きます)。
-                    </p>
+                  <div class="itemin">
+                    <div class="block-txt">
+                      <h3 class="head">お振込み</h3>
+                      <p class="txt">
+                        査定価格に同意頂けましたら、即日、ご指定の口座にお振り込みいたします。
+                    </div>
+                    <div class="img"><img class="" src="<?php echo $path; ?>images/home/img12.png" alt="書類準備"></div>
                   </div>
-                  <div class="img"><img class="" src="<?php echo $path; ?>images/home/img12.png" alt="書類準備"></div>
+                  <p class="attention">
+                    【注意事項】<br>
+                    ・DPFが再使用できる場合と、そうでない場合では買取価格に差が出ます。あくまでも、買取価格表は再使用可能なDPFの買取価格です。<br>
+                    ・振込み手数料はお客様ご負担にてお願いしております。
+                  </p>
                 </li>
               </ul>
             </div>

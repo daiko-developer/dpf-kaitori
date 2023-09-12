@@ -278,8 +278,8 @@ class PurchaseForm extends Form {
     住所　　　　　　　　　：{$this->address}
     電話番号　　　　　　　：{$this->tel}
     メールアドレス　　　　：{$this->applicantEmail}
-    証明写真（表）　　　　：{$this->pictureFileName}
-    証明写真（裏）　　　　：{$this->pictureUraFileName}
+    本人確認書類（表）　　　　：{$this->pictureFileName}
+    本人確認書類（裏）　　　　：{$this->pictureUraFileName}
 
     振り込み先情報
     金融機関名　　　　　　：{$this->bank}
