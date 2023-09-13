@@ -2,7 +2,9 @@
 /** フォーム送信画面での処理 */
 session_start();
 require_once '../../../common/util/escape.php';
+require_once 'EmailSender.php';
 include_once '../../../common/util/location.php';
+include_once '../../../common/util/env.php';
 
 // Token validation
 if($_POST['token'] !== $_SESSION['token']){
@@ -13,26 +15,6 @@ if($_POST['token'] !== $_SESSION['token']){
 
 //// メール送信処理
 $form->setValuesFromSession();
-
-// Mail related functions
-function buildMailHeader($type, $companyEmail, $applicantEmail, $staffEmail) {
-  $org = "DPFラクラク買取";
-  $header = "Content-Type: multipart/mixed;boundary=\"__BOUNDARY__\"\n";
-  if ($type === 'user') {
-      $header .= "Return-Path: " . $companyEmail . " \n";
-      $header .= "From: {$org} <{$companyEmail}> \n";
-      $header .= "Bcc: " . $companyEmail ." \n";
-      $header .= "Sender: {$org} <{$companyEmail}> \n";
-      $header .= "Reply-To: " . $companyEmail . " \n";
-      $header .= "Organization: " . $org . " \n";
-      $header .= "X-Sender: " . $org . " \n";
-      $header .= "X-Priority: 3 \n";
-  } else {
-      $header .= "From: " . $applicantEmail ." \n";
-      $header .= "Cc: " . $staffEmail ." \n";
-  }
-  return $header;
-}
 
 // cURL POST function
 function curlPostData($post_url, $post_data) {
@@ -49,28 +31,29 @@ function curlPostData($post_url, $post_data) {
   return $result;
 }
 
-$companyEmail = "master@daiko-denki.co.jp";
-$staffEmail = "astron04a.e@gmail.com,daiko.developer@gmail.com";
-
-// Build and send mails
-mb_language("Japanese");
-mb_internal_encoding("UTF-8");
+$emailSender = new EmailSender();
 
 // User Mail
-$header2 = buildMailHeader('user', $companyEmail, $form->applicantEmail, $staffEmail);
 $mailTitle2 = $form->getMailTitleForUser();
 $body2 = $form->getMailBodyForUser();
-if (!mb_send_mail($form->applicantEmail, $mailTitle2, $body2, $header2)) {
+try {
+  $emailSender->sendToUser(to: $form->applicantEmail, subject: $mailTitle2, body: $body2);
+  echo 'メールを送信しました!';
+} catch (Exception $e) {
     $message = '<p class="question-text error">『' . $form->applicantEmail . '』宛に確認メールを送信できませんでした。<br>正しいメールアドレスで再度ご連絡をお願いいたします。</p>';
+    print('エラー');
     exit;
 }
 
 // Staff Mail
-$header1 = buildMailHeader('staff', $companyEmail, $form->applicantEmail, $staffEmail);
 $mailTitle1 = $form->getMailTitleForStaff();
 $body1 = $form->getMailBodyForStaff();
-if (!mb_send_mail($companyEmail, $mailTitle1, $body1, $header1)) {
+try {
+  $emailSender->sendToStaff(subject: $mailTitle1, body: $body1);
+  echo 'メールを送信しました!';
+} catch (Exception $e) {
     $message = '<p class="question-text error">何らかの理由で送信エラーが発生しました<br>しばらく待ってから再度送信してください</p>';
+    print('エラー');
     exit;
 }
 
