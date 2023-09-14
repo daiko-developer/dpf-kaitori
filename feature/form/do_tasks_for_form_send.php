@@ -13,6 +13,8 @@ if($_POST['token'] !== $_SESSION['token']){
   exit;
 }
 
+$form->setValuesFromSession();
+
 // GASを通してスプレッドシートにフォームに内容を送信
 $postUrl = $form->getPostUrl();
 $postData = $form->getPostData();
@@ -44,8 +46,6 @@ if ($response === false) {
 $newId = $response;
 
 //// メール送信処理
-$form->setValuesFromSession();
-
 $emailSender = new EmailSender();
 
 // User Mail
