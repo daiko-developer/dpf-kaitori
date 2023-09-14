@@ -83,7 +83,7 @@
           <label for="purchase-form-picture">本人確認書類(表)</label><span class="require">必須</span>
         </div>
         <div class="data">
-          <input id="purchase-form-picture" type="file" name="picture" value="<?php if (isset($form->picture)) {echo $form->picture;} ?>" required>
+          <input id="purchase-form-picture" type="file" name="picture" value="<?php if (isset($form->pictureFileName)) {echo $form->pictureFileName;} ?>" required>
         </div>
       </li>
       <li class="item01">
@@ -91,7 +91,7 @@
           <label for="purchase-form-picture-ura">本人確認書類(裏)</label><span class="require">必須</span>
         </div>
         <div class="data">
-          <input id="purchase-form-picture-ura" type="file" name="pictureUra" value="<?php if (isset($form->pictureUra)) {echo $form->pictureUra;} ?>" required>
+          <input id="purchase-form-picture-ura" type="file" name="pictureUra" value="<?php if (isset($form->pictureUraFileName)) {echo $form->pictureUraFileName;} ?>" required>
         </div>
       </li>
       <li class="item01">

@@ -3,8 +3,6 @@ include_once 'form.php';
 require_once __DIR__ . '../../../../common/util/escape.php';
 /** 買取フォームのクラス */
 class PurchaseForm extends Form {
-  const SPREAD_SHEET_URL = "https://script.google.com/macros/s/AKfycbyXxI4cJy0HnRfaDaIO_sdNgDTST9_hDrTerjRROwuz9DvH_mTau0b9nWER1RZX6rMmBw/exec";
-
   public $name;
   public $nameFuri;
   public $company;
@@ -378,6 +376,7 @@ class PurchaseForm extends Form {
       'dpfCar05' => $this->dpfCar05,
       'dpfNumber05' => $this->dpfNumber05,
       'dpfDetail05' => $this->dpfDetail05,
+      'formType' => 'purchaseForm',
     );
   }
 }

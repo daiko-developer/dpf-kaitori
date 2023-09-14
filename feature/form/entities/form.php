@@ -1,6 +1,8 @@
 <?php
 /** フォーム関連の抽象クラス */
 abstract class Form {
+  const SPREAD_SHEET_URL = "https://script.google.com/macros/s/AKfycbynJWkbc-CRAI_my08drf0g2s4KdnEmlxRxp1jlW2njgb8ukbLAO2_PtxF3VzGKhaFFjA/exec";
+
   /** フォームの内容をフィールドに格納 */
   abstract protected function setValuesFromForm(): void;
   /** フォームにエラーがあれば変数に格納 */

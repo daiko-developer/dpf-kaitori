@@ -3,8 +3,6 @@ include_once 'form.php';
 require_once __DIR__ . '../../../../common/util/escape.php';
 /** 画像見積りフォームのクラス */
 class EstimateForm extends Form {
-  const SPREAD_SHEET_URL = "https://script.google.com/macros/s/AKfycbyNpcgR_0PRZbLFOsIoWDEHvJyHW0s2ZIv0JAh-wQckXEObTp0sMgx-ThVY-BJTnHKr/exec";
-
   public $name;
   public $tel;
   public $applicantEmail;
@@ -216,6 +214,7 @@ class EstimateForm extends Form {
       'dpfType01' => $this->dpfType01,
       'dpfCar01' => $this->dpfCar01,
       'dpfDetail01' => $this->dpfDetail01,
+      'formType' => 'estimateForm',
     );
   }
 }

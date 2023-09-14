@@ -3,8 +3,6 @@ include_once 'form.php';
 require_once __DIR__ . '../../../../common/util/escape.php';
 /** お問い合わせフォームのクラス */
 class ContactForm extends Form {
-  const SPREAD_SHEET_URL = "https://script.google.com/macros/s/AKfycbzKHAerRrFOIzcgVcM3Bdwo8FcvmfiPah8OqR7QmOL9Qm2LGXpwI9rfZZ4eSDzDgFdm/exec";
-
   public $name;
   public $tel;
   public $applicantEmail;
@@ -81,6 +79,7 @@ class ContactForm extends Form {
     お問い合わせありがとうございます。
     以下の内容を送信いたしました。
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    受付番号：
     {$this->getFormContentsOfMailBody()}
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     E-mail: astron04a.e@email.com
@@ -116,6 +115,7 @@ class ContactForm extends Form {
       'tel' => $this->tel,
       'applicantEmail' => $this->applicantEmail,
       'detail' => $this->detail,
+      'formType' => 'contactForm',
     );
   }
 }
