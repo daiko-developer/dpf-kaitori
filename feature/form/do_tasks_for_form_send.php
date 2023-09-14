@@ -18,14 +18,16 @@ $form->setValuesFromSession();
 // GASを通してスプレッドシートにフォームに内容を送信
 $postUrl = $form->getPostUrl();
 $postData = $form->getPostData();
+$jsonData = json_encode($postData);
 
 $options = array(
-  'http' => array(
-      'header' => "Content-type: application/x-www-form-urlencoded\r\n",
-      'method' => 'POST',
-      'content' => http_build_query($postData)
-  )
+    'http' => array(
+        'header' => "Content-type: application/json\r\n",
+        'method' => 'POST',
+        'content' => $jsonData
+    )
 );
+
 $context = stream_context_create($options);
 $response = file_get_contents($postUrl, false, $context);
 

@@ -111,11 +111,17 @@ class ContactForm extends Form {
   /** フォーム内容を返す */
   function getPostData(): array {
     return array(
-      'name' => $this->name,
-      'tel' => $this->tel,
-      'applicantEmail' => $this->applicantEmail,
-      'detail' => $this->detail,
+      // 'name' => $this->name,
+      // 'tel' => $this->tel,
+      // 'applicantEmail' => $this->applicantEmail,
+      // 'detail' => $this->detail,
       'formType' => 'contactForm',
+      'formData' => [
+        'name' => $this->name,
+        'tel' => $this->tel,
+        'applicantEmail' => $this->applicantEmail,
+        'detail' => $this->detail,
+      ],
     );
   }
 }
