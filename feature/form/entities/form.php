@@ -3,6 +3,7 @@
 abstract class Form {
   const SPREAD_SHEET_URL = "https://script.google.com/macros/s/AKfycbwa983TVTPnatajQ2L4x2QafqXQrjilzhsfdZOl10ToVWlQ-iv3o9xGUgLiWv10vgmeNQ/exec";
 
+  protected $applicationMethod;
   public $formData = [];
   public $fileData = [];
 
@@ -20,6 +21,10 @@ abstract class Form {
   abstract protected function getFormContentsOfMailBody(string $id): string;
   /** フォーム内容を返す */
   abstract protected function getPostData(): array;
+
+  public function __construct(string $applicationMethod) {
+      $this->applicationMethod = $applicationMethod;
+  }
 
   /** フォームの内容をフィールドに格納 */
   function setValuesFromForm(): void {
@@ -41,12 +46,14 @@ abstract class Form {
 
   /** フォームの内容をセッションに保存 */
   function setSession(): void {
+    $_SESSION['applicationMethod'] = $this->applicationMethod;
     $_SESSION['formData'] = $this->formData;
     $_SESSION['fileData'] = $this->fileData;
   }
 
   /** セッションにあるフォームの内容をフィールドに格納 */
   function setValuesFromSession(): void {
+    $this->applicationMethod = $_SESSION['applicationMethod'];
     $this->formData = $_SESSION['formData'];
     $this->fileData = $_SESSION['fileData'];
   }

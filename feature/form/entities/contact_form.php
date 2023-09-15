@@ -71,6 +71,7 @@ class ContactForm extends Form {
   /** フォーム内容を返す */
   function getPostData(): array {
     return [
+      'applicationMethod' => $this->applicationMethod,
       'formType' => 'contactForm',
       'formData' => $this->formData,
       'fileData' => $this->fileData,

@@ -1,7 +1,7 @@
 <?php
 // フォーム処理
 require_once '../../../feature/form/entities/estimate_form.php';
-$form = new EstimateForm;
+$form = new EstimateForm(applicationMethod: 'LINE');
 include_once '../../../feature/form/do_tasks_for_form_confirm.php';
 ?>
 

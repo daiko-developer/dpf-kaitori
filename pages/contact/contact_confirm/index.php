@@ -1,7 +1,7 @@
 <?php
 // フォーム処理
 require_once '../../../feature/form/entities/contact_form.php';
-$form = new ContactForm;
+$form = new ContactForm(applicationMethod: 'WEB');
 include_once '../../../feature/form/do_tasks_for_form_confirm.php';
 ?>
 

@@ -148,6 +148,7 @@ class PurchaseForm extends Form {
   /** フォーム内容を返す */
   function getPostData(): array {
     return [
+      'applicationMethod' => $this->applicationMethod,
       'formType' => 'purchaseForm',
       'formData' => $this->formData,
       'fileData' => [

@@ -108,6 +108,7 @@ class EstimateForm extends Form {
   /** フォーム内容を返す */
   function getPostData(): array {
     return [
+      'applicationMethod' => $this->applicationMethod,
       'formType' => 'estimateForm',
       'formData' => $this->formData,
       'fileData' => [
