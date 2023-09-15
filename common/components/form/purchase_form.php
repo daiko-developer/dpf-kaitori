@@ -216,6 +216,16 @@
               </div>
               <div class="data04">
                 <input id="purchase-form-car0<?= $i; ?>" class="input" type="text" name="dpfCar0<?= $i; ?>" placeholder="ABC012-3456789" value="<?php if (isset($form->dataForm['dpfCar' . $i])) {echo $form->dataForm['dpfCar' . $i];} ?>" <?= $i === 1 ? 'required' : ''; ?>>
+                <?php
+                if ($i === 1) {
+                ?>
+                <p class="txt">※車両型式、車台番号は車検証を御覧ください</p>
+                <div class="block-img">
+                  <div class="img -large"><img src="<?php echo $path; ?>images/estimate/img07.png" alt=""></div>
+                </div>
+                <?php
+                }
+                ?>
               </div>
             </li>
             <li class="item04">

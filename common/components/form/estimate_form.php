@@ -53,6 +53,10 @@
         </div>
         <div class="data">
           <input id="estimate-form-car01" class="input" type="text" name="dpfCar01" placeholder="ABC012-3456789" value="<?php if (isset($form->formData['dpfCar01'])) {echo $form->formData['dpfCar01'];} ?>" required>
+          <p class="txt">※車両型式、車台番号は車検証を御覧ください</p>
+          <div class="block-img">
+            <div class="img -large"><img src="<?php echo $path; ?>images/estimate/img07.png" alt=""></div>
+          </div>
         </div>
       </li>
       <li class="item01 -fullsize">

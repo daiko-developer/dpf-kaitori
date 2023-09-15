@@ -214,6 +214,9 @@
       content: 'BAD';
       color: red;
     }
+    &.-large {
+      width: auto;
+    }
   }
   @media only screen and (max-width: 1024px) {
     .item01 {
