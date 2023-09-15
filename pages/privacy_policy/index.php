@@ -17,7 +17,7 @@ include $path .'common/components/head.php';
       <section class="policy area">
         <div class="inner1500">
           <h2 class="ttl ttl-cmn01">プライバシーポリシー</h2>
-          <p class="txt">株式会社ミツトレーディング（以下，「当社」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。</p>
+          <p class="txt">株式会社リック・ジャパン（以下，「当社」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。</p>
           <dl class="list">
             <div class="item">
               <dt class="datattl">第1条（個人情報）</dt>
@@ -82,9 +82,9 @@ include $path .'common/components/head.php';
             <div class="item">
               <dt class="datattl">第10条（お問い合わせ窓口）</dt>
               <dd class="data">本ポリシーに関するお問い合わせは、下記の窓口までお願いいたします。<br>
-                住所:大阪府堺市南区釜室890-5<br>
-                社名:有限会社ミツ・トレーディング<br>
-                TEL:072-296-6752</dd>
+                住所:大阪府堺市南区片蔵486-1<br>
+                社名:株式会社リック・ジャパン<br>
+                TEL:072-349-3548</dd>
             </div>
           </dl>
         </div>

@@ -1,4 +1,30 @@
 <form id="purchase-form" class="form" method="POST" action="./" enctype="multipart/form-data">
+
+<?php
+  $type = $_GET['type'] ?? '';
+  $_SESSION['type'] = $type;
+  if ($type == "staff") {
+  ?>
+  <input type="hidden" name="type" value="<?php echo $type ?>">
+  <div class="block">
+    <ul class="list01">
+      <li class="item01">
+        <div class="datattl">
+          申込方法<span class="require">必須</span>
+        </div>
+        <div class="data">
+          <input type="radio" value="WEB" id="purchase-form-application-method-web" name="applicationMethod" <?php if (isset($form->formData['applicationMethod']) && $form->formData['applicationMethod'] === "WEB") {echo "checked";} ?> required><label for="purchase-form-application-method-web">WEB</label>
+          <input type="radio" value="LINE" id="purchase-form-bank-confirm-line" name="applicationMethod" <?php if (isset($form->formData['applicationMethod']) && $form->formData['applicationMethod'] === "LINE") {echo "checked";} ?> required><label for="purchase-form-bank-confirm-line">LINE</label>
+          <input type="radio" value="TEL" id="purchase-form-bank-confirm-tel" name="applicationMethod" <?php if (isset($form->formData['applicationMethod']) && $form->formData['applicationMethod'] === "TEL") {echo "checked";} ?> required><label for="purchase-form-bank-confirm-tel">TEL</label>
+          <input type="radio" value="買取依頼書" id="purchase-form-bank-confirm-paper" name="applicationMethod" <?php if (isset($form->formData['applicationMethod']) && $form->formData['applicationMethod'] === "買取依頼書") {echo "checked";} ?> required><label for="purchase-form-bank-confirm-paper">買取依頼書</label>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <?php
+  }
+  ?>
+
   <div class="block">
     <div class="head">お客様情報</div>
     <ul class="list01">

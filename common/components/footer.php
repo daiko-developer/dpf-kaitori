@@ -25,5 +25,5 @@
       </dl> -->
     </div>
   </div>
-  <div class="copy"><small>© DPFラクラク買取 All Rights Reserved.</small></div>
+  <div class="copy"><small>© リビルトワールド All Rights Reserved.</small></div>
 </footer>

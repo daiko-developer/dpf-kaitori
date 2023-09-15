@@ -1,3 +1,17 @@
+<?php
+$type = $form->formData['type'];
+if ($type == "staff") {
+?>
+<dl class="list-form-confirm">
+  <div class="item">
+    <dt class="datattl">申込方法</dt>
+    <dd class="data"><?php echo $form->formData['applicationMethod']; ?></dd>
+  </div>
+</dl>
+<?php
+}
+?>
+
 <p class="ttl-cmn03">お客様情報</p>
 <dl class="list-form-confirm">
   <div class="item">

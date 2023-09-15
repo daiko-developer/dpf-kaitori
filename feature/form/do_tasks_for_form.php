@@ -14,7 +14,16 @@ if(isset($_POST['submit'])){
     $form->setSession();
 
     include_once '../../common/util/location.php';
-    header($location . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/' . $form->confirmPage);
+
+    $url = $location . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/' . $form->confirmPage;
+
+    // $typeが'staff'である場合、URLの末尾にクエリパラメータを追加
+    $type = $_POST['type'] ?? '';
+    if ($type == "staff") {
+      $url .= "?type=staff";
+    }
+
+    header($url);
   }else{
     // エラー配列があればエラーを表示
     $form->echoErrors($errors);
