@@ -1,125 +1,28 @@
 <?php
 include_once 'form.php';
-require_once __DIR__ . '../../../../common/util/escape.php';
+
 /** 画像見積りフォームのクラス */
 class EstimateForm extends Form {
-  public $name;
-  public $tel;
-  public $applicantEmail;
-  public $dpfType01;
-  public $dpfCar01;
-  public $dpfDetail01;
-  public $picture01;
-  public $picture01FileName;
-  public $picture01Name;
-  public $picture01Type;
-  public $picture02;
-  public $picture02FileName;
-  public $picture02Name;
-  public $picture02Type;
-  public $picture03;
-  public $picture03FileName;
-  public $picture03Name;
-  public $picture03Type;
   public $confirmPage = 'estimate_confirm';
   public $sendPage = 'estimate_send';
-
-  /** フォームの内容をフィールドに格納 */
-  function setValuesFromForm(): void {
-    // POSTされたデータをエスケープ処理して変数に格納
-    $this->name = escape($_POST['name']);
-    $this->tel = escape($_POST['tel']);
-    $this->applicantEmail = escape($_POST['applicantEmail']);
-
-    $this->dpfType01 = escape($_POST['dpfType01']);
-    $this->dpfCar01 = escape($_POST['dpfCar01']);
-    $this->dpfDetail01 = escape($_POST['dpfDetail01']);
-
-    $this->picture01 = $_FILES['picture01'];
-    $this->picture01FileName = $_FILES['picture01']['name'];
-    $this->picture01Name = file_get_contents($_FILES['picture01']['tmp_name']);
-    $this->picture01Type = exif_imagetype($_FILES['picture01']['tmp_name']);
-    $this->picture02 = $_FILES['picture02'];
-    $this->picture02FileName = $_FILES['picture02']['name'];
-    $this->picture02Name = file_get_contents($_FILES['picture02']['tmp_name']);
-    $this->picture02Type = exif_imagetype($_FILES['picture02']['tmp_name']);
-    $this->picture03 = $_FILES['picture03'];
-    $this->picture03FileName = $_FILES['picture03']['name'];
-    $this->picture03Name = file_get_contents($_FILES['picture03']['tmp_name']);
-    $this->picture03Type = exif_imagetype($_FILES['picture03']['tmp_name']);
-  }
 
   /** フォームにエラーがあれば変数に格納 */
   function setError():array {
     $errors = [];
     // trim(文字列)→文字列内の空白を除去 →値がなくなればエラーにする
-    if(trim($this->name) === '' || trim($this->name) === "　"){
+    if(trim($this->formData['name']) === '' || trim($this->formData['name']) === "　"){
       $errors['name'] = "お名前を入力してください";
     }
-    if(trim($this->dpfCar01) === '' || trim($this->dpfCar01) === "　"){
+    if(trim($this->formData['dpfCar01']) === '' || trim($this->formData['dpfCar01']) === "　"){
       $errors['dpfCar01'] = "車台番号を入力してください";
     }
 
     return $errors;
   }
 
-  /** フォームの内容をセッションに保存 */
-  function setSession():void {
-    $_SESSION['name'] = $this->name;
-    $_SESSION['tel'] = $this->tel;
-    $_SESSION['applicantEmail'] = $this->applicantEmail;
-
-    $_SESSION['dpfType01'] = $this->dpfType01;
-    $_SESSION['dpfCar01'] = $this->dpfCar01;
-    $_SESSION['dpfDetail01'] = $this->dpfDetail01;
-
-    $_SESSION['picture01'] = $this->picture01;
-    $_SESSION['picture01FileName'] = $this->picture01FileName;
-    $_SESSION['picture01Name'] = $this->picture01Name;
-    $_SESSION['picture01Type'] = $this->picture01Type;
-    $_SESSION['picture02'] = $this->picture02;
-    $_SESSION['picture02FileName'] = $this->picture02FileName;
-    $_SESSION['picture02Name'] = $this->picture02Name;
-    $_SESSION['picture02Type'] = $this->picture02Type;
-    $_SESSION['picture03'] = $this->picture03;
-    $_SESSION['picture03FileName'] = $this->picture03FileName;
-    $_SESSION['picture03Name'] = $this->picture03Name;
-    $_SESSION['picture03Type'] = $this->picture03Type;
-  }
-
-  /** フォームのエラー内容を出力 */
-  function echoErrors($errors): void {
-    echo $errors['name'];
-    echo $errors['dpfCar01'];
-  }
-
-  /** セッションにあるフォームの内容をフィールドに格納 */
-  function setValuesFromSession(): void {
-    $this->name = $_SESSION['name'];
-    $this->tel = $_SESSION['tel'];
-    $this->applicantEmail = $_SESSION['applicantEmail'];
-
-    $this->dpfType01 = $_SESSION['dpfType01'];
-    $this->dpfCar01 = $_SESSION['dpfCar01'];
-    $this->dpfDetail01 = $_SESSION['dpfDetail01'];
-
-    $this->picture01 = $_SESSION['picture01'];
-    $this->picture01FileName = $_SESSION['picture01FileName'];
-    $this->picture01Name = $_SESSION['picture01Name'];
-    $this->picture01Type = $_SESSION['picture01Type'];
-    $this->picture02 = $_SESSION['picture02'];
-    $this->picture02FileName = $_SESSION['picture02FileName'];
-    $this->picture02Name = $_SESSION['picture02Name'];
-    $this->picture02Type = $_SESSION['picture02Type'];
-    $this->picture03 = $_SESSION['picture03'];
-    $this->picture03FileName = $_SESSION['picture03FileName'];
-    $this->picture03Name = $_SESSION['picture03Name'];
-    $this->picture03Type = $_SESSION['picture03Type'];
-  }
-
   /** スタッフに送るメールのタイトルを取得 */
   function getMailTitleForStaff(): string {
-    return "[DPFラクラク買取]{$this->name}様よりDPF写真お見積りがきました。";
+    return "[DPFラクラク買取]{$this->formData['name']}様よりDPF写真お見積りがきました。";
   }
 
   /** ユーザーに送るメールのタイトルを取得 */
@@ -128,17 +31,17 @@ class EstimateForm extends Form {
   }
 
   /** スタッフに送るメールの本文を取得 */
-  function getMailBodyForStaff(): string {
+  function getMailBodyForStaff($id): string {
     $body = "--__BOUNDARY__\n";
     $body .= "Content-Type: text/plain; charset=\"ISO-2022-JP\"\n";
-    $body .= $this->getFormContentsOfMailBody();
+    $body .= $this->getFormContentsOfMailBody($id);
     $body .= "--__BOUNDARY__\n";
     $body .= $this->getFileContentsOfMailBody();
     return $body;
   }
 
   /** ユーザーに送るメールの本文を取得 */
-  function getMailBodyForUser(): string {
+  function getMailBodyForUser($id): string {
     $body = "--__BOUNDARY__\n";
     $body .= "Content-Type: text/plain; charset=\"ISO-2022-JP\"\n\n";
     $body .= <<<EOD
@@ -146,7 +49,7 @@ class EstimateForm extends Form {
     申込ありがとうございます。
     以下の内容を送信いたしました。
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    {$this->getFormContentsOfMailBody()}
+    {$this->getFormContentsOfMailBody($id)}
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     E-mail: astron04a.e@email.com
     DPFラクラク買取
@@ -158,64 +61,61 @@ class EstimateForm extends Form {
   }
 
   /** メール本文に挿入するフォーム内容を取得 */
-  protected function getFormContentsOfMailBody(): string {
+  protected function getFormContentsOfMailBody($id): string {
     return <<<EOD
 
+    受付番号：$id
+
     お客様情報
-    お名前　　　　　　　　：{$this->name}
-    電話番号　　　　　　　：{$this->tel}
-    メールアドレス　　　　：{$this->applicantEmail}
+    お名前　　　　　　　　：{$this->formData['name']}
+    電話番号　　　　　　　：{$this->formData['tel']}
+    メールアドレス　　　　：{$this->formData['applicantEmail']}
 
     マフラー情報
-    車両型式　　　　　　　：{$this->dpfType01}
-    車台番号　　　　　　　：{$this->dpfCar01}
-    備考欄　　　　　　　　：{$this->dpfDetail01}
-    DPF写真１　　　　　　：{$this->picture01FileName}
-    DPF写真２　　　　　　：{$this->picture02FileName}
-    DPF写真３　　　　　　：{$this->picture03FileName}
+    車両型式　　　　　　　：{$this->formData['dpfType01']}
+    車台番号　　　　　　　：{$this->formData['dpfCar01']}
+    備考欄　　　　　　　　：{$this->formData['dpfDetail01']}
+    DPF写真１　　　　　　：{$this->fileData['picture01']['fileName']}
+    DPF写真２　　　　　　：{$this->fileData['picture02']['fileName']}
+    DPF写真３　　　　　　：{$this->fileData['picture03']['fileName']}
 
     EOD;
   }
 
   /** メール本文に挿入するファイル内容を取得 */
   protected function getFileContentsOfMailBody(): string {
-    $fileBody = "Content-Type: application/octet-stream; name=\"{$this->picture01FileName}\"\n";
-    $fileBody .= "Content-Disposition: attachment; filename=\"{$this->picture01FileName}\"\n";
+    $fileBody = "Content-Type: application/octet-stream; name=\"{$this->fileData['picture01']['fileName']}\"\n";
+    $fileBody .= "Content-Disposition: attachment; filename=\"{$this->fileData['picture01']['fileName']}\"\n";
     $fileBody .= "Content-Transfer-Encoding: base64\n";
     $fileBody .= "\n";
-    $fileBody .= chunk_split(base64_encode($this->picture01Name));
+    $fileBody .= chunk_split(base64_encode($this->fileData['picture01']['fileContents']));
     $fileBody .= "--__BOUNDARY__\n";
-    $fileBody .= "Content-Type: application/octet-stream; name=\"{$this->picture02FileName}\"\n";
-    $fileBody .= "Content-Disposition: attachment; filename=\"{$this->picture02FileName}\"\n";
+    $fileBody .= "Content-Type: application/octet-stream; name=\"{$this->fileData['picture02']['fileName']}\"\n";
+    $fileBody .= "Content-Disposition: attachment; filename=\"{$this->fileData['picture02']['fileName']}\"\n";
     $fileBody .= "Content-Transfer-Encoding: base64\n";
     $fileBody .= "\n";
-    $fileBody .= chunk_split(base64_encode($this->picture02Name));
+    $fileBody .= chunk_split(base64_encode($this->fileData['picture02']['fileContents']));
     $fileBody .= "--__BOUNDARY__\n";
-    $fileBody .= "Content-Type: application/octet-stream; name=\"{$this->picture03FileName}\"\n";
-    $fileBody .= "Content-Disposition: attachment; filename=\"{$this->picture03FileName}\"\n";
+    $fileBody .= "Content-Type: application/octet-stream; name=\"{$this->fileData['picture03']['fileName']}\"\n";
+    $fileBody .= "Content-Disposition: attachment; filename=\"{$this->fileData['picture03']['fileName']}\"\n";
     $fileBody .= "Content-Transfer-Encoding: base64\n";
     $fileBody .= "\n";
-    $fileBody .= chunk_split(base64_encode($this->picture03Name));
+    $fileBody .= chunk_split(base64_encode($this->fileData['picture03']['fileContents']));
     $fileBody .= "--__BOUNDARY__";
     return $fileBody;
   }
 
-  /** フォーム内容を記録するPOST先URLを返す */
-  function getPostUrl(): string {
-    return self::SPREAD_SHEET_URL;
-  }
-
   /** フォーム内容を返す */
   function getPostData(): array {
-    return array(
-      'name' => $this->name,
-      'tel' => $this->tel,
-      'applicantEmail' => $this->applicantEmail,
-      'dpfType01' => $this->dpfType01,
-      'dpfCar01' => $this->dpfCar01,
-      'dpfDetail01' => $this->dpfDetail01,
+    return [
       'formType' => 'estimateForm',
-    );
+      'formData' => $this->formData,
+      'fileData' => [
+        'picture01' => $this->fileData['picture01']['fileName'],
+        'picture02' => $this->fileData['picture02']['fileName'],
+        'picture03' => $this->fileData['picture03']['fileName'],
+      ],
+    ];
   }
 }
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-switch ($_SESSION['picture01Type']) {
+switch ($_SESSION['fileData']['picture01']['fileType']) {
   case IMAGETYPE_JPEG:
   header('content-type: image/jpeg');
   break;
@@ -13,5 +13,5 @@ switch ($_SESSION['picture01Type']) {
   break;
 }
 
-echo $_SESSION['picture01Name'];
+echo $_SESSION['fileData']['picture01']['fileContents'];
 ?>

@@ -15,7 +15,7 @@ if($_POST['token'] !== $_SESSION['token']){
 
 $form->setValuesFromSession();
 
-// GASを通してスプレッドシートにフォームに内容を送信
+// GASを通してスプレッドシートにフォーム内容を送信
 $postUrl = $form->getPostUrl();
 $postData = $form->getPostData();
 $jsonData = json_encode($postData);
@@ -30,12 +30,6 @@ $options = array(
 
 $context = stream_context_create($options);
 $response = file_get_contents($postUrl, false, $context);
-
-if ($response == "Success") {
-  echo "データが正常に送信されました。";
-} else {
-  echo "エラー: データの送信に失敗しました。";
-}
 
 if ($response === false) {
   echo "Error: Unable to send data.";
@@ -52,21 +46,21 @@ $emailSender = new EmailSender();
 
 // User Mail
 $mailTitle2 = $form->getMailTitleForUser();
-$body2 = $form->getMailBodyForUser();
+$body2 = $form->getMailBodyForUser($newId);
 try {
-  $emailSender->sendToUser(to: $form->applicantEmail, subject: $mailTitle2, body: $body2);
+  $emailSender->sendToUser(to: $form->formData['applicantEmail'], subject: $mailTitle2, body: $body2);
   echo 'メールを送信しました!';
 } catch (Exception $e) {
-    $message = '<p class="question-text error">『' . $form->applicantEmail . '』宛に確認メールを送信できませんでした。<br>正しいメールアドレスで再度ご連絡をお願いいたします。</p>';
+    $message = '<p class="question-text error">『' . $form->formData['applicantEmail'] . '』宛に確認メールを送信できませんでした。<br>正しいメールアドレスで再度ご連絡をお願いいたします。</p>';
     print('エラー');
     exit;
 }
 
 // Staff Mail
 $mailTitle1 = $form->getMailTitleForStaff();
-$body1 = $form->getMailBodyForStaff();
+$body1 = $form->getMailBodyForStaff($newId);
 try {
-  $emailSender->sendToStaff(subject: $mailTitle1, body: $body1, replyTo: $form->applicantEmail);
+  $emailSender->sendToStaff(subject: $mailTitle1, body: $body1, replyTo: $form->formData['applicantEmail']);
   echo 'メールを送信しました!';
 } catch (Exception $e) {
     $message = '<p class="question-text error">何らかの理由で送信エラーが発生しました<br>しばらく待ってから再度送信してください</p>';
@@ -74,7 +68,7 @@ try {
     exit;
 }
 
-$message = '<p class="question-text">『' . $form->applicantEmail . '』宛に確認メールを送信しました<br>お問い合わせありがとうございます。</p>';
+$message = '<p class="question-text">『' . $form->formData['applicantEmail'] . '』宛に確認メールを送信しました<br>お問い合わせありがとうございます。</p>';
 
 
 // End and destroy the session

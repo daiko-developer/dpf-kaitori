@@ -45,7 +45,7 @@ class EmailSender {
     public function sendToStaff($subject, $body, $replyTo) {
         $this->mailer->clearAddresses();
         $this->mailer->setFrom($this->siteEmail, 'DPFラクラク買取');
-        $this->mailer->addAddress('dpf-kaitori@ml.rebuilt-world.com');
+        $this->mailer->addAddress('dpf-kaitori@rebuilt-world.com');
         $this->mailer->addReplyTo($replyTo);
         $this->mailer->Subject = $subject;
         $this->mailer->Body = $body;

@@ -2,30 +2,30 @@
 <dl class="list-form-confirm">
   <div class="item">
     <dt class="datattl">お名前</dt>
-    <dd class="data"><?php echo $form->name; ?></dd>
+    <dd class="data"><?php echo $form->formData['name']; ?></dd>
   </div>
   <div class="item">
     <dt class="datattl">電話番号</dt>
-    <dd class="data"><?php echo empty($form->tel)? '-' : $form->tel; ?></dd>
+    <dd class="data"><?php echo empty($form->formData['tel'])? '-' : $form->formData['tel']; ?></dd>
   </div>
   <div class="item">
     <dt class="datattl">メールアドレス</dt>
-    <dd class="data"><?php echo $form->applicantEmail; ?></dd>
+    <dd class="data"><?php echo $form->formData['applicantEmail']; ?></dd>
   </div>
 </dl>
 <p class="ttl-cmn03">マフラー情報</p>
 <dl class="list-form-confirm">
   <div class="item">
     <dt class="datattl">車両型式</dt>
-    <dd class="data"><?php echo empty($form->dpfType01)? '-' : $form->dpfType01; ?></dd>
+    <dd class="data"><?php echo empty($form->formData['dpfType01'])? '-' : $form->formData['dpfType01']; ?></dd>
   </div>
   <div class="item">
     <dt class="datattl">車台番号</dt>
-    <dd class="data"><?php echo $form->dpfCar01; ?></dd>
+    <dd class="data"><?php echo $form->formData['dpfCar01']; ?></dd>
   </div>
   <div class="item">
     <dt class="datattl">備考欄</dt>
-    <dd class="data"><?php echo empty($form->dpfDetail01)? '-' : $form->dpfDetail01; ?></dd>
+    <dd class="data"><?php echo empty($form->formData['dpfDetail01'])? '-' : $form->formData['dpfDetail01']; ?></dd>
   </div>
   <div class="item">
     <dt class="datattl">DPF写真１</dt>

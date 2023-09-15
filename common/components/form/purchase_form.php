@@ -9,7 +9,7 @@
               <label for="purchase-form-name">お名前</label><span class="require">必須</span>
             </div>
             <div class="data">
-              <input id="purchase-form-name" class="input" type="text" name="name" placeholder="田中太郎" value="<?php if (isset($form->name)) {echo $form->name;} ?>" required>
+              <input id="purchase-form-name" class="input" type="text" name="name" placeholder="田中太郎" value="<?php if (isset($form->formData['name'])) {echo $form->formData['name'];} ?>" required>
             </div>
           </li>
           <li class="item02">
@@ -17,7 +17,7 @@
               <label for="purchase-form-name-furi">お名前(フリガナ)</label><span class="require">必須</span>
             </div>
             <div class="data">
-              <input id="purchase-form-name-furi" class="input" type="text" name="nameFuri" placeholder="タナカタロウ" value="<?php if (isset($form->nameFuri)) {echo $form->nameFuri;} ?>" required>
+              <input id="purchase-form-name-furi" class="input" type="text" name="nameFuri" placeholder="タナカタロウ" value="<?php if (isset($form->formData['nameFuri'])) {echo $form->formData['nameFuri'];} ?>" required>
             </div>
           </li>
         </ul>
@@ -29,7 +29,7 @@
               <label for="purchase-form-company">会社名</label>
             </div>
             <div class="data">
-              <input id="purchase-form-company" class="input" type="text" name="company" placeholder="〇〇株式会社" value="<?php if (isset($form->company)) {echo $form->company;} ?>">
+              <input id="purchase-form-company" class="input" type="text" name="company" placeholder="〇〇株式会社" value="<?php if (isset($form->formData['company'])) {echo $form->formData['company'];} ?>">
             </div>
           </li>
           <li class="item02">
@@ -37,7 +37,7 @@
               <label for="purchase-form-company-furi">会社名(フリガナ)</label>
             </div>
             <div class="data">
-              <input id="purchase-form-company-furi" class="input" type="text" name="companyFuri" placeholder="〇〇カブシキガイシャ" value="<?php if (isset($form->companyFuri)) {echo $form->companyFuri;} ?>">
+              <input id="purchase-form-company-furi" class="input" type="text" name="companyFuri" placeholder="〇〇カブシキガイシャ" value="<?php if (isset($form->formData['companyFuri'])) {echo $form->formData['companyFuri'];} ?>">
             </div>
           </li>
         </ul>
@@ -47,7 +47,7 @@
           <label for="purchase-form-yubin">郵便番号</label>
         </div>
         <div class="data">
-          <input id="purchase-form-yubin" type="text" name="post" class="input -short" placeholder="000-0000" value="<?php if (isset($form->post)) {echo $form->post;} ?>" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">
+          <input id="purchase-form-yubin" type="text" name="post" class="input -short" placeholder="000-0000" value="<?php if (isset($form->formData['post'])) {echo $form->formData['post'];} ?>" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">
         </div>
       </li>
       <li class="item01">
@@ -55,7 +55,7 @@
           <label for="purchase-form-address">住所</label>
         </div>
         <div class="data">
-          <input id="purchase-form-address" class="input" type="text" name="address" placeholder="〇〇県〇〇市〇〇111-1" value="<?php if (isset($form->address)) {echo $form->address;} ?>">
+          <input id="purchase-form-address" class="input" type="text" name="address" placeholder="〇〇県〇〇市〇〇111-1" value="<?php if (isset($form->formData['address'])) {echo $form->formData['address'];} ?>">
         </div>
       </li>
       <li class="item">
@@ -65,7 +65,7 @@
               <label for="purchase-form-tel">電話番号</label>
             </div>
             <div class="data">
-              <input id="purchase-form-tel" class="input" type="text" name="tel" placeholder="000-0000-0000" value="<?php if (isset($form->tel)) {echo $form->tel;} ?>">
+              <input id="purchase-form-tel" class="input" type="text" name="tel" placeholder="000-0000-0000" value="<?php if (isset($form->formData['tel'])) {echo $form->formData['tel'];} ?>">
             </div>
           </li>
           <li class="item02">
@@ -73,7 +73,7 @@
               <label for="purchase-form-mail">メールアドレス</label><span class="require">必須</span>
             </div>
             <div class="data">
-              <input id="purchase-form-mail" class="input" type="text" name="applicantEmail" required pattern="[\w\-._]+@[\w\-._]+\.[A-Za-z]+" placeholder="abc@gmail.com" value="<?php if (isset($form->applicantEmail)) {echo $form->applicantEmail;} ?>">
+              <input id="purchase-form-mail" class="input" type="text" name="applicantEmail" required pattern="[\w\-._]+@[\w\-._]+\.[A-Za-z]+" placeholder="abc@gmail.com" value="<?php if (isset($form->formData['applicantEmail'])) {echo $form->formData['applicantEmail'];} ?>">
             </div>
           </li>
         </ul>
@@ -83,7 +83,7 @@
           <label for="purchase-form-picture">本人確認書類(表)</label><span class="require">必須</span>
         </div>
         <div class="data">
-          <input id="purchase-form-picture" type="file" name="picture" value="<?php if (isset($form->pictureFileName)) {echo $form->pictureFileName;} ?>" required>
+          <input id="purchase-form-picture" type="file" name="picture01" required>
         </div>
       </li>
       <li class="item01">
@@ -91,7 +91,7 @@
           <label for="purchase-form-picture-ura">本人確認書類(裏)</label><span class="require">必須</span>
         </div>
         <div class="data">
-          <input id="purchase-form-picture-ura" type="file" name="pictureUra" value="<?php if (isset($form->pictureUraFileName)) {echo $form->pictureUraFileName;} ?>" required>
+          <input id="purchase-form-picture-ura" type="file" name="picture02" required>
         </div>
       </li>
       <li class="item01">
@@ -112,7 +112,7 @@
               <label for="purchase-form-bank-name">金融機関名</label><span class="require">必須</span>
             </div>
             <div class="data">
-              <input id="purchase-form-bank-name" class="input" type="text" name="bank" placeholder="三井住友銀行" value="<?php if (isset($form->bank)) {echo $form->bank;} ?>" required>
+              <input id="purchase-form-bank-name" class="input" type="text" name="bank" placeholder="三井住友銀行" value="<?php if (isset($form->formData['bank'])) {echo $form->formData['bank'];} ?>" required>
             </div>
           </li>
           <li class="item02">
@@ -120,7 +120,7 @@
               <label for="purchase-form-bank-shiten">支店名(店番)</label><span class="require">必須</span>
             </div>
             <div class="data">
-              <input id="purchase-form-bank-shiten" class="input" type="text" name="branch" placeholder="梅田支店" value="<?php if (isset($form->branch)) {echo $form->branch;} ?>" required>
+              <input id="purchase-form-bank-shiten" class="input" type="text" name="branch" placeholder="梅田支店" value="<?php if (isset($form->formData['branch'])) {echo $form->formData['branch'];} ?>" required>
             </div>
           </li>
         </ul>
@@ -132,8 +132,8 @@
               種別<span class="require">必須</span>
             </div>
             <div class="data">
-              <input type="radio" value="普通(総合)" id="purchase-form-bank-type-normal" name="bankType" <?php if (isset($form->bankType) && $form->bankType === "普通(総合)") {echo "checked";} ?> required><label for="purchase-form-bank-type-normal">普通(総合)</label>
-              <input type="radio" value="当座" id="purchase-form-bank-type-toza" name="bankType" <?php if (isset($form->bankType) && $form->bankType === "当座") {echo "checked";} ?> required><label for="purchase-form-bank-type-toza">当座</label>
+              <input type="radio" value="普通(総合)" id="purchase-form-bank-type-normal" name="bankType" <?php if (isset($form->formData['bankType']) && $form->formData['bankType'] === "普通(総合)") {echo "checked";} ?> required><label for="purchase-form-bank-type-normal">普通(総合)</label>
+              <input type="radio" value="当座" id="purchase-form-bank-type-toza" name="bankType" <?php if (isset($form->formData['bankType']) && $form->formData['bankType'] === "当座") {echo "checked";} ?> required><label for="purchase-form-bank-type-toza">当座</label>
             </div>
           </li>
           <li class="item02">
@@ -141,7 +141,7 @@
               <label for="purchase-form-bank-number">口座番号</label><span class="require">必須</span>
             </div>
             <div class="data">
-              <input id="purchase-form-bank-number" class="input" type="text" name="bankNumber" placeholder="1234567" value="<?php if (isset($form->bankNumber)) {echo $form->bankNumber;} ?>" required>
+              <input id="purchase-form-bank-number" class="input" type="text" name="bankNumber" placeholder="1234567" value="<?php if (isset($form->formData['bankNumber'])) {echo $form->formData['bankNumber'];} ?>" required>
             </div>
           </li>
         </ul>
@@ -153,7 +153,7 @@
               <label for="purchase-form-bank-user-name">口座名義人<span class="ttlin">(カタカナ)</span></label><span class="require">必須</span>
             </div>
             <div class="data">
-              <input id="purchase-form-bank-user-name" class="input" type="text" name="bankUser" placeholder="タナカタロウ" value="<?php if (isset($form->bankUser)) {echo $form->bankUser;} ?>" required>
+              <input id="purchase-form-bank-user-name" class="input" type="text" name="bankUser" placeholder="タナカタロウ" value="<?php if (isset($form->formData['bankUser'])) {echo $form->formData['bankUser'];} ?>" required>
             </div>
           </li>
         </ul>
@@ -163,8 +163,8 @@
           査定金額の確認<span class="require">必須</span>
         </div>
         <div class="data">
-          <input type="radio" value="確認する" id="purchase-form-bank-confirm-yes" name="bankConfirm" <?php if (isset($form->bankConfirm) && $form->bankConfirm === "確認する") {echo "checked";} ?> required><label for="purchase-form-bank-confirm-yes">確認する</label>
-          <input type="radio" value="確認しない(即入金)" id="purchase-form-bank-confirm-no" name="bankConfirm" <?php if (isset($form->bankConfirm) && $form->bankConfirm === "確認しない(即入金)") {echo "checked";} ?> required><label for="purchase-form-bank-confirm-no">確認しない(即入金)</label>
+          <input type="radio" value="確認する" id="purchase-form-bank-confirm-yes" name="bankConfirm" <?php if (isset($form->formData['bankConfirm']) && $form->formData['bankConfirm'] === "確認する") {echo "checked";} ?> required><label for="purchase-form-bank-confirm-yes">確認する</label>
+          <input type="radio" value="確認しない(即入金)" id="purchase-form-bank-confirm-no" name="bankConfirm" <?php if (isset($form->formData['bankConfirm']) && $form->formData['bankConfirm'] === "確認しない(即入金)") {echo "checked";} ?> required><label for="purchase-form-bank-confirm-no">確認しない(即入金)</label>
         </div>
       </li>
     </ul>
@@ -181,7 +181,7 @@
                 <label for="purchase-form-type0<?= $i; ?>">車両型式</label><?= $i === 1 ? '<span class="require">必須</span>' : ''; ?>
               </div>
               <div class="data04">
-                <input id="purchase-form-type0<?= $i; ?>" class="input" type="text" name="dpfType0<?= $i; ?>" placeholder="FE82DG" value="<?php if (isset($form->{'dpfType' . $i})) {echo $form->{'dpfType' . $i};} ?>" <?= $i === 1 ? 'required' : ''; ?>>
+                <input id="purchase-form-type0<?= $i; ?>" class="input" type="text" name="dpfType0<?= $i; ?>" placeholder="FE82DG" value="<?php if (isset($form->dataForm['dpfType' . $i])) {echo $form->dataForm['dpfType' . $i];} ?>" <?= $i === 1 ? 'required' : ''; ?>>
               </div>
             </li>
             <li class="item04">
@@ -189,7 +189,7 @@
                 <label for="purchase-form-car0<?= $i; ?>">車台番号</label><?= $i === 1 ? '<span class="require">必須</span>' : ''; ?>
               </div>
               <div class="data04">
-                <input id="purchase-form-car0<?= $i; ?>" class="input" type="text" name="dpfCar0<?= $i; ?>" placeholder="ABC012-3456789" value="<?php if (isset($form->{'dpfCar' . $i})) {echo $form->{'dpfCar' . $i};} ?>" <?= $i === 1 ? 'required' : ''; ?>>
+                <input id="purchase-form-car0<?= $i; ?>" class="input" type="text" name="dpfCar0<?= $i; ?>" placeholder="ABC012-3456789" value="<?php if (isset($form->dataForm['dpfCar' . $i])) {echo $form->dataForm['dpfCar' . $i];} ?>" <?= $i === 1 ? 'required' : ''; ?>>
               </div>
             </li>
             <li class="item04">
@@ -197,7 +197,7 @@
                 <label for="purchase-form-number0<?= $i; ?>">数量</label><?= $i === 1 ? '<span class="require">必須</span>' : ''; ?>
               </div>
               <div class="data04">
-                <input type="number" id="purchase-form-number0<?= $i; ?>" class="input" name="dpfNumber0<?= $i; ?>" value="<?php if (isset($form->{'dpfNumber' . $i})) {echo $form->{'dpfNumber' . $i};} ?>" <?= $i === 1 ? 'required' : ''; ?>>
+                <input type="number" id="purchase-form-number0<?= $i; ?>" class="input" name="dpfNumber0<?= $i; ?>" value="<?php if (isset($form->dataForm['dpfNumber' . $i])) {echo $form->dataForm['dpfNumber' . $i];} ?>" <?= $i === 1 ? 'required' : ''; ?>>
               </div>
             </li>
             <li class="item04 -fullsize">
@@ -205,7 +205,7 @@
                 <label for="purchase-form-detail0<?= $i; ?>">備考欄<br>(商品状態)</label>
               </div>
               <div class="data04">
-                <textarea id="purchase-form-detail0<?= $i; ?>" name="dpfDetail0<?= $i; ?>" placeholder="オイル漏れ、欠陥部品がある等"><?= isset($form->{'dpfDetail' . $i}) ? $form->{'dpfDetail' . $i} : ''; ?></textarea>
+                <textarea id="purchase-form-detail0<?= $i; ?>" name="dpfDetail0<?= $i; ?>" placeholder="オイル漏れ、欠陥部品がある等"><?= isset($form->dataForm['dpfDetail' . $i]) ? $form->dataForm['dpfDetail' . $i] : ''; ?></textarea>
               </div>
             </li>
           </ul>

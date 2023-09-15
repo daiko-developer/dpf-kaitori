@@ -39,7 +39,7 @@ include_once $path .'common/components/head.php';
                         <label for="contact-form-name">お名前</label><span class="require">必須</span>
                       </div>
                       <div class="data">
-                        <input id="contact-form-name" class="input" type="text" name="name" placeholder="田中太郎" value="<?php if (isset($form->name)) {echo $form->name;} ?>" required>
+                        <input id="contact-form-name" class="input" type="text" name="name" placeholder="田中太郎" value="<?php if (isset($form->formData['name'])) {echo $form->formData['name'];} ?>" required>
                       </div>
                     </li>
                   </ul>
@@ -51,7 +51,7 @@ include_once $path .'common/components/head.php';
                         <label for="contact-form-tel">電話番号</label>
                       </div>
                       <div class="data">
-                        <input id="contact-form-tel" class="input" type="text" name="tel" placeholder="000-0000-0000" value="<?php if (isset($form->tel)) {echo $form->tel;} ?>">
+                        <input id="contact-form-tel" class="input" type="text" name="tel" placeholder="000-0000-0000" value="<?php if (isset($form->formData['tel'])) {echo $form->formData['tel'];} ?>">
                       </div>
                     </li>
                     <li class="item02">
@@ -59,7 +59,7 @@ include_once $path .'common/components/head.php';
                         <label for="contact-form-mail">メールアドレス</label><span class="require">必須</span>
                       </div>
                       <div class="data">
-                        <input id="contact-form-mail" class="input" type="text" name="applicantEmail" required pattern="[\w\-._]+@[\w\-._]+\.[A-Za-z]+" placeholder="abc@gmail.com" value="<?php if (isset($form->applicantEmail)) {echo $form->applicantEmail;} ?>">
+                        <input id="contact-form-mail" class="input" type="text" name="applicantEmail" required pattern="[\w\-._]+@[\w\-._]+\.[A-Za-z]+" placeholder="abc@gmail.com" value="<?php if (isset($form->formData['applicantEmail'])) {echo $form->formData['applicantEmail'];} ?>">
                       </div>
                     </li>
                   </ul>
@@ -69,7 +69,7 @@ include_once $path .'common/components/head.php';
                     <label for="contact-form-detail">お問い合わせ内容</label><span class="require">必須</span>
                   </div>
                   <div class="data">
-                    <textarea id="contact-form-detail" name="detail" required><?php if (isset($form->detail)) {echo $form->detail;} ?></textarea>
+                    <textarea id="contact-form-detail" name="detail" required><?php if (isset($form->formData['detail'])) {echo $form->formData['detail'];} ?></textarea>
                   </div>
                 </li>
               </ul>

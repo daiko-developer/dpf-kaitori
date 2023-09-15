@@ -32,19 +32,19 @@ include $path .'common/components/head.php';
           <dl class="list-form-confirm">
             <div class="item">
               <dt class="datattl">お名前</dt>
-              <dd class="data"><?php echo $form->name; ?></dd>
+              <dd class="data"><?php echo $form->formData['name']; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">電話番号</dt>
-              <dd class="data"><?php echo empty($form->tel)? '-' : $form->tel; ?></dd>
+              <dd class="data"><?php echo empty($form->formData['tel'])? '-' : $form->formData['tel']; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">メールアドレス</dt>
-              <dd class="data"><?php echo $form->applicantEmail; ?></dd>
+              <dd class="data"><?php echo $form->formData['applicantEmail']; ?></dd>
             </div>
             <div class="item">
               <dt class="datattl">備考欄</dt>
-              <dd class="data"><?php echo empty($form->detail)? '-' : $form->detail; ?></dd>
+              <dd class="data"><?php echo empty($form->formData['detail'])? '-' : $form->formData['detail']; ?></dd>
             </div>
           </dl>
           <p class="tac">こちらの内容で送信してもよろしいですか？</p>
