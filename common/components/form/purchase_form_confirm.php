@@ -49,13 +49,13 @@ if ($type == "staff") {
   <div class="item">
     <dt class="datattl">証明写真(表)</dt>
     <dd class="data">
-      <img class="pic" src="<?php echo $path; ?>common/components/form/purchase_form_picture01.php" alt="証明写真(表)">
+      <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=picture01" alt="証明写真(表)">
     </dd>
   </div>
   <div class="item">
     <dt class="datattl">証明写真(裏)</dt>
     <dd class="data">
-      <img class="pic" src="<?php echo $path; ?>common/components/form/purchase_form_picture02.php" alt="証明写真(裏)">
+      <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=picture02" alt="証明写真(裏)">
     </dd>
   </div>
 </dl>

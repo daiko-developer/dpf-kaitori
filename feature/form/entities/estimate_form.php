@@ -22,7 +22,7 @@ class EstimateForm extends Form {
 
   /** スタッフに送るメールのタイトルを取得 */
   function getMailTitleForStaff(): string {
-    return "[DPFラクラク買取]{$this->formData['name']}様よりDPF写真お見積りがきました。";
+    return "[見積り]{$this->formData['name']}様";
   }
 
   /** ユーザーに送るメールのタイトルを取得 */

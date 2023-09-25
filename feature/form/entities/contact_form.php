@@ -17,7 +17,7 @@ class ContactForm extends Form {
 
   /** スタッフに送るメールのタイトルを取得 */
   function getMailTitleForStaff(): string {
-    return "[DPFラクラク買取]{$this->formData['name']}様よりお問い合わせがありました。";
+    return "[お問い合せ]{$this->formData['name']}様";
   }
 
   /** ユーザーに送るメールのタイトルを取得 */

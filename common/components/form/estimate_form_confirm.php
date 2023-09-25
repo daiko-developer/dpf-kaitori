@@ -30,19 +30,19 @@
   <div class="item">
     <dt class="datattl">DPF写真１</dt>
     <dd class="data">
-      <img class="pic" src="<?php echo $path; ?>common/components/form/estimate_form_picture01.php" alt="DPF写真１">
+      <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=picture01" alt="DPF写真１">
     </dd>
   </div>
   <div class="item">
     <dt class="datattl">DPF写真２</dt>
     <dd class="data">
-      <img class="pic" src="<?php echo $path; ?>common/components/form/estimate_form_picture02.php" alt="DPF写真２">
+      <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=picture02" alt="DPF写真２">
     </dd>
   </div>
   <div class="item">
     <dt class="datattl">DPF写真３</dt>
     <dd class="data">
-      <img class="pic" src="<?php echo $path; ?>common/components/form/estimate_form_picture03.php" alt="DPF写真３">
+      <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=picture03" alt="DPF写真３">
     </dd>
   </div>
 </dl>

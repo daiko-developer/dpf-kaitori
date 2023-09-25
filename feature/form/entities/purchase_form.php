@@ -34,7 +34,7 @@ class PurchaseForm extends Form {
 
   /** スタッフに送るメールのタイトルを取得 */
   function getMailTitleForStaff(): string {
-    return "[DPFラクラク買取]{$this->formData['name']}様より買取申込がきました。";
+    return "[買取申込]{$this->formData['name']}様";
   }
 
   /** ユーザーに送るメールのタイトルを取得 */
