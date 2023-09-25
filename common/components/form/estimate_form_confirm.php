@@ -28,21 +28,51 @@
     <dd class="data"><?php echo empty($form->formData['dpfDetail01'])? '-' : $form->formData['dpfDetail01']; ?></dd>
   </div>
   <div class="item">
-    <dt class="datattl">DPF写真１</dt>
+    <dt class="datattl">DPF全体の写真</dt>
     <dd class="data">
       <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=picture01" alt="DPF写真１">
     </dd>
   </div>
   <div class="item">
-    <dt class="datattl">DPF写真２</dt>
+    <dt class="datattl">DPFフィルター部分の写真</dt>
     <dd class="data">
       <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=picture02" alt="DPF写真２">
     </dd>
   </div>
   <div class="item">
-    <dt class="datattl">DPF写真３</dt>
+    <dt class="datattl">DPF出口側の写真</dt>
     <dd class="data">
       <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=picture03" alt="DPF写真３">
+    </dd>
+  </div>
+  <div class="item">
+    <dt class="datattl">補足写真1</dt>
+    <dd class="data">
+      <?php if (!empty($form->fileData['exPicture01'])): ?>
+        <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=exPicture01" alt="補足写真1">
+      <?php else: ?>
+        -
+      <?php endif; ?>
+    </dd>
+  </div>
+  <div class="item">
+    <dt class="datattl">補足写真2</dt>
+    <dd class="data">
+      <?php if (!empty($form->fileData['exPicture02'])): ?>
+        <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=exPicture02" alt="補足写真2">
+      <?php else: ?>
+        -
+      <?php endif; ?>
+    </dd>
+  </div>
+  <div class="item">
+    <dt class="datattl">補足写真3</dt>
+    <dd class="data">
+      <?php if (!empty($form->fileData['exPicture03'])): ?>
+        <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=exPicture03" alt="補足写真3">
+      <?php else: ?>
+        -
+      <?php endif; ?>
     </dd>
   </div>
 </dl>

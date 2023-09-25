@@ -30,17 +30,21 @@ abstract class Form {
   function setValuesFromForm(): void {
     // POSTされたデータをエスケープ処理して変数に格納
     foreach ($_POST as $key => $value) {
-        $this->formData[$key] = $this->escape($value);
+      $this->formData[$key] = $this->escape($value);
     }
 
     // Files data
     foreach ($_FILES as $key => $fileInfo) {
-        $this->fileData[$key] = [
-            'file' => $fileInfo,
-            'fileName' => $fileInfo['name'],
-            'fileContents' => file_get_contents($fileInfo['tmp_name']),
-            'fileType' => exif_imagetype($fileInfo['tmp_name'])
-        ];
+      if ($fileInfo['error'] == 4) {
+        continue;
+      }
+
+      $this->fileData[$key] = [
+        'file' => $fileInfo,
+        'fileName' => $fileInfo['name'],
+        'fileContents' => file_get_contents($fileInfo['tmp_name']),
+        'fileType' => exif_imagetype($fileInfo['tmp_name'])
+      ];
     }
   }
 

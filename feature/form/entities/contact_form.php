@@ -1,5 +1,6 @@
 <?php
 include_once 'form.php';
+include_once '../../../common/util/env.php';
 
 /** お問い合わせフォームのクラス */
 class ContactForm extends Form {
@@ -36,6 +37,9 @@ class ContactForm extends Form {
 
   /** ユーザーに送るメールの本文を取得 */
   function getMailBodyForUser($id): string {
+    $config = new EnvironmentConfig();
+    $emailReception = $config->get('email_reception');
+
     $body = "--__BOUNDARY__\n";
     $body .= "Content-Type: text/plain; charset=\"ISO-2022-JP\"\n\n";
     $body .= <<<EOD
@@ -45,7 +49,7 @@ class ContactForm extends Form {
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     {$this->getFormContentsOfMailBody($id)}
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    E-mail: astron04a.e@email.com
+    E-mail: {$emailReception}
     DPFラクラク買取
 
     EOD;

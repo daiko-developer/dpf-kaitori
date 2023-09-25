@@ -107,6 +107,33 @@
           </div>
         </div>
       </li>
+      <li class="item01">
+        <p class="txt">※大きな凹みや傷や破損がある場合、その箇所の写真をアップロードしてください</p>
+      </li>
+      <li class="item01">
+        <div class="datattl">
+          <label for="estimate-form-ex-picture01">補足写真1</label>
+        </div>
+        <div class="data">
+          <input id="estimate-form-ex-picture01" class="file" type="file" name="exPicture01">
+        </div>
+      </li>
+      <li class="item01">
+        <div class="datattl">
+          <label for="estimate-form-ex-picture02">補足写真2</label>
+        </div>
+        <div class="data">
+          <input id="estimate-form-ex-picture02" class="file" type="file" name="exPicture02">
+        </div>
+      </li>
+      <li class="item01">
+        <div class="datattl">
+          <label for="estimate-form-ex-picture03">補足写真3</label>
+        </div>
+        <div class="data">
+          <input id="estimate-form-ex-picture03" class="file" type="file" name="exPicture03">
+        </div>
+      </li>
     </ul>
   </div>
   <div class="block-btn">
