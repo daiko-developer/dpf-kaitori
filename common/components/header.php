@@ -10,7 +10,7 @@
         <div class="txt02">営業時間 9:00〜18:00 (土日祝 ※年末年始･お盆除く)</div>
       </div>
       <div class="block-btn">
-        <div class="btn -kaitori"><a href="<?php echo $path; ?>pages/purchase" class="label">買取申込</a></div>
+        <div class="btn -kaitori"><a href="<?php echo $path; ?>#application" class="label">買取申込</a></div>
         <div class="btn -contact"><a href="<?php echo $path; ?>pages/contact" class="label">お問い合わせ</a></div>
         <div class="btn -menu">
           <div class="toggle"><span class="bar accordion-toggle"></span></div>
@@ -27,7 +27,7 @@
         <li class="item01"><a href="<?php echo $path; ?>#point">３つのポイント</a></li>
         <li class="item01"><a href="<?php echo $path; ?>#price">高価買取リスト</a></li>
         <li class="item01"><a href="<?php echo $path; ?>#case">買取事例</a></li>
-        <li class="item01"><a href="<?php echo $path; ?>#flow">流れ</a></li>
+        <li class="item01"><a href="<?php echo $path; ?>#flow">申込から入金までの流れ</a></li>
         <li class="item01"><a href="<?php echo $path; ?>#faq">よくあるご質問</a></li>
         <li class="item01"><a href="<?php echo $path; ?>#satei">０秒見積り</a></li>
         <li class="item01"><a href="<?php echo $path; ?>#application">買取申込</a></li>

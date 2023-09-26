@@ -377,7 +377,10 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
         <div class="inner1500">
           <h2 class="ttl ttl-cmn01">買取申込</h2>
           <p class="txt01">古くても、汚れていても、詰まっていても、OK！<br>まずは着払いでお送りください！</p>
-          <div class="btn btn-cmn02 -purchase"><a href="<?php echo $path; ?>pages/purchase">買取申込はコチラ</a></div>
+          <div class="block-btn">
+            <div class="btn btn-cmn02 -form-paper"><a href="https://drive.google.com/uc?id=17BahxJcsY3ZqYa7RlqkqGk0GL2vGOBfV" target="_blank">買取依頼書で申込</a></div>
+            <div class="btn btn-cmn02 -form-web"><a href="<?php echo $path; ?>pages/purchase">WEBフォームで申込</a></div>
+          </div>
           <p class="txt01">以下のような状態の場合は減額になることがあります。<br>予めご了承ください。</p>
           <ul class="block-img">
             <li class="item">

@@ -45,4 +45,10 @@
   &.-estimate a:before {
     content: "\f002";
   }
+  &.-form-paper a:before {
+    content: "\f15b";
+  }
+  &.-form-web a:before {
+    content: "\f390";
+  }
 }

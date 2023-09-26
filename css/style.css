@@ -247,6 +247,12 @@ button[href*=tel] {
 .btn-cmn02.-estimate a:before {
   content: "\f002";
 }
+.btn-cmn02.-form-paper a:before {
+  content: "\f15b";
+}
+.btn-cmn02.-form-web a:before {
+  content: "\f390";
+}
 
 /*フォーム*/
 .form {
@@ -2284,6 +2290,17 @@ gnav
   font-weight: bold;
   font-size: 1.2rem;
 }
+.home-application .block-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.home-application .block-btn .btn {
+  margin: 0 20px;
+}
 .home-application .block-img {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2302,6 +2319,15 @@ gnav
   font-weight: bold;
 }
 @media only screen and (max-width: 599px) {
+  .home-application .block-btn {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .home-application .block-btn .btn {
+    margin: 10px 0px;
+  }
   .home-application .block-img {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
