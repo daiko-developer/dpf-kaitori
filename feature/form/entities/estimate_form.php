@@ -1,6 +1,6 @@
 <?php
 include_once 'form.php';
-include_once  __DIR__ .  '../../../../common/util/env.php';
+include_once __DIR__ . '../../../../common/util/env.php';
 
 /** 画像見積りフォームのクラス */
 class EstimateForm extends Form {

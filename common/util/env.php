@@ -14,6 +14,7 @@ class EnvironmentConfig {
       // 環境変数をプロパティとして保存
       $this->data['email_username'] = getenv('EMAIL_USERNAME');
       $this->data['email_password'] = getenv('EMAIL_PASSWORD');
+      $this->data['email_reception'] = getenv('EMAIL_RECEPTION');
   }
 
   public function get($key) {

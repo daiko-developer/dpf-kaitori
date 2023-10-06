@@ -1,6 +1,6 @@
 <?php
 include_once 'form.php';
-include_once '../../../common/util/env.php';
+include_once __DIR__ . '../../../../common/util/env.php';
 
 /** お問い合わせフォームのクラス */
 class ContactForm extends Form {
