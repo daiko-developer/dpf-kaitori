@@ -1,5 +1,5 @@
 <?php
-$type = $form->formData['type'];
+$type = isset($form->formData['type']) ? $form->formData['type'] : '';
 if ($type == "staff") {
 ?>
 <dl class="list-form-confirm">
@@ -56,6 +56,26 @@ if ($type == "staff") {
     <dt class="datattl">証明写真(裏)</dt>
     <dd class="data">
       <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=picture02" alt="証明写真(裏)">
+    </dd>
+  </div>
+  <div class="item">
+    <dt class="datattl">社会保険証(表)</dt>
+    <dd class="data">
+      <?php if (!empty($form->fileData['picture03'])): ?>
+        <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=picture03" alt="社会保険証(表)">
+      <?php else: ?>
+        -
+      <?php endif; ?>
+    </dd>
+  </div>
+  <div class="item">
+    <dt class="datattl">社会保険証(裏)</dt>
+    <dd class="data">
+      <?php if (!empty($form->fileData['picture04'])): ?>
+        <img class="pic" src="<?php echo $path; ?>common/components/form/display_image_from_session.php?pic=picture04" alt="社会保険証(裏)">
+      <?php else: ?>
+        -
+      <?php endif; ?>
     </dd>
   </div>
 </dl>

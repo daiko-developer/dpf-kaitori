@@ -48,7 +48,6 @@ class PurchaseForm extends Form {
     $body = "--__BOUNDARY__\n";
     $body .= "Content-Type: text/plain; charset=\"ISO-2022-JP\"\n";
     $body .= $this->getFormContentsOfMailBody($id);
-    $body .= "--__BOUNDARY__\n";
     $body .= $this->getFileContentsOfMailBody();
     return $body;
   }
@@ -71,13 +70,15 @@ class PurchaseForm extends Form {
     DPFラクラク買取
 
     EOD;
-    $body .= "--__BOUNDARY__\n";
     $body .= $this->getFileContentsOfMailBody();
     return $body;
   }
 
   /** メール本文に挿入するフォーム内容を取得 */
   protected function getFormContentsOfMailBody($id): string {
+    $picture03 = isset($this->fileData['picture03']) ? $this->fileData['picture03']['fileName'] : '-';
+    $picture04 = isset($this->fileData['picture04']) ? $this->fileData['picture04']['fileName'] : '-';
+
     return <<<EOD
 
     受付番号：$id
@@ -91,8 +92,10 @@ class PurchaseForm extends Form {
     住所　　　　　　　　　：{$this->formData['address']}
     電話番号　　　　　　　：{$this->formData['tel']}
     メールアドレス　　　　：{$this->formData['applicantEmail']}
-    本人確認書類（表）　　　　：{$this->fileData['picture01']['fileName']}
-    本人確認書類（裏）　　　　：{$this->fileData['picture02']['fileName']}
+    本人確認書類（表）　　：{$this->fileData['picture01']['fileName']}
+    本人確認書類（裏）　　：{$this->fileData['picture02']['fileName']}
+    社会保険証(表)　　　　：$picture03
+    社会保険証(裏)　　　　：$picture04
 
     振り込み先情報
     金融機関名　　　　　　：{$this->formData['bank']}
@@ -134,31 +137,62 @@ class PurchaseForm extends Form {
 
   /** メール本文に挿入するファイル内容を取得 */
   protected function getFileContentsOfMailBody(): string {
-    $fileBody = "Content-Type: application/octet-stream; name=\"{$this->fileData['picture01']['fileName']}\"\n";
-    $fileBody .= "Content-Disposition: attachment; filename=\"{$this->fileData['picture01']['fileName']}\"\n";
-    $fileBody .= "Content-Transfer-Encoding: base64\n";
-    $fileBody .= "\n";
-    $fileBody .= chunk_split(base64_encode($this->fileData['picture01']['fileContents']));
-    $fileBody .= "--__BOUNDARY__\n";
-    $fileBody .= "Content-Type: application/octet-stream; name=\"{$this->fileData['picture02']['fileName']}\"\n";
-    $fileBody .= "Content-Disposition: attachment; filename=\"{$this->fileData['picture02']['fileName']}\"\n";
-    $fileBody .= "Content-Transfer-Encoding: base64\n";
-    $fileBody .= "\n";
-    $fileBody .= chunk_split(base64_encode($this->fileData['picture02']['fileContents']));
-    $fileBody .= "--__BOUNDARY__";
+    $fileBody = "";
+
+    // 必須の画像ファイルリスト
+    $mandatoryPics = ['picture01', 'picture02'];
+    foreach ($mandatoryPics as $key) {
+        if (!isset($this->fileData[$key])) {
+            throw new Exception("Mandatory picture {$key} is missing."); // 必須の画像が存在しない場合は例外をスロー
+        }
+        $fileBody .= $this->generateFileBody($key);
+    }
+
+    // 任意の画像ファイルリスト
+    $optionalPics = ['picture03', 'picture04'];
+    foreach ($optionalPics as $key) {
+        if (isset($this->fileData[$key])) {
+            $fileBody .= $this->generateFileBody($key);
+        }
+    }
+
+    if ($fileBody !== "") {
+        $fileBody .= "--__BOUNDARY__"; // 最後のバウンダリ
+    }
+
     return $fileBody;
+  }
+
+  /** 画像の内容をもとにファイルのボディ部分を生成 */
+  protected function generateFileBody($key) {
+    $body = "--__BOUNDARY__\n";
+    $body .= "Content-Type: application/octet-stream; name=\"{$this->fileData[$key]['fileName']}\"\n";
+    $body .= "Content-Disposition: attachment; filename=\"{$this->fileData[$key]['fileName']}\"\n";
+    $body .= "Content-Transfer-Encoding: base64\n";
+    $body .= "\n";
+    $body .= chunk_split(base64_encode($this->fileData[$key]['fileContents']));
+    return $body;
   }
 
   /** フォーム内容を返す */
   function getPostData(): array {
+    $fileNames = [
+      'picture01' => $this->fileData['picture01']['fileName'] ?? null,
+      'picture02' => $this->fileData['picture02']['fileName'] ?? null,
+    ];
+
+    // picture03,04 が存在する場合のみ、そのデータを追加
+    foreach (['picture03', 'picture04'] as $key) {
+      if (isset($this->fileData[$key])) {
+          $fileNames[$key] = $this->fileData[$key]['fileName'];
+      }
+  }
+
     return [
       'applicationMethod' => $this->applicationMethod,
       'formType' => 'purchaseForm',
       'formData' => $this->formData,
-      'fileData' => [
-        'picture01' => $this->fileData['picture01']['fileName'],
-        'picture02' => $this->fileData['picture02']['fileName'],
-      ],
+      'fileData' => $fileNames,
     ];
   }
 }

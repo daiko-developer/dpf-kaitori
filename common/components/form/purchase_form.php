@@ -106,18 +106,18 @@
       </li>
       <li class="item01">
         <div class="datattl">
-          <label for="purchase-form-picture">本人確認書類(表)</label><span class="require">必須</span>
+          <label for="purchase-form-picture01">本人確認書類(表)</label><span class="require">必須</span>
         </div>
         <div class="data">
-          <input id="purchase-form-picture" type="file" name="picture01" required>
+          <input id="purchase-form-picture01" type="file" name="picture01" required>
         </div>
       </li>
       <li class="item01">
         <div class="datattl">
-          <label for="purchase-form-picture-ura">本人確認書類(裏)</label><span class="require">必須</span>
+          <label for="purchase-form-picture02">本人確認書類(裏)</label><span class="require">必須</span>
         </div>
         <div class="data">
-          <input id="purchase-form-picture-ura" type="file" name="picture02" required>
+          <input id="purchase-form-picture02" type="file" name="picture02" required>
         </div>
       </li>
       <li class="item01">
@@ -125,6 +125,27 @@
           本人確認書類<br>
           運転免許証/健康保険証/パスポート/住民票/年金手帳など
         </p>
+      </li>
+      <li class="item01">
+        <p class="txt">
+          ※法人の振込先の場合は、社会保険証を以下にアップロードしてください
+        </p>
+      </li>
+      <li class="item01">
+        <div class="datattl">
+          <label for="purchase-form-picture03">社会保険証(表)</label>
+        </div>
+        <div class="data">
+          <input id="purchase-form-picture03" type="file" name="picture03">
+        </div>
+      </li>
+      <li class="item01">
+        <div class="datattl">
+          <label for="purchase-form-picture04">社会保険証(裏)</label>
+        </div>
+        <div class="data">
+          <input id="purchase-form-picture04" type="file" name="picture04">
+        </div>
       </li>
     </ul>
   </div>
