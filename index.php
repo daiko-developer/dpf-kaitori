@@ -435,7 +435,7 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
               <dt class="datattl">古物営業法の規定<span class="ttlin">に基づく表示</span></dt>
               <dd class="data">
                 大阪府公安委員会<br>
-                第62234R057273号
+                第62207R056806号
               </dd>
             </div>
           </dl>
