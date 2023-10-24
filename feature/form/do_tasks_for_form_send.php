@@ -34,22 +34,23 @@ $response = file_get_contents($postUrl, false, $context);
 if ($response === false) {
   echo "Error: Unable to send data.";
 } elseif (strpos($response, "Error:") === 0) {
-  echo $response;  // GASからのエラーメッセージを表示
+  // echo $response;  // GASからのエラーメッセージを表示
 } else {
-  echo "Generated ID: " . $response;
+  // echo "Generated ID: " . $response;
 }
 
 $newId = $response;
 
 //// メール送信処理
 $emailSender = new EmailSender();
+$emailSender->attachFile(fileData: $form->fileData);
 
 // User Mail
 $mailTitle2 = $form->getMailTitleForUser();
 $body2 = $form->getMailBodyForUser($newId);
 try {
   $emailSender->sendToUser(to: $form->formData['applicantEmail'], subject: $mailTitle2, body: $body2);
-  echo 'メールを送信しました!';
+  // echo 'メールを送信しました!';
 } catch (Exception $e) {
     $message = '<p class="question-text error">『' . $form->formData['applicantEmail'] . '』宛に確認メールを送信できませんでした。<br>正しいメールアドレスで再度ご連絡をお願いいたします。</p>';
     print('エラー');
@@ -61,7 +62,7 @@ $mailTitle1 = $form->getMailTitleForStaff();
 $body1 = $form->getMailBodyForStaff($newId);
 try {
   $emailSender->sendToStaff(subject: $mailTitle1, body: $body1, replyTo: $form->formData['applicantEmail']);
-  echo 'メールを送信しました!';
+  // echo 'メールを送信しました!';
 } catch (Exception $e) {
     $message = '<p class="question-text error">何らかの理由で送信エラーが発生しました<br>しばらく待ってから再度送信してください</p>';
     print('エラー');

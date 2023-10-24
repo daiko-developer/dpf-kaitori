@@ -28,10 +28,7 @@ class ContactForm extends Form {
 
   /** スタッフに送るメールの本文を取得 */
   function getMailBodyForStaff($id): string {
-    $body = "--__BOUNDARY__\n";
-    $body .= "Content-Type: text/plain; charset=\"ISO-2022-JP\"\n";
-    $body .= $this->getFormContentsOfMailBody($id);
-    $body .= "--__BOUNDARY__\n";
+    $body = $this->getFormContentsOfMailBody($id);
     return $body;
   }
 
@@ -39,36 +36,30 @@ class ContactForm extends Form {
   function getMailBodyForUser($id): string {
     $config = new EnvironmentConfig();
     $emailReception = $config->get('email_reception');
-
-    $body = "--__BOUNDARY__\n";
-    $body .= "Content-Type: text/plain; charset=\"ISO-2022-JP\"\n\n";
-    $body .= <<<EOD
-
-    お問い合わせありがとうございます。
-    以下の内容を送信いたしました。
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    $body = <<<EOD
+    お問い合わせありがとうございます。<br>
+    以下の内容を送信いたしました。<br>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+    <br>
     {$this->getFormContentsOfMailBody($id)}
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    E-mail: {$emailReception}
+    <br>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+    E-mail: {$emailReception}<br>
     DPFラクラク買取
-
     EOD;
-    $body .= "--__BOUNDARY__\n";
     return $body;
   }
 
   /** メール本文に挿入するフォーム内容を取得 */
   protected function getFormContentsOfMailBody($id): string {
     return <<<EOD
-
-    受付番号：$id
-
-    お客様情報
-    お名前　　　　　　　　：{$this->formData['name']}
-    電話番号　　　　　　　：{$this->formData['tel']}
-    メールアドレス　　　　：{$this->formData['applicantEmail']}
-    備考欄　　　　　　　　：{$this->formData['detail']}
-
+    受付番号：$id<br>
+    <br>
+    お客様情報<br>
+    お名前　　　　　　　　：{$this->formData['name']}<br>
+    電話番号　　　　　　　：{$this->formData['tel']}<br>
+    メールアドレス　　　　：{$this->formData['applicantEmail']}<br>
+    備考欄　　　　　　　　：{$this->formData['detail']}<br>
     EOD;
   }
 

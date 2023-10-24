@@ -479,7 +479,10 @@ button[href*=tel] {
   display: flex;
 }
 .form .txt {
-  margin: 10px 10px 0 10px;
+  margin: 10px 10px 0 0px;
+}
+.form .txt.-blue {
+  color: #0d4987;
 }
 .form .img {
   position: relative;

@@ -33,10 +33,7 @@ class EstimateForm extends Form {
 
   /** スタッフに送るメールの本文を取得 */
   function getMailBodyForStaff($id): string {
-    $body = "--__BOUNDARY__\n";
-    $body .= "Content-Type: text/plain; charset=\"ISO-2022-JP\"\n";
-    $body .= $this->getFormContentsOfMailBody($id);
-    $body .= $this->getFileContentsOfMailBody();
+    $body = $this->getFormContentsOfMailBody($id);
     return $body;
   }
 
@@ -44,21 +41,17 @@ class EstimateForm extends Form {
   function getMailBodyForUser($id): string {
     $config = new EnvironmentConfig();
     $emailReception = $config->get('email_reception');
-
-    $body = "--__BOUNDARY__\n";
-    $body .= "Content-Type: text/plain; charset=\"ISO-2022-JP\"\n\n";
-    $body .= <<<EOD
-
-    申込ありがとうございます。
-    以下の内容を送信いたしました。
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    $body = <<<EOD
+    申込ありがとうございます。<br>
+    以下の内容を送信いたしました。<br>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+    <br>
     {$this->getFormContentsOfMailBody($id)}
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    E-mail: {$emailReception}
+    <br>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+    E-mail: {$emailReception}<br>
     DPFラクラク買取
-
     EOD;
-    $body .= $this->getFileContentsOfMailBody();
     return $body;
   }
 
@@ -69,65 +62,24 @@ class EstimateForm extends Form {
     $exPicture03 = isset($this->fileData['exPicture03']) ? $this->fileData['exPicture03']['fileName'] : '-';
 
     return <<<EOD
-
-    受付番号：$id
-
-    お客様情報
-    お名前　　　　　　　　　　：{$this->formData['name']}
-    電話番号　　　　　　　　　：{$this->formData['tel']}
-    メールアドレス　　　　　　：{$this->formData['applicantEmail']}
-
-    マフラー情報
-    車両型式　　　　　　　　　：{$this->formData['dpfType01']}
-    車台番号　　　　　　　　　：{$this->formData['dpfCar01']}
-    備考欄　　　　　　　　　　：{$this->formData['dpfDetail01']}
-    DPF全体の写真　　　　　　：{$this->fileData['picture01']['fileName']}
-    DPFフィルター部分の写真　：{$this->fileData['picture02']['fileName']}
-    DPF出口側の写真　　　　　：{$this->fileData['picture03']['fileName']}
-    補足写真1　　　　　　　　：$exPicture01
-    補足写真2　　　　　　　　：$exPicture02
-    補足写真3　　　　　　　　：$exPicture03
-
+    受付番号：$id<br>
+    <br>
+    お客様情報<br>
+    お名前　　　　　　　　　　：{$this->formData['name']}<br>
+    電話番号　　　　　　　　　：{$this->formData['tel']}<br>
+    メールアドレス　　　　　　：{$this->formData['applicantEmail']}<br>
+    <br>
+    マフラー情報<br>
+    車両型式　　　　　　　　　：{$this->formData['dpfType01']}<br>
+    車台番号　　　　　　　　　：{$this->formData['dpfCar01']}<br>
+    備考欄　　　　　　　　　　：{$this->formData['dpfDetail01']}<br>
+    DPF全体の写真　　　　　　：{$this->fileData['picture01']['fileName']}<br>
+    DPFフィルター部分の写真　：{$this->fileData['picture02']['fileName']}<br>
+    DPF出口側の写真　　　　　：{$this->fileData['picture03']['fileName']}<br>
+    補足写真1　　　　　　　　：$exPicture01<br>
+    補足写真2　　　　　　　　：$exPicture02<br>
+    補足写真3　　　　　　　　：$exPicture03<br>
     EOD;
-  }
-
-  /** メール本文に挿入するファイル内容を取得 */
-  protected function getFileContentsOfMailBody(): string {
-    $fileBody = "";
-
-    // 必須の画像ファイルリスト
-    $mandatoryPics = ['picture01', 'picture02', 'picture03'];
-    foreach ($mandatoryPics as $key) {
-        if (!isset($this->fileData[$key])) {
-            throw new Exception("Mandatory picture {$key} is missing."); // 必須の画像が存在しない場合は例外をスロー
-        }
-        $fileBody .= $this->generateFileBody($key);
-    }
-
-    // 任意の画像ファイルリスト
-    $optionalPics = ['exPicture01', 'exPicture02', 'exPicture03'];
-    foreach ($optionalPics as $key) {
-        if (isset($this->fileData[$key])) {
-            $fileBody .= $this->generateFileBody($key);
-        }
-    }
-
-    if ($fileBody !== "") {
-        $fileBody .= "--__BOUNDARY__"; // 最後のバウンダリ
-    }
-
-    return $fileBody;
-  }
-
-  /** 画像の内容をもとにファイルのボディ部分を生成 */
-  protected function generateFileBody($key) {
-    $body = "--__BOUNDARY__\n";
-    $body .= "Content-Type: application/octet-stream; name=\"{$this->fileData[$key]['fileName']}\"\n";
-    $body .= "Content-Disposition: attachment; filename=\"{$this->fileData[$key]['fileName']}\"\n";
-    $body .= "Content-Transfer-Encoding: base64\n";
-    $body .= "\n";
-    $body .= chunk_split(base64_encode($this->fileData[$key]['fileContents']));
-    return $body;
   }
 
   /** フォーム内容を返す */

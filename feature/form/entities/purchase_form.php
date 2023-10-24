@@ -45,10 +45,7 @@ class PurchaseForm extends Form {
 
   /** スタッフに送るメールの本文を取得 */
   function getMailBodyForStaff($id): string {
-    $body = "--__BOUNDARY__\n";
-    $body .= "Content-Type: text/plain; charset=\"ISO-2022-JP\"\n";
-    $body .= $this->getFormContentsOfMailBody($id);
-    $body .= $this->getFileContentsOfMailBody();
+    $body = $this->getFormContentsOfMailBody($id);
     return $body;
   }
 
@@ -56,21 +53,17 @@ class PurchaseForm extends Form {
   function getMailBodyForUser($id): string {
     $config = new EnvironmentConfig();
     $emailReception = $config->get('email_reception');
-
-    $body = "--__BOUNDARY__\n";
-    $body .= "Content-Type: text/plain; charset=\"ISO-2022-JP\"\n\n";
-    $body .= <<<EOD
-
-    申込ありがとうございます。
-    以下の内容を送信いたしました。
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    $body = <<<EOD
+    申込ありがとうございます。<br>
+    以下の内容を送信いたしました。<br>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+    <br>
     {$this->getFormContentsOfMailBody($id)}
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    E-mail: {$emailReception}
+    <br>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+    E-mail: {$emailReception}<br>
     DPFラクラク買取
-
     EOD;
-    $body .= $this->getFileContentsOfMailBody();
     return $body;
   }
 
@@ -80,98 +73,57 @@ class PurchaseForm extends Form {
     $picture04 = isset($this->fileData['picture04']) ? $this->fileData['picture04']['fileName'] : '-';
 
     return <<<EOD
-
-    受付番号：$id
-
-    お客様情報
-    お名前　　　　　　　　：{$this->formData['name']}
-    お名前（フリガナ）　　：{$this->formData['nameFuri']}
-    会社名　　　　　　　　：{$this->formData['company']}
-    会社名（フリガナ）　　：{$this->formData['companyFuri']}
-    郵便番号　　　　　　　：{$this->formData['post']}
-    住所　　　　　　　　　：{$this->formData['address']}
-    電話番号　　　　　　　：{$this->formData['tel']}
-    メールアドレス　　　　：{$this->formData['applicantEmail']}
-    本人確認書類（表）　　：{$this->fileData['picture01']['fileName']}
-    本人確認書類（裏）　　：{$this->fileData['picture02']['fileName']}
-    社会保険証(表)　　　　：$picture03
-    社会保険証(裏)　　　　：$picture04
-
-    振り込み先情報
-    金融機関名　　　　　　：{$this->formData['bank']}
-    支店名（店番）　　　　：{$this->formData['branch']}
-    種別　　　　　　　　　：{$this->formData['bankType']}
-    口座番号　　　　　　　：{$this->formData['bankNumber']}
-    口座名義人（カタカナ）：{$this->formData['bankUser']}
-    査定金額の確認　　　　：{$this->formData['bankConfirm']}
-
-    買取希望マフラー
-    マフラー１
-    車両型式　　　　　　　：{$this->formData['dpfType01']}
-    車台番号　　　　　　　：{$this->formData['dpfCar01']}
-    数量　　　　　　　　　：{$this->formData['dpfNumber01']}
-    備考欄　　　　　　　　：{$this->formData['dpfDetail01']}
-    マフラー２
-    車両型式　　　　　　　：{$this->formData['dpfType02']}
-    車台番号　　　　　　　：{$this->formData['dpfCar02']}
-    数量　　　　　　　　　：{$this->formData['dpfNumber02']}
-    備考欄　　　　　　　　：{$this->formData['dpfDetail02']}
-    マフラー３
-    車両型式　　　　　　　：{$this->formData['dpfType03']}
-    車台番号　　　　　　　：{$this->formData['dpfCar03']}
-    数量　　　　　　　　　：{$this->formData['dpfNumber03']}
-    備考欄　　　　　　　　：{$this->formData['dpfDetail03']}
-    マフラー４
-    車両型式　　　　　　　：{$this->formData['dpfType04']}
-    車台番号　　　　　　　：{$this->formData['dpfCar04']}
-    数量　　　　　　　　　：{$this->formData['dpfNumber04']}
-    備考欄　　　　　　　　：{$this->formData['dpfDetail04']}
-    マフラー５
-    車両型式　　　　　　　：{$this->formData['dpfType05']}
-    車台番号　　　　　　　：{$this->formData['dpfCar05']}
-    数量　　　　　　　　　：{$this->formData['dpfNumber05']}
-    備考欄　　　　　　　　：{$this->formData['dpfDetail05']}
-
+    受付番号：$id<br>
+    <br>
+    お客様情報<br>
+    お名前　　　　　　　　：{$this->formData['name']}<br>
+    お名前（フリガナ）　　：{$this->formData['nameFuri']}<br>
+    会社名　　　　　　　　：{$this->formData['company']}<br>
+    会社名（フリガナ）　　：{$this->formData['companyFuri']}<br>
+    郵便番号　　　　　　　：{$this->formData['post']}<br>
+    住所　　　　　　　　　：{$this->formData['address']}<br>
+    電話番号　　　　　　　：{$this->formData['tel']}<br>
+    メールアドレス　　　　：{$this->formData['applicantEmail']}<br>
+    本人確認書類（表）　　：{$this->fileData['picture01']['fileName']}<br>
+    本人確認書類（裏）　　：{$this->fileData['picture02']['fileName']}<br>
+    社会保険証(表)　　　　：$picture03<br>
+    社会保険証(裏)　　　　：$picture04<br>
+    <br>
+    振り込み先情報<br>
+    金融機関名　　　　　　：{$this->formData['bank']}<br>
+    支店名（店番）　　　　：{$this->formData['branch']}<br>
+    種別　　　　　　　　　：{$this->formData['bankType']}<br>
+    口座番号　　　　　　　：{$this->formData['bankNumber']}<br>
+    口座名義人（カタカナ）：{$this->formData['bankUser']}<br>
+    査定金額の確認　　　　：{$this->formData['bankConfirm']}<br>
+    <br>
+    買取希望マフラー<br>
+    マフラー１<br>
+    車両型式　　　　　　　：{$this->formData['dpfType01']}<br>
+    車台番号　　　　　　　：{$this->formData['dpfCar01']}<br>
+    数量　　　　　　　　　：{$this->formData['dpfNumber01']}<br>
+    備考欄　　　　　　　　：{$this->formData['dpfDetail01']}<br>
+    マフラー２<br>
+    車両型式　　　　　　　：{$this->formData['dpfType02']}<br>
+    車台番号　　　　　　　：{$this->formData['dpfCar02']}<br>
+    数量　　　　　　　　　：{$this->formData['dpfNumber02']}<br>
+    備考欄　　　　　　　　：{$this->formData['dpfDetail02']}<br>
+    マフラー３<br>
+    車両型式　　　　　　　：{$this->formData['dpfType03']}<br>
+    車台番号　　　　　　　：{$this->formData['dpfCar03']}<br>
+    数量　　　　　　　　　：{$this->formData['dpfNumber03']}<br>
+    備考欄　　　　　　　　：{$this->formData['dpfDetail03']}<br>
+    マフラー４<br>
+    車両型式　　　　　　　：{$this->formData['dpfType04']}<br>
+    車台番号　　　　　　　：{$this->formData['dpfCar04']}<br>
+    数量　　　　　　　　　：{$this->formData['dpfNumber04']}<br>
+    備考欄　　　　　　　　：{$this->formData['dpfDetail04']}<br>
+    マフラー５<br>
+    車両型式　　　　　　　：{$this->formData['dpfType05']}<br>
+    車台番号　　　　　　　：{$this->formData['dpfCar05']}<br>
+    数量　　　　　　　　　：{$this->formData['dpfNumber05']}<br>
+    備考欄　　　　　　　　：{$this->formData['dpfDetail05']}<br>
     EOD;
-  }
-
-  /** メール本文に挿入するファイル内容を取得 */
-  protected function getFileContentsOfMailBody(): string {
-    $fileBody = "";
-
-    // 必須の画像ファイルリスト
-    $mandatoryPics = ['picture01', 'picture02'];
-    foreach ($mandatoryPics as $key) {
-        if (!isset($this->fileData[$key])) {
-            throw new Exception("Mandatory picture {$key} is missing."); // 必須の画像が存在しない場合は例外をスロー
-        }
-        $fileBody .= $this->generateFileBody($key);
-    }
-
-    // 任意の画像ファイルリスト
-    $optionalPics = ['picture03', 'picture04'];
-    foreach ($optionalPics as $key) {
-        if (isset($this->fileData[$key])) {
-            $fileBody .= $this->generateFileBody($key);
-        }
-    }
-
-    if ($fileBody !== "") {
-        $fileBody .= "--__BOUNDARY__"; // 最後のバウンダリ
-    }
-
-    return $fileBody;
-  }
-
-  /** 画像の内容をもとにファイルのボディ部分を生成 */
-  protected function generateFileBody($key) {
-    $body = "--__BOUNDARY__\n";
-    $body .= "Content-Type: application/octet-stream; name=\"{$this->fileData[$key]['fileName']}\"\n";
-    $body .= "Content-Disposition: attachment; filename=\"{$this->fileData[$key]['fileName']}\"\n";
-    $body .= "Content-Transfer-Encoding: base64\n";
-    $body .= "\n";
-    $body .= chunk_split(base64_encode($this->fileData[$key]['fileContents']));
-    return $body;
   }
 
   /** フォーム内容を返す */
