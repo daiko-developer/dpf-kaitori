@@ -422,7 +422,7 @@ include_once $path .'common/components/head.php'; //変更（$path. を追加）
             <div class="item">
               <dt class="datattl">住所</dt>
               <dd class="data">
-                大阪府堺市南区片蔵486-1
+                大阪府堺市三宝町四丁272番地の4
               </dd>
             </div>
             <div class="item">
